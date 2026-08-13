@@ -1,0 +1,87 @@
+# Design-harness gates — CI twin of the agent-run gate suite.
+# The agents run these gates by discipline; this workflow makes them law on every PR.
+name: gates
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-e2e:
+    name: Lint · Build · Playwright (e2e + axe + visual baselines)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm build
+      - run: pnpm exec playwright install --with-deps chromium
+      # Runs the project's e2e suites: functional specs, axe accessibility checks,
+      # and toHaveScreenshot() visual-regression baselines (see the e2e-test skill).
+      - run: pnpm exec playwright test
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
+
+  token-guard:
+    name: Token compliance (no hardcoded values)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # CI twin of the design-system-guard hook: hardcoded hex colors, arbitrary px
+      # values, and inline color styles are banned in shipped code (tokens.css is generated).
+      - name: Grep for token violations
+        run: |
+          set -e
+          VIOLATIONS=$(grep -rnE "#[0-9a-fA-F]{3,8}\b|\[[0-9]+px\]|style=\{\{[^}]*(color|background)" \
+            app components --include='*.tsx' --include='*.ts' --include='*.css' \
+            | grep -v "tokens.css" | grep -v "// token-exempt" || true)
+          if [ -n "$VIOLATIONS" ]; then
+            echo "Token violations found (token-only styling is a non-negotiable):"
+            echo "$VIOLATIONS"
+            exit 1
+          fi
+          echo "token-guard: clean"
+
+  security:
+    name: Security (deps + secrets)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - name: Dependency audit (fail on high+)
+        run: pnpm audit --prod --audit-level high
+      - name: Secret scan
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # Performance budget on the production build (LCP/TBT/CLS — the docs/tech.md budget).
+  # Requires no external service; uses Lighthouse against a locally started prod server.
+  perf-budget:
+    name: Performance budget (Lighthouse)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm start & npx wait-on http://localhost:3000
+      - name: Lighthouse assertions
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: http://localhost:3000
+          uploadArtifacts: true
+          configPath: ./.lighthouserc.json

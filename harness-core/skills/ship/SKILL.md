@@ -46,6 +46,13 @@ npx --yes impeccable detect; echo "exit: $?"
 - Non-zero exit → treat the output as findings; list each one verbatim in the report (these are 45 machine-checked, non-LLM rules — do not paraphrase or second-guess them).
 - Command not found, network error, or the tool itself crashes → say so honestly in the report ("impeccable unavailable: <error>") and continue. This is a bonus gate, never a blocker, and never a silent skip.
 
+## Step 2b — Security lens
+
+1. `pnpm audit --prod --audit-level high; echo "exit: $?"` — non-zero → each advisory is a finding.
+2. Secrets sweep over the diff/scope: `git diff main...HEAD | grep -inE "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"][A-Za-z0-9_\-]{16,}" || echo "secrets: clean"` — any hit is a finding (rotate, don't just delete).
+3. If the scope touches auth, sessions, file upload, payments, or PII: walk it against a minimal checklist — inputs validated server-side, authz checked on every route (not just UI), no PII in logs/URLs/analytics, third-party embeds approved (house rule). Each miss is a finding with file:line.
+4. This lens is scoped, not a pentest — say plainly what it did not cover.
+
 ## Step 3 — Taste gate
 
 1. Read `docs/design-system.md` (the art direction) and `design/taste-rules.md` (standing taste rules, if present).
@@ -65,6 +72,7 @@ Classify every finding into a gate:
 | 360px integrity | HARD | Horizontal scroll at 360px |
 | Art direction exists | HARD | `docs/design-system.md` has no written art direction (caught in Step 0) |
 | T.R.U.S.T. (AI surfaces only) | HARD | Any unchecked `docs/trust-scaffolding.md` checklist item at Medium+ stakes on an AI surface in scope (no AI in scope → gate auto-passes, note "n/a") |
+| Security | HARD | Any high+ dependency advisory, exposed secret, or auth/PII checklist miss in scope (Step 2b) |
 | Taste rules | SOFT | Any Step 3 taste-rule finding |
 | Impeccable | SOFT | Any Step 2 finding |
 

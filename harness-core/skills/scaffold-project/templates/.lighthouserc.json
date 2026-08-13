@@ -1,0 +1,12 @@
+{
+  "ci": {
+    "collect": { "settings": { "preset": "perf", "formFactor": "mobile", "throttlingMethod": "simulate" } },
+    "assert": {
+      "assertions": {
+        "largest-contentful-paint": ["error", { "maxNumericValue": 2500 }],
+        "total-blocking-time": ["error", { "maxNumericValue": 200 }],
+        "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }]
+      }
+    }
+  }
+}

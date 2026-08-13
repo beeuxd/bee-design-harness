@@ -184,3 +184,13 @@ Flaky (passed on retry): [list — each gets a root-cause debugging follow-up, n
 ```
 
 Failure screenshots and traces land in `test-results/` automatically (config above). Reference their paths — a claim without a run log and screenshot paths is not a passing suite. For visual polish beyond functional checks, follow up with the `visual-qa` skill; before declaring done, run `verify-before-done`.
+
+
+## Visual regression baselines
+
+Approved screens become machine-checked baselines — unintended visual drift fails CI instead of relying on reviewer eyes (the automated twin of `visual-qa`'s judgment pass).
+
+1. One `visual.spec.ts` per feature: `await expect(page).toHaveScreenshot('<screen>-<width>.png', { fullPage: true, maxDiffPixelRatio: 0.01 })` at 360 / 768 / 1440, dark mode (same contexts as the suites above).
+2. **Baselines are created deliberately, never accidentally**: run `pnpm exec playwright test --update-snapshots` ONLY after the screen passed the ship gate — a baseline is an approval artifact. Commit the snapshots.
+3. A CI diff failure means either a regression (fix the code) or an intentional redesign (re-run the gates, then update the baseline in the same PR — with the ship evidence cited in the commit message). Never update snapshots to silence a failure.
+4. Mask genuinely dynamic regions (`mask: [locator]`) rather than raising the diff threshold — a loose threshold is a blind gate.

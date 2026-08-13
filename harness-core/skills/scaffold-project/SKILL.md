@@ -39,7 +39,11 @@ docs/specs/      (empty — design specs land here)
 design/          (tokens.json, tokens.md, components.md, patterns.md, recipes.md, templates.md, accessibility.md, taste-rules.md, references/README.md)
 registry/        (empty — recipe-harvest writes shadcn registry items here)
 scripts/build-tokens.mjs
+.github/workflows/gates.yml   (CI gate suite: e2e + axe + visual baselines, token-guard, security, perf budget)
+.lighthouserc.json            (Lighthouse budget assertions — LCP/TBT/CLS from docs/tech.md)
 ```
+
+The CI files only bite once the repo is on GitHub and `app-bootstrap` (role-engineer) has installed the toolchain — say so in the report if either isn't true yet.
 
 Then replace placeholders in every copied `.md`/`.json`: `{{PROJECT_NAME}}`, `{{PROJECT_DESCRIPTION}}`, `{{AESTHETIC}}`, `{{FIGMA_URL}}` with the Step 0 answers (empty answer → leave the placeholder and note it in the report). Record the intake answers per Step 0.3. If intake named Replit or Figma Make as executors, run `sync-executor-context` at the end to generate their context files (AGENTS.md ships from the template either way).
 
