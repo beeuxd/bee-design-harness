@@ -1,6 +1,6 @@
 # Skill Curation — consolidated verdicts (2026-08-13)
 
-Source: 192 files / 125 unique skills in `/Users/bee/Downloads/Skills/`, audited by three independent reviewers (Designer; Engineer+PM; Copywriter+Marketer+Founder), reconciled here. Result: **79 skills across 6 role packs** + the 10 in harness-core.
+Source: 192 files / 125 unique skills in `/Users/bee/Downloads/Skills/`, audited by three independent reviewers (Designer; Engineer+PM; Copywriter+Marketer+Founder), reconciled here. Result: **80 skills across 6 role packs** (16+13+12+5+26+9 — copywriter gained ux-copy-review from the gate-suite archive) + the 20 in harness-core (11 + the 9-skill gate suite).
 
 ## Final pack shapes
 
@@ -16,7 +16,7 @@ customer-journey-map · firecrawl · grilling (+merge: grill-me's "explore the c
 ### role-copywriter (4)
 copywriting · copy-editing · ux-writing · internal-comms
 
-### role-marketer (25)
+### role-marketer (26)
 brandkit · ppt-visual-design · ab-testing · analytics-tracking · marketing-psychology · onboarding-cro · page-cro · product-marketing-context · cold-email · email-sequences · ad-creative · churn-prevention · competitor-alternatives · directory-submissions · lead-magnets · paid-ads · pricing-strategy · product-launch · referral-program · content-strategy · marketing-ideas · social-content · ai-seo (+merge: seo-geo's AI-crawler robots.txt allowlist + validate-and-monitor checklist) · programmatic-seo · seo-audit · schema-markup
 *(rename short generic frontmatter names on import: launch→product-launch, emails→email-sequences, ads→paid-ads, etc.)*
 

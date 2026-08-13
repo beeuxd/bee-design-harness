@@ -10,7 +10,7 @@ quote → INS → PROB → FEAT (MoSCoW) → wireframe region → token/Figma va
 
 | Plugin | What | Install when |
 |---|---|---|
-| `harness-core` | The 5 evidence loops (insight → problem → ideation → wireframe → hifi-gate), token/Figma gates, guard hooks, `scaffold-project`, qa + researcher agents | Always — every role pack depends on it |
+| `harness-core` | 19 skills — 5 evidence loops + dependencies + 9-skill quality-gate suite (ship / verify-before-done / visual-qa / a11y-audit / performance-check / e2e-test / design-system-audit / review-ux / parallel-review) + scaffold | Always — every role pack depends on it |
 | `role-designer` | The **default** design agent: design system, a11y, motion, polish, critique, hand-off | Doing design work |
 | `role-engineer` | Implement from Figma, ship polished UI, design systems in code, deploy | Shipping code |
 | `role-pm` | Discover & validate (feeds the loops), spec & prioritize | Defining product |
@@ -35,5 +35,5 @@ Read `harness-core/skills/scaffold-project/templates/DESIGN.md` — it's the who
 
 ## Status
 
-- `harness-core` — complete (10 skills, 2 hooks, 2 agents, scaffold templates)
-- `role-*` — agents defined; skill packs being curated from a 125-skill library (dedupe in progress)
+- `harness-core` — complete with gates (19 skills: 5 loops + 5 dependencies + 9-skill quality-gate suite, 2 hooks, 2 agents, scaffold templates)
+- `role-*` — built (agents defined, skill packs installed per role)

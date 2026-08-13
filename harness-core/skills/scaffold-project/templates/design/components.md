@@ -4,7 +4,7 @@
 
 ## shadcn/ui Primitives
 
-All shadcn components must be restyled to project tokens before shipping. See `add-shadcn-component` skill.
+All shadcn components must be restyled to project tokens before shipping — visuals get the project treatment; interaction behavior stays the primitive's.
 
 | Component | Status | Notes |
 |-----------|--------|-------|

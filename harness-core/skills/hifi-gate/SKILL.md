@@ -67,5 +67,5 @@ Present the gate evidence — drift result, unbound-value count (0), matrix conf
 ## Handoffs
 
 - Gate passed + user verdict → `/from-figma` builds it, citing this gate's evidence in its Step 0.
-- Visual direction feels wrong even though it's token-clean → `/design-options` for variants, `/taste-retro` for the corrections.
+- Visual direction feels wrong even though it's token-clean → run a scratch-route variant exploration (3 distinct variants, screenshotted; the user picks), then `/taste-retro` for the corrections.
 - Drift keeps reappearing between runs → someone is editing Figma variables outside the sync flow; flag it to the user as a process problem, not a token problem.

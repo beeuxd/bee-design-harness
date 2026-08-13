@@ -1,6 +1,6 @@
 ---
 name: storybook-component
-description: Maintains the story-per-component discipline — every component in design/components.md gets a Storybook story covering its full states matrix, and the running Storybook MCP server is queried for existing components before anything new is built. Use after building or restyling any component, when stories are missing or stale, or to check what components already exist. Trigger phrases: "write the story", "add it to Storybook", "story for this component", "what components exist", "check Storybook first", "stories are out of date". (Installing Storybook itself is part of bootstrap-app; building the component is new-site-component or add-shadcn-component — this skill documents and verifies it as executable spec.)
+description: Maintains the story-per-component discipline — every component in design/components.md gets a Storybook story covering its full states matrix, and the running Storybook MCP server is queried for existing components before anything new is built. Use after building or restyling any component, when stories are missing or stale, or to check what components already exist. Trigger phrases: "write the story", "add it to Storybook", "story for this component", "what components exist", "check Storybook first", "stories are out of date". (This skill can install Storybook itself if missing; building the component happens elsewhere — this skill documents and verifies it as executable spec.)
 ---
 
 # Storybook Component — stories as the executable spec
@@ -10,12 +10,16 @@ Stories make the coded component library machine-readable: a component without a
 ## Step 0 — Is Storybook available?
 
 1. Check `package.json` for a `storybook` script and a `.storybook/` directory.
-2. **Not installed** → STOP and ask: "Storybook isn't set up. Install it now (Storybook + `@storybook/addon-mcp`, ~5 min), or skip stories for this project?" If the user opts in, follow the Storybook step in `bootstrap-app`. If they decline, record the decision in `docs/tech.md` so this question isn't re-asked every component.
+2. **Not installed** → STOP and ask: "Storybook isn't set up. Install it now (Storybook + `@storybook/addon-mcp`, ~5 min), or skip stories for this project?" If the user opts in, install it here:
+   ```bash
+   pnpm dlx storybook@latest init --yes && pnpm add -D @storybook/addon-mcp
+   ```
+   Then register `@storybook/addon-mcp` in the `addons` array of `.storybook/main.ts`, and import `../app/globals.css` in `.storybook/preview.ts` so stories get the app's tokens and styles — with dark mode as the default theme, matching the app. If they decline, record the decision in `docs/tech.md` so this question isn't re-asked every component.
 3. Confirm the dev instance runs: `pnpm storybook` — MCP endpoint is `/mcp` on the Storybook dev server (registered via `@storybook/addon-mcp` in `.storybook/main.ts`).
 
 ## Reuse check (run BEFORE building any new component)
 
-When invoked as the pre-build check from `new-site-component`/`add-shadcn-component`:
+When invoked as the pre-build check before any new component is built:
 
 1. Query the running Storybook MCP for existing components and their props/variants (fall back to `design/components.md` + a `grep` over `components/` if the server isn't running — but say which source you used).
 2. Report: exact match / close match (name it and what differs) / no match. A close match goes back to the caller's reuse-first decision — extending an existing component beats a near-duplicate.
@@ -44,6 +48,6 @@ For the component just built or restyled:
 
 ## Handoffs
 
-- Story reveals a visual defect → fix the component (route back to `new-site-component`), not the story.
-- States matrix doesn't exist for this component → `design-flow`/`prd-to-ui` owns states; get the matrix before faking one.
+- Story reveals a visual defect → fix the component (route back to whichever build path produced it), not the story.
+- States matrix doesn't exist for this component → the feature's design spec owns states (wireframe-loop/hifi-gate output); get the matrix before faking one.
 - Many components missing stories → propose a sweep, one component at a time, oldest first.

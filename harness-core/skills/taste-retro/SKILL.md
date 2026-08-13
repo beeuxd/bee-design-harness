@@ -1,6 +1,6 @@
 ---
 name: taste-retro
-description: Captures the user's design corrections as durable, checkable rules in design/taste-rules.md so taste compounds across sessions instead of evaporating. Use whenever the user corrects visual output in any words ("too boxy", "stop centering everything", "the spacing feels cramped", "not this shade", "that's not the vibe"), when a design-options round reveals why a winner won, or at the end of a visual feature. Also invoked by other skills as the source of standing taste rules to load before visual work. (Setting the initial aesthetic via interview is art-direction; saving external inspiration is design-references — this skill only records reactions to work we already produced.)
+description: Captures the user's design corrections as durable, checkable rules in design/taste-rules.md so taste compounds across sessions instead of evaporating. Use whenever the user corrects visual output in any words ("too boxy", "stop centering everything", "the spacing feels cramped", "not this shade", "that's not the vibe"), when a variant-exploration round reveals why a winner won, or at the end of a visual feature. Also invoked by other skills as the source of standing taste rules to load before visual work. (Setting the initial aesthetic via interview is art-direction; external inspiration is filed under design/references/ — this skill only records reactions to work we already produced.)
 ---
 
 # Taste Retro — turn corrections into permanent rules
@@ -10,7 +10,7 @@ Every visual correction the user makes is a rule they should never have to repea
 ## When to run (any ONE of these)
 
 1. **The user corrects visual output** — in any wording: "too boxy", "stop centering everything", "the spacing feels cramped", "not this shade", "less rounded", "this feels cheap". Fix the immediate issue FIRST, then run this skill in the same turn.
-2. **A design-options round produced a winner AND the user said why** — capture the why as a rule. If they only picked without explaining, do not invent a reason; you may ask once: "what made this one win?" If no answer, capture nothing.
+2. **A scratch-route variant exploration produced a winner AND the user said why** — capture the why as a rule. If they only picked without explaining, do not invent a reason; you may ask once: "what made this one win?" If no answer, capture nothing.
 3. **End of a visual feature** (before `/ship` or when the user says the visual work is done) — ask exactly once: **"any taste notes from this one?"** If the answer is no or silence, move on. Never nag.
 
 Do NOT run for functional bugs, copy edits, or performance issues — visual/aesthetic judgments only.
@@ -102,7 +102,7 @@ Show the user the exact entry (or edit) as written, in one short block: "Logged 
 
 ## The load rule (for every OTHER skill)
 
-Any skill doing visual build or review work — `from-figma`, `new-site-component`, `design-flow`, `prd-to-ui`, `design-options`, `motion`, `visual-qa`, `review-ux`, `design-system-audit`, `ship`, and the `ui-designer` / `frontend-engineer` / `qa` agents — MUST:
+Any skill doing visual build or review work — `from-figma`, `hifi-gate`, `wireframe-loop`, `storybook-component`, `visual-qa`, `review-ux`, `design-system-audit`, `ship`, any scratch-route variant exploration or animation work, and the designer / engineer / qa agents — MUST:
 
 1. Read `design/taste-rules.md` before producing or reviewing anything visual (alongside `docs/design-system.md` and `design/references/`).
 2. Treat EVERY rule as a checkable gate, same status as a contrast check: a violation is a defect, cite the rule and the offending `file:line`.

@@ -1,6 +1,6 @@
 ---
 name: insight-loop
-description: Turns raw research (interview transcripts, notes, survey data in docs/research/raw/) into evidence-traced insights in docs/research/insights.md, looping through an adversarial trace-back pass until every insight is 100% backed by verbatim quotes with zero meaning drift. Use when research material needs synthesis or existing insights need re-validation. Trigger phrases: "synthesize the research", "analyze these interviews", "extract insights", "code this transcript", "do the insights hold", "run the insight loop". (Defining the problem from finished insights is problem-loop; asking the user discovery questions with no research data is kickoff.)
+description: Turns raw research (interview transcripts, notes, survey data in docs/research/raw/) into evidence-traced insights in docs/research/insights.md, looping through an adversarial trace-back pass until every insight is 100% backed by verbatim quotes with zero meaning drift. Use when research material needs synthesis or existing insights need re-validation. Trigger phrases: "synthesize the research", "analyze these interviews", "extract insights", "code this transcript", "do the insights hold", "run the insight loop". (Defining the problem from finished insights is problem-loop; asking the user discovery questions with no research data is PM discovery — role-pm.)
 ---
 
 # Insight Loop — raw research ↔ analysis fidelity

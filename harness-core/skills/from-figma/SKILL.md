@@ -1,6 +1,6 @@
 ---
 name: from-figma
-description: Builds a React component or page from a Figma design by pulling exact specs from Figma variables (never eyeballing screenshots) and interaction behavior from shadcn/Radix source, then verifies the build against the Figma screenshot with Playwright. Use when the user shares a figma.com link to be built, or asks to implement a design. Triggers: "build this from Figma", "implement this design", "here's the Figma", "make this screen", "code up this mockup", "from the figma". (A Figma or site link shared as inspiration to save — not to build — is design-references.)
+description: Builds a React component or page from a Figma design by pulling exact specs from Figma variables (never eyeballing screenshots) and interaction behavior from shadcn/Radix source, then verifies the build against the Figma screenshot with Playwright. Use when the user shares a figma.com link to be built, or asks to implement a design. Triggers: "build this from Figma", "implement this design", "here's the Figma", "make this screen", "code up this mockup", "from the figma". (A Figma or site link shared as inspiration to save — not to build — is filed under design/references/ with notes, not built here.)
 ---
 
 # Build from Figma
@@ -66,7 +66,7 @@ Reuse before build. For **each** element in the frame, in order:
 - (b) add a variant to an existing component,
 - (c) build a new component.
 
-Never silently invent a component. If (c) is chosen, follow the `add-shadcn-component` skill if a shadcn primitive is the right base, and add the new component to `design/components.md` with a usage example.
+Never silently invent a component. If (c) is chosen and a shadcn primitive is the right base, install the primitive and restyle visuals only — never behavior — and add the new component to `design/components.md` with a usage example.
 
 ## Step 4 — Map Figma variables to tokens
 

@@ -54,4 +54,4 @@ One row per `ideation-loop` iteration.
 
 ---
 
-Feeds: `/kickoff` (REQ prioritization seeds from Must/Should rows) and `/wireframe-loop` (`docs/ideation/wireframes.md`).
+Feeds: PRD REQ prioritization (Must/Should rows seed the REQ tables — role-pm's spec skills) and `/wireframe-loop` (`docs/ideation/wireframes.md`).

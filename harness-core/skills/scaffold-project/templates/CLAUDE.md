@@ -34,9 +34,9 @@ For specific tasks, Claude Code auto-invokes the matching skill from the library
 
 ## The skill library
 
-**REBUILD IN PROGRESS (2026-08-13).** The previous 31-skill batch is archived at `.claude/skills-legacy-2026-08-13.tar.gz`; a new harness-first batch is being designed around the Design Harness structure in `DESIGN.md`. Until it lands, 10 skills survive. References to retired skills elsewhere in this file and in the survivors are pending the rebuild — treat the capability description, not the name, as the contract.
+**REBUILT (2026-08-13).** The previous 31-skill batch is archived at `.claude/skills-legacy-2026-08-13.tar.gz`; the harness-first batch is built around the Design Harness structure in `DESIGN.md`: the 5 evidence loops, their dependencies, and the restored 9-skill quality-gate suite, shipped via the `harness-core` plugin. Role packs (role-designer, role-engineer, role-pm, role-copywriter, ...) add role-specific skills when installed.
 
-10 skills under `.claude/skills/<name>/SKILL.md`. Claude Code picks them by description; you can also invoke one directly with `/<name>`.
+19 skills ship with `harness-core`. Claude Code picks them by description; you can also invoke one directly with `/<name>`.
 
 **Research & ideation loops — evidence-first, each iterates (max 5 rounds) until its convergence check passes, keeps a director's ledger, and exits only on your verdict:**
 
@@ -57,6 +57,20 @@ For specific tasks, Claude Code auto-invokes the matching skill from the library
 | `art-direction` | Once per project, before ANY visual work: interview → written art direction. **Visual work stops if this doesn't exist** |
 | `taste-retro` | Every design correction becomes a standing rule in `design/taste-rules.md` — how loop steering compounds |
 | `storybook-component` | Story-per-component discipline; the Storybook MCP is queried before building anything new |
+
+**Quality gates — evidence required, no gate = no ship:**
+
+| Skill | What |
+|---|---|
+| `ship` | Pre-ship gate: parallel lens reviews → honest SHIP / NO-SHIP verdict |
+| `verify-before-done` | Before the words "done" / "fixed" — evidence required |
+| `visual-qa` | Playwright screenshots at the three review widths (360/768/1440, dark-first) + design review |
+| `a11y-audit` | WCAG 2.2 AA, automation-first (axe via Playwright) |
+| `performance-check` | Core Web Vitals budget gate — fail = no ship |
+| `e2e-test` | Playwright suites per feature (5-spec structure) |
+| `design-system-audit` | Token-compliance sweep of the codebase |
+| `review-ux` | State-coverage matrix + UX completeness |
+| `parallel-review` | Fan out subagent lens-reviews for big audits |
 
 `design/taste-rules.md` ships seeded with universal anti-slop rules and is read before every visual build and review.
 
@@ -83,7 +97,7 @@ This project uses 7 specialized agents under `.claude/agents/`. Delegate to the 
 
 ### Typical flow for a new feature
 
-0. Research exists? Run the loops first: `/insight-loop` → `/problem-loop` → `/ideation-loop` — evidence-traced problems and a MoSCoW feature tree seed everything below. (No research material → start at 1; kickoff will note the evidence-first path.)
+0. Research exists? Run the loops first: `/insight-loop` → `/problem-loop` → `/ideation-loop` — evidence-traced problems and a MoSCoW feature tree seed everything below. (No research material → start at 1; PM discovery will note the evidence-first path.)
 1. **pm** defines requirements, asks hard questions, writes to `docs/prd.md` (seeded from the feature tree when it exists)
 2. **researcher** challenges the PRD — finds faults, asks "why?", stress-tests assumptions
 3. **architect** structures the experience — IA, flows, hierarchy, responsive specs; `/wireframe-loop` validates the screens against problems + MoSCoW
@@ -95,7 +109,7 @@ This project uses 7 specialized agents under `.claude/agents/`. Delegate to the 
 
 ### Ticket workflow
 
-Before implementation begins, run `/setup-kanban` to create a GitHub Projects board. Then run `/write-tickets` to generate work tickets for each module/feature from the specs. Tickets are created as GitHub Issues with labels, acceptance criteria, and linked to the kanban board.
+Before implementation begins, set up a GitHub Projects board, then generate work tickets for each module/feature from the specs — GitHub Issues with labels and acceptance criteria, linked to the board (use `gh`, or a role pack's ticket skills if installed).
 
 For small tasks, skip agents and just do the work directly. Agents are for delegation when context or specialization helps.
 
@@ -118,7 +132,7 @@ For small tasks, skip agents and just do the work directly. Agents are for deleg
 
 ## How I want Claude Code to work
 
-- **Orient before coding.** Run `session-start` at the top of every session. When stuck, `escalation-protocol`. Nothing is "done" without `verify-before-done` evidence.
+- **Orient before coding.** Re-read this file and the current scope at the top of every session. Stuck after 2 attempts? Stop, report findings, ask. Nothing is "done" without `verify-before-done` evidence.
 - **No visual work without direction.** If `docs/design-system.md` has no art direction section, stop and run `art-direction` first. Read `design/taste-rules.md` before building or reviewing anything visual.
 - **Small, verifiable steps.** One component or section at a time. Show me the file before moving on.
 - **Ask before assuming.** Design or content unclear? Ask — don't pick for me.
@@ -145,7 +159,7 @@ Proactively tell me to start a new chat when **any** of these happen:
 
 ### What to do when you suggest it
 
-Generate a **handoff summary** using the `handoff-summary` skill. I'll paste it into the new chat to resume.
+Generate a **handoff summary** — one copy-paste block: current scope, decisions made, files touched, next steps. I'll paste it into the new chat to resume.
 
 ### At the start of any new chat
 

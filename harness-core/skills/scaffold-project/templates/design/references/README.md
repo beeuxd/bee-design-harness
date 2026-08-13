@@ -2,7 +2,7 @@
 
 Curated visual references for this project. **Builders: read this index before any visual work** — every build report cites which reference each section follows (or says "no reference" and flags it).
 
-Managed by the `design-references` skill: give it a URL (it screenshots the site itself), drop in images by hand, or let it pull from Mobbin if the mobbin-mcp package is installed. Every reference gets a folder with screenshots and a `notes.md` of *transferable* observations — measurable things (type scale, spacing rhythm, accent discipline, layout moves), never "looks clean."
+To file a reference: give Claude a URL (it screenshots the site itself), drop in images by hand, or pull from Mobbin if the mobbin-mcp package is installed. Every reference gets a folder with screenshots and a `notes.md` of *transferable* observations — measurable things (type scale, spacing rhythm, accent discipline, layout moves), never "looks clean."
 
 ## Index
 

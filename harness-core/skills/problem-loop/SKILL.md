@@ -1,6 +1,6 @@
 ---
 name: problem-loop
-description: Derives problem statements from docs/research/insights.md and validates them in challenge-style rounds until every clause maps to insight evidence and no high-confidence insight is left contradicting or unexplained — then writes docs/research/problems.md and the PRD's Problem Statement. Use after insight-loop, or to pressure-test an existing problem statement against research. Trigger phrases: "define the problem", "what's the real problem", "validate the problem statement", "does the problem match the research", "run the problem loop". (Stress-testing a full PRD is challenge; synthesizing raw transcripts is insight-loop.)
+description: Derives problem statements from docs/research/insights.md and validates them in challenge-style rounds until every clause maps to insight evidence and no high-confidence insight is left contradicting or unexplained — then writes docs/research/problems.md and the PRD's Problem Statement. Use after insight-loop, or to pressure-test an existing problem statement against research. Trigger phrases: "define the problem", "what's the real problem", "validate the problem statement", "does the problem match the research", "run the problem loop". (Stress-testing a full PRD is the researcher agent's job; synthesizing raw transcripts is insight-loop.)
 ---
 
 # Problem Loop — problem statement ↔ analysis
@@ -32,7 +32,7 @@ The loop that guarantees the problem we commit to actually answers the analysis 
 
 ## Step 2 — Validation rounds (the loop core)
 
-One challenge per round, `challenge`-style: state it, answer it from the evidence, record the verdict. The canonical probes, run against each problem in turn:
+One challenge per round, devil's-advocate style: state it, answer it from the evidence, record the verdict. The canonical probes, run against each problem in turn:
 
 1. **Support probe** — *Which INS-IDs support this clause?* Any clause resting on Low-confidence or `unvalidated` evidence → say so in the inventory; any clause with none → cut or reword.
 2. **Omission probe** — *Which Active insights does this problem ignore?* Check every High-confidence insight against the problem set; unaccounted ones go to the Unexplained Insights table.
@@ -61,5 +61,5 @@ Then: write `docs/research/problems.md`, update the **Problem Statement** sectio
 ## Handoffs
 
 - Verdict accepted → propose `/ideation-loop` (problems → personas, diagrams, feature tree).
-- Problems reshape scope materially → suggest re-running `/challenge` on the PRD afterward.
+- Problems reshape scope materially → suggest having the researcher agent re-stress-test the PRD afterward.
 - Unexplained-insight rows keep growing → the research has more than one product in it; flag that to the user explicitly.

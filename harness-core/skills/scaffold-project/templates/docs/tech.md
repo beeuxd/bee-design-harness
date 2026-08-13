@@ -10,7 +10,7 @@
 | Language | TypeScript (strict mode) |
 | Styling | Tailwind CSS v4 |
 | Components | shadcn/ui (restyled) |
-| Component workshop | Storybook + `@storybook/addon-mcp` (optional, set up via `bootstrap-app`) |
+| Component workshop | Storybook + `@storybook/addon-mcp` (optional, set up via the `storybook-component` skill) |
 | Fonts | Plus Jakarta Sans + Geist Mono via `next/font` |
 | Package manager | pnpm |
 | Deployment | Vercel |

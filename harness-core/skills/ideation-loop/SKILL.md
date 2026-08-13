@@ -1,6 +1,6 @@
 ---
 name: ideation-loop
-description: Takes validated problem statements and turns them into evidence-backed ideation — picking the right UX diagram per problem (empathy map, JTBD, journey map, HMW), building personas from insights, and producing a MoSCoW feature tree where every node traces to a problem. Use after problem-loop, or when features need prioritizing against evidence. Trigger phrases: "ideate on this problem", "build the feature tree", "empathy map", "MoSCoW this", "what features should this have", "run the ideation loop". (Writing REQ rows from a settled scope is kickoff; validating wireframes against this tree is wireframe-loop.)
+description: Takes validated problem statements and turns them into evidence-backed ideation — picking the right UX diagram per problem (empathy map, JTBD, journey map, HMW), building personas from insights, and producing a MoSCoW feature tree where every node traces to a problem. Use after problem-loop, or when features need prioritizing against evidence. Trigger phrases: "ideate on this problem", "build the feature tree", "empathy map", "MoSCoW this", "what features should this have", "run the ideation loop". (Writing REQ rows from a settled scope is PM spec work — role-pm; validating wireframes against this tree is wireframe-loop.)
 ---
 
 # Ideation Loop — problem → diagrams → feature tree
@@ -73,6 +73,6 @@ Present the tree summary (counts per MoSCoW tier, bets flagged), the ledger, and
 
 ## Handoffs
 
-- Verdict accepted → propose `/kickoff` (Must/Should rows seed the PRD's REQ tables) or `/wireframe-loop` if the PRD already holds.
+- Verdict accepted → propose PRD REQ writing (role-pm's discovery/spec skills; Must/Should rows seed the REQ tables) or `/wireframe-loop` if the PRD already holds.
 - Gaps sections in personas grew → more raw research needed; name what's missing.
 - The tree implies pages not in `docs/prd.md` → per CLAUDE.md, stop and ask before adding pages.

@@ -1,6 +1,6 @@
 ---
 name: wireframe-loop
-description: Creates lo-fi wireframes as Figma frames and cross-checks them against the problem statements and MoSCoW feature tree until every screen region maps to a Must/Should feature and every Must feature has a home — recording the proof in docs/ideation/wireframes.md. Use when moving from feature list to screens, or to audit existing wireframes against scope. Trigger phrases: "wireframe this", "sketch the screens", "lo-fi first", "does the wireframe cover the features", "run the wireframe loop". (Applying visual styling to validated wireframes is hifi-gate; a written spec with component/token mapping is design-flow.)
+description: Creates lo-fi wireframes as Figma frames and cross-checks them against the problem statements and MoSCoW feature tree until every screen region maps to a Must/Should feature and every Must feature has a home — recording the proof in docs/ideation/wireframes.md. Use when moving from feature list to screens, or to audit existing wireframes against scope. Trigger phrases: "wireframe this", "sketch the screens", "lo-fi first", "does the wireframe cover the features", "run the wireframe loop". (Applying visual styling to validated wireframes is hifi-gate; a written spec with component/token mapping lives in docs/specs/.)
 ---
 
 # Wireframe Loop — wireframes ↔ problem + MoSCoW
@@ -16,7 +16,7 @@ The loop that guarantees screens serve the evidenced scope: no orphan UI, no hom
 
 ## Step 0 — Preconditions
 
-1. Read `docs/ideation/feature-tree.md`, `docs/research/problems.md`, `docs/user-flows.md`, and `design/patterns.md`. If `docs/specs/<feature-slug>.md` exists for this feature (from `design-flow`), read it — the wireframe must not contradict a committed spec.
+1. Read `docs/ideation/feature-tree.md`, `docs/research/problems.md`, `docs/user-flows.md`, and `design/patterns.md`. If `docs/specs/<feature-slug>.md` exists for this feature (a committed design spec), read it — the wireframe must not contradict a committed spec.
 2. **Soft gate:** feature tree missing/empty → offer: "Run `/ideation-loop` first (recommended), or list the features directly — they'll be labeled `unvalidated` in the matrix."
 3. **Figma check:** confirm the Figma MCP connection works (e.g., `get_metadata` on the project file from `docs/design-system.md`). Unavailable → **STOP and ask:** "Figma MCP is not reachable. Fix the connection, or approve a markdown-only matrix as fallback?" Never silently fall back.
 4. Screens implied that aren't in `docs/prd.md`/`docs/user-flows.md` → STOP and ask (house rule: no new pages without approval).
@@ -61,5 +61,5 @@ Present the matrix summary + frame links + ledger; ask for the verdict.
 ## Handoffs
 
 - Verdict accepted → propose `/hifi-gate` (visual system application with the hard token gate).
-- Structural questions about states/interactions beyond wireframe scope → `/design-flow` for the full spec.
+- Structural questions about states/interactions beyond wireframe scope → write the full design spec (structure + tokens + states) to `docs/specs/<feature-slug>.md` before the hi-fi pass.
 - The cross-check reshaped scope (features cut/added) → update `docs/ideation/feature-tree.md` via `/ideation-loop` so the tree stays true.

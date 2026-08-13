@@ -58,7 +58,7 @@ House rules in `CLAUDE.md` override Figma when they conflict (e.g., tap-target m
 ```
 raw research ──insight-loop──▶ insights ──problem-loop──▶ problems
    ──ideation-loop──▶ personas + feature tree (MoSCoW)
-   ──kickoff/challenge──▶ PRD ──flow-map/design-flow──▶ flows + specs
+   ──PM discovery + researcher stress-test──▶ PRD ──flow mapping / design specs──▶ flows + specs
    ──wireframe-loop──▶ validated lo-fi wireframes
    ──hifi-gate──▶ token-clean hi-fi ──from-figma──▶ built UI ──ship──▶ shipped
 ```
