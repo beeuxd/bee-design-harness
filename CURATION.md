@@ -55,6 +55,10 @@ fundraising · pitch-deck · scoping-cutting · measuring-product-market-fit · 
 - **Served by MCP / meta-utilities**: figma-use, figma-generate-design (the Figma MCP serves both — shipping copies = version drift), find-skills (×3, installed globally)
 - **Quality (vibes, not method)**: ai-evals, ai-product(PM copy), vibe-coding(Engineer copy — Founder's kept), loop-me, data-visualization, accessibility-expert (WCAG 2.1, superseded), animation-vocabulary(Engineer copy), remotion (broken index + peripheral), design-an-interface (misfile), ai-native-product-designer (hiring rubric), just-scrape (second scraping stack), cro (byte-twin of page-cro), wayfinder(Discover copy), 3 within-role byte-dups (apple-design, design-taste-frontend ×2 groups)
 
+## Addendum (2026-08-13, user request): GSAP + Lenis
+
+Not present in the Downloads folders (they were global installs only), added from `~/.claude/skills/` full versions: **role-engineer +7** (gsap-core, gsap-react, gsap-scrolltrigger, gsap-timeline, gsap-plugins, gsap-performance, gsap-utils) → 20 skills; **role-designer +1** (awwwards-animations — the Lenis/premium-scroll carrier) → 17 skills. Excluded: gsap-frameworks (Vue/Svelte-only, off-stack). Every GSAP use remains subject to the motion gates (reduced-motion, performance budget — review-animations/a11y-audit enforce).
+
 ## Repairs required before packaging
 
 1. **Re-fetch companion files from origin repos** (export shipped bare .md only): better-ui/-accessibility/-colors/-layout/-typography (~28 refs), review-animations (STANDARDS.md), improve-animations (AUDIT.md, PLAN-TEMPLATE.md), wcag-accessibility (A11Y-PATTERNS.md), prototype (LOGIC.md, UI.md), triage (AGENT-BRIEF.md, OUT-OF-SCOPE.md), stripe-best-practices (6 refs), firecrawl (refs; usable degraded), pdf/docx (REFERENCE.md, FORMS.md), vercel-* rule bodies (can copy from the locally installed full versions in ~/.claude/skills)
