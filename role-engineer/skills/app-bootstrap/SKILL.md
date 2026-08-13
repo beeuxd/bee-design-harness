@@ -224,7 +224,7 @@ Per `verify-before-done`: claim, evidence (build output, both screenshots, hook 
 ## STOP conditions (summary)
 
 - `package.json` already exists (Step 0) — never bootstrap twice.
-- Persona files (`CLAUDE.md`, `design/tokens.json`, `scripts/build-tokens.mjs`) missing (Step 0) — wrong directory or `setup.sh` not run.
+- Harness files (`CLAUDE.md`, `design/tokens.json`, `scripts/build-tokens.mjs`) missing (Step 0) — wrong directory, or `/harness-core:scaffold-project` not run.
 - pnpm missing (Step 0) — machine-level install is the user's call.
 - Design-system-package question unanswered (Step 0.5) — always ASK; default to plain React + Tailwind only when the user says no or is unsure.
 - Unexpected file collision during merge (Step 1).
