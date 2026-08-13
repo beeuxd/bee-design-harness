@@ -6,6 +6,5 @@
   "author": { "name": "Bee", "email": "bee@frontiertower.io" },
   "license": "MIT",
   "keywords": ["engineering", "role", "frontend"],
-  "mcpServers": "./.mcp.json",
   "dependencies": ["harness-core"]
 }
