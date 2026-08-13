@@ -1,0 +1,10 @@
+{
+  "name": "role-copywriter",
+  "displayName": "Role: Copywriter",
+  "version": "1.0.0",
+  "description": "The Copywriter role — the harness's Content block. UX writing, product & UI copy, voice alignment, research & launch copy.",
+  "author": { "name": "Bee", "email": "bee@frontiertower.io" },
+  "license": "MIT",
+  "keywords": ["content", "role", "copywriting", "ux-writing"],
+  "dependencies": ["harness-core"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "role-designer",
+  "displayName": "Role: Designer",
+  "version": "1.0.0",
+  "description": "The Designer role — the harness's default agent. Design system, accessibility, motion, polish & prototype, validate & critique, hand-off to code, work in documents.",
+  "author": { "name": "Bee", "email": "bee@frontiertower.io" },
+  "license": "MIT",
+  "keywords": ["design", "role", "designer"],
+  "dependencies": ["harness-core"]
+}

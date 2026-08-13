@@ -1,0 +1,10 @@
+{
+  "name": "harness-core",
+  "displayName": "Design Harness Core",
+  "version": "1.0.0",
+  "description": "The design harness core: the 5 evidence loops (insight → problem → ideation → wireframe → hifi-gate), their dependencies (design-tokens-sync, from-figma, art-direction, taste-retro, storybook-component), the design-system guard hooks, the project scaffold, and the qa + researcher agents.",
+  "author": { "name": "Bee", "email": "bee@frontiertower.io" },
+  "license": "MIT",
+  "keywords": ["design", "harness", "ux", "figma", "tokens", "loops"],
+  "hooks": "./hooks/hooks.json"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "role-pm",
+  "displayName": "Role: PM",
+  "version": "1.0.0",
+  "description": "The PM role — discover & validate (feeds the harness loops), spec & prioritize, partner on design.",
+  "author": { "name": "Bee", "email": "bee@frontiertower.io" },
+  "license": "MIT",
+  "keywords": ["product", "role", "pm"],
+  "dependencies": ["harness-core"]
+}
