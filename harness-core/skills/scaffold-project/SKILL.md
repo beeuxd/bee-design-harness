@@ -11,12 +11,18 @@ The harness's skills assume a document set (DESIGN.md, docs/, design/) that plug
 
 1. Identify the project root (the user's cwd unless they say otherwise).
 2. **Never overwrite silently.** Check each target before writing: `DESIGN.md`, `CLAUDE.md`, `docs/`, `design/`, `scripts/build-tokens.mjs`. Any that already exist → list them and STOP: "These exist — overwrite, skip, or merge per file?" A project that already has a `CLAUDE.md` almost certainly wants a merge (append the harness sections), not a replacement.
-3. Ask, in ONE batch, then WAIT:
+3. **The intake — ask in ONE batch, then WAIT.** These answers shape everything downstream; unanswered items are recorded as `OPEN`, never guessed:
    1. Project name?
    2. One-line project description?
    3. Aesthetic direction in a sentence (placeholder-level is fine — `art-direction` captures the real one later)?
    4. Figma design-system file URL (or none yet)?
-   5. **The standing question (DESIGN.md Step 0):** is there an existing design system to integrate — npm package, Figma library, internal DS — beyond the harness's own conventions?
+   5. **Existing design system?** npm package, Figma library, internal DS — beyond the harness's own conventions? (Yes → integration mode: adopt its tokens/components, docs record deltas.)
+   6. **Existing branding?** Brand kit, logo system, brand guidelines? (Yes → note where they live; `art-direction` adopts rather than invents.)
+   7. **Existing content voice?** Voice/tone/content guidelines? (Yes → `voice-guide` runs in adoption mode against them; no → `voice-guide` interviews before user-facing copy ships.)
+   8. **Research material?** Interviews, tickets, surveys to seed `docs/research/raw/`? (Determines whether the loops or direct build is the next step.)
+   9. **Which executors besides Claude Code?** Cursor/Codex/Copilot-family (AGENTS.md standard), Replit, Figma Make? (Determines which executor context files `sync-executor-context` maintains.)
+
+   Record answers 5–9 under a `## Intake` section in `docs/design-system.md` (with the design-system answer as its own `## Design system source` line) so no skill re-asks them.
 
 ## Step 1 — Write the tree
 
@@ -24,16 +30,18 @@ Copy from `templates/` into the project, preserving structure:
 
 ```
 DESIGN.md
+AGENTS.md        (cross-tool executor context — Cursor/Codex/Copilot/Gemini read this)
 CLAUDE.md
-docs/            (project, prd, user-flows, ux-principles, design-system, tech, trust-scaffolding)
+docs/            (project, prd, user-flows, ux-principles, design-system, tech, trust-scaffolding, content-guidelines)
 docs/research/   (insights.md, problems.md, raw/README.md, personas/README.md)
 docs/ideation/   (feature-tree.md, wireframes.md)
 docs/specs/      (empty — design specs land here)
-design/          (tokens.json, tokens.md, components.md, patterns.md, accessibility.md, taste-rules.md, references/README.md)
+design/          (tokens.json, tokens.md, components.md, patterns.md, recipes.md, templates.md, accessibility.md, taste-rules.md, references/README.md)
+registry/        (empty — recipe-harvest writes shadcn registry items here)
 scripts/build-tokens.mjs
 ```
 
-Then replace placeholders in every copied `.md`/`.json`: `{{PROJECT_NAME}}`, `{{PROJECT_DESCRIPTION}}`, `{{AESTHETIC}}`, `{{FIGMA_URL}}` with the Step 0 answers (empty answer → leave the placeholder and note it in the report). Record the Step 0.3.5 design-system answer under a `## Design system source` section in `docs/design-system.md` so no skill re-asks it.
+Then replace placeholders in every copied `.md`/`.json`: `{{PROJECT_NAME}}`, `{{PROJECT_DESCRIPTION}}`, `{{AESTHETIC}}`, `{{FIGMA_URL}}` with the Step 0 answers (empty answer → leave the placeholder and note it in the report). Record the intake answers per Step 0.3. If intake named Replit or Figma Make as executors, run `sync-executor-context` at the end to generate their context files (AGENTS.md ships from the template either way).
 
 ## Step 2 — Project-level protections
 
@@ -47,7 +55,7 @@ If the project is not a git repo, recommend `git init` (the harness's checkpoint
 
 1. `ls` the written tree and diff the file count against the template list — every template accounted for.
 2. Grep the project for any `{{` placeholders that should have been replaced; list survivors honestly.
-3. Report: files written, placeholders replaced/remaining, the design-system-source answer recorded, and next steps — `/harness-core:insight-loop` if research material exists, or the Designer role's build path if not, and `art-direction` before any visual work.
+3. Report: files written, placeholders replaced/remaining, the intake record location, and next steps — `/harness-core:insight-loop` if intake found research material, `art-direction` before any visual work, `voice-guide` (role-copywriter) before user-facing copy, `sync-executor-context` whenever direction or tokens change.
 
 ## STOP and ask when
 

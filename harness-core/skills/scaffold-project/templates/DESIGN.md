@@ -49,9 +49,28 @@ When sources disagree, higher wins. Never eyeball what a source of truth can sta
 1. **`design/tokens.json`** — every color, spacing, radius, and type value
 2. **Figma** — visual intent (layout, composition, component visuals), read via variables, never via screenshot-guessing
 3. **Storybook** — coded component behavior and states; its MCP server (`/mcp` on the Storybook dev server, via `@storybook/addon-mcp`) is how agents query what exists before building anything new
-4. **`design/components.md` / `design/patterns.md`** — narrative documentation; descriptive, not authoritative
+4. **`design/components.md` / `design/patterns.md` / `design/recipes.md` / `design/templates.md`** — narrative documentation; descriptive, not authoritative
 
 House rules in `CLAUDE.md` override Figma when they conflict (e.g., tap-target minimums).
+
+## Recipes and templates
+
+A **recipe** is an approved composition of primitives (a settings form, a pricing table); a **template** is an approved page archetype (dashboard, detail, empty state). Both are *earned, never invented*: a composition becomes a recipe only after passing hifi-gate + the ship gate, harvested via `recipe-harvest` into `design/recipes.md` / `design/templates.md` plus shadcn registry-item JSON. Imported material (shadcn blocks, community registries — browsed via the shadcn MCP) enters as raw material and earns recipe status through the same gates. Reuse-first checks recipes and templates before anything is composed from scratch.
+
+## Executor context files
+
+Every executor reads generated context, all derived from this document and the design docs — never hand-maintained per tool: **AGENTS.md** (cross-tool standard: Cursor, Codex, Copilot, Gemini CLI, and others), **replit.md** (Replit Agent), **figma-make-guidelines.md** (upload into Figma Make's Guidelines). After any art-direction revision or token change, run `sync-executor-context` to regenerate them — stale executor context is drift.
+
+## Sandbox environment
+
+Experimentation happens in sandboxes, never in production surfaces. Four tiers, cheapest first:
+
+1. **Storybook** — component-level sandbox; every experiment on a single component starts as a story.
+2. **Scratch routes** — `app/dev-preview/<slug>/` for page/flow experiments: never linked from production navigation, exempt from the "no new pages" rule, deleted after the verdict (the route is scaffolding, not product).
+3. **Git worktrees** — parallel or risky work gets its own worktree; the main tree stays shippable.
+4. **Preview deploys** — shareable sandboxes; deploys are preview-by-default, production promotion is an explicit human decision.
+
+An experiment leaves its sandbox only through the normal gates.
 
 ## The pipeline
 

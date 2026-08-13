@@ -10,7 +10,7 @@ quote → INS → PROB → FEAT (MoSCoW) → wireframe region → token/Figma va
 
 | Plugin | What | Install when |
 |---|---|---|
-| `harness-core` | 19 skills — 5 evidence loops + dependencies + 9-skill quality-gate suite (ship / verify-before-done / visual-qa / a11y-audit / performance-check / e2e-test / design-system-audit / review-ux / parallel-review) + scaffold | Always — every role pack depends on it |
+| `harness-core` | 22 skills — 5 evidence loops + dependencies, the 9-skill quality-gate suite, scaffold-project (full intake: DS/branding/voice/research/executors), recipe-harvest, sync-executor-context (AGENTS.md / replit.md / Figma Make guidelines) | Always — every role pack depends on it |
 | `role-designer` | The **default** design agent: design system, a11y, motion, polish, critique, hand-off | Doing design work |
 | `role-engineer` | Implement from Figma, ship polished UI, design systems in code, deploy | Shipping code |
 | `role-pm` | Discover & validate (feeds the loops), spec & prioritize | Defining product |
@@ -27,7 +27,7 @@ claude plugin install role-designer@bee-design-harness --scope project   # the d
 # add other roles as needed
 ```
 
-Then in the project: `/harness-core:scaffold-project` — installs DESIGN.md, docs/, design/, and the token pipeline into the repo (plugins ship behaviors; the scaffold skill writes the documents).
+Then in the project: `/harness-core:scaffold-project` — runs the intake (existing design system / branding / voice / research / executors) and installs DESIGN.md, AGENTS.md, docs/, design/, registry/, and the token pipeline (plugins ship behaviors; the scaffold skill writes the documents).
 
 ## How it works
 
@@ -35,5 +35,5 @@ Read `harness-core/skills/scaffold-project/templates/DESIGN.md` — it's the who
 
 ## Status
 
-- `harness-core` — complete with gates (19 skills: 5 loops + 5 dependencies + 9-skill quality-gate suite, 2 hooks, 2 agents, scaffold templates)
+- `harness-core` — complete (22 skills: loops + gates + scaffold + recipe-harvest + sync-executor-context; 2 hooks; 2 agents)
 - `role-*` — built (agents defined, skill packs installed per role)

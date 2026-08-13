@@ -9,9 +9,9 @@ Review-only by default. Do NOT edit files unless the user explicitly asks you to
 
 ## Prerequisites
 
-1. Read `docs/project.md` — the voice/tone section is the standard for the Tone checklist.
+1. Read `docs/content-guidelines.md` — the project's voice law (voice, tone by moment, terminology, mechanics, banned list) is the standard for the Tone checklist. Fall back to `docs/project.md`'s voice/tone section only if the guide doesn't exist yet.
 2. Read `docs/ux-principles.md` — the anti-patterns list ("Click here", placeholder-as-label, color-only references) is binding.
-3. **STOP and ask the user** if the voice/tone section in `docs/project.md` is missing or still contains `{{PLACEHOLDER}}` values. Ask for 3 adjectives describing the voice plus one example sentence; do not judge tone against an invented voice.
+3. **STOP if no voice standard exists** (`docs/content-guidelines.md` unfilled and no voice/tone section in `docs/project.md`): propose running `voice-guide` first — a 5-minute interview beats reviewing against an invented voice. If the user declines, ask for 3 adjectives plus one example sentence and proceed with that as an explicitly provisional standard.
 
 ## Step 0 — Build the copy inventory (never skip)
 
@@ -79,7 +79,7 @@ Exclude from the inventory: code comments, `console.*` strings, test files, clas
 - [ ] No abbreviations that aren't universally understood
 
 ### Tone
-- [ ] Matches the voice defined in `docs/project.md`
+- [ ] Matches the voice defined in `docs/content-guidelines.md` (terminology table and banned list are hard checks, not vibes)
 - [ ] Consistent across the experience (same person, same formality)
 - [ ] Context-appropriate: errors are calm, success is encouraging
 - [ ] No exclamation marks in error states
