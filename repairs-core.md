@@ -244,3 +244,10 @@ Suite result 2026-08-14: ALL GREEN (33 checks) including workshop in-sync ×15.
 - harness-core plugin version bumped 1.0.0 → 1.1.0 (5 restored skills, 5 added agents,
   SessionStart(compact) hook since 1.0.0). README counts corrected: 27 skills / 7 agents / 3 hooks.
 - Suite re-run after all edits: ALL GREEN.
+
+## Addendum (2026-08-14, late II): model tiering on verification agents
+
+`qa` and `researcher` now carry `model: sonnet` in frontmatter (workshop + harness-core) —
+verification passes run on Sonnet 4.6 for cost while the judgment agents (pm, architect,
+ui-designer, backend-dev, frontend-engineer) inherit the session model (Opus tier). Rationale:
+the gate suite's pass/fail checks are procedural and evidence-based; design judgment is not.
