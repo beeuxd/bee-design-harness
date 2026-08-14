@@ -39,6 +39,51 @@ quote → INS → PROB → FEAT (MoSCoW) → wireframe region → token/Figma va
 | `role-marketer` | SEO, CRO, analytics, launch, brand — post-ship growth | Growing it |
 | `role-founder` | Validate, scope ruthlessly, launch, fundraise | Making bets |
 
+<details>
+<summary><b>What's inside each plugin</b> — every skill, by pack</summary>
+
+**`harness-core` (27)**
+Evidence loops: `insight-loop` · `problem-loop` · `ideation-loop` · `wireframe-loop` · `hifi-gate`
+Quality gates: `ship` · `verify-before-done` · `visual-qa` · `a11y-audit` · `performance-check` · `e2e-test` · `design-system-audit` · `review-ux` · `parallel-review`
+Session lifecycle: `session-start` · `handoff-summary` · `escalation-protocol`
+Foundation: `scaffold-project` · `art-direction` · `taste-retro` · `design-tokens-sync` · `from-figma` · `storybook-component` · `recipe-harvest` · `sync-executor-context` · `setup-kanban` · `write-tickets`
+
+**`role-designer` (17)**
+`animate` · `review-animations` · `improve-animations` · `find-animation-opportunities` · `animation-vocabulary` · `awwwards-animations` · `apple-design` · `design-critique` · `design-handoff` · `design-taste-frontend` · `extract-design-system` · `wcag-accessibility` · `imagegen-frontend-web` · `imagegen-frontend-mobile` · `text-to-lottie` · `docx` · `pdf`
+
+**`role-engineer` (21)**
+`app-bootstrap` · `tailwind-design-system` · `better-ui` · `better-accessibility` · `better-colors` · `better-layout` · `better-typography` · `gsap-core` · `gsap-react` · `gsap-scrolltrigger` · `gsap-timeline` · `gsap-plugins` · `gsap-performance` · `gsap-utils` · `vercel-react-best-practices` · `vercel-composition-patterns` · `vercel-react-view-transitions` · `web-design-guidelines` · `review-loop` · `agent-browser` · `deploy-to-vercel`
+
+**`role-pm` (12)**
+`user-research` · `usability-testing` · `customer-journey-map` · `opportunity-solution-tree` · `grilling` · `to-prd` · `to-issues` · `triage` · `prototype` · `doc-co-authoring` · `firecrawl` · `wayfinder`
+
+**`role-copywriter` (6)**
+`voice-guide` · `copywriting` · `copy-editing` · `ux-writing` · `ux-copy-review` · `internal-comms`
+
+**`role-marketer` (26)**
+`brandkit` · `product-launch` · `product-marketing-context` · `content-strategy` · `seo-audit` · `ai-seo` · `programmatic-seo` · `schema-markup` · `page-cro` · `onboarding-cro` · `ab-testing` · `analytics-tracking` · `marketing-psychology` · `pricing-strategy` · `paid-ads` · `ad-creative` · `email-sequences` · `cold-email` · `lead-magnets` · `referral-program` · `churn-prevention` · `competitor-alternatives` · `directory-submissions` · `social-content` · `marketing-ideas` · `ppt-visual-design`
+
+**`role-founder` (9)**
+`scoping-cutting` · `vibe-coding` · `measuring-product-market-fit` · `founder-sales` · `fundraising` · `pitch-deck` · `stripe-best-practices` · `ai-product` · `ai-product-strategy`
+
+</details>
+
+## The team
+
+`harness-core` also ships seven agents — the roles a product team would have, each with its own charter, tools, and place in the pipeline. The main session delegates to them; you never manage them directly.
+
+| Agent | Role | What it does | Runs on |
+|---|---|---|---|
+| `pm` | The Strategist | Requirements, PRDs, scoping, prioritization — owns `docs/prd.md` | session model |
+| `researcher` | The Devil's Advocate | Stress-tests PRDs and specs, fact-checks claims with file:line evidence — challenges, never builds | Sonnet (cheap verification) |
+| `architect` | The Architect | Information architecture, user flows, states matrices, responsive specs | session model |
+| `backend-dev` | The API Architect | API contracts, endpoints, data models — specs for handoff | session model |
+| `ui-designer` | The Crafter | Art direction, tokens, Figma alignment, component styling specs — the taste keeper | session model |
+| `frontend-engineer` | The Builder | React/TypeScript to the house standard: token-only, both themes, WCAG 2.2 AA, within budget | session model |
+| `qa` | The Gatekeeper | Playwright E2E per feature + the ship gate's verification lenses — honest pass/fail with evidence | Sonnet (cheap verification) |
+
+The typical flow for a feature: **pm** defines → **researcher** challenges → **architect** structures → **backend-dev** specs the API → **ui-designer** applies the visual system through `hifi-gate` → **frontend-engineer** builds via `from-figma` → **qa** verifies → `/ship`.
+
 ## Install
 
 ### Before you start
