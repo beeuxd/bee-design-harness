@@ -4,12 +4,12 @@
 </picture>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/plugins-7-A5E8B6?style=flat-square&labelColor=1f2328" alt="7 plugins">
-  <img src="https://img.shields.io/badge/skills-118-B9CFF7?style=flat-square&labelColor=1f2328" alt="118 skills">
-  <img src="https://img.shields.io/badge/agents-7-E4BAF5?style=flat-square&labelColor=1f2328" alt="7 agents">
-  <img src="https://img.shields.io/badge/core-v1.1.0-F6DE8D?style=flat-square&labelColor=1f2328" alt="harness-core v1.1.0">
-  <img src="https://img.shields.io/badge/a11y-WCAG_2.2_AA-A5E8D3?style=flat-square&labelColor=1f2328" alt="WCAG 2.2 AA">
-  <img src="https://img.shields.io/badge/theme-dark--first-F5B5AF?style=flat-square&labelColor=1f2328" alt="dark-first">
+  <img src="https://img.shields.io/badge/plugins-7-D8FF3A?style=flat-square&labelColor=16130F" alt="7 plugins">
+  <img src="https://img.shields.io/badge/skills-118-5660F0?style=flat-square&labelColor=16130F" alt="118 skills">
+  <img src="https://img.shields.io/badge/agents-7-F056A0?style=flat-square&labelColor=16130F" alt="7 agents">
+  <img src="https://img.shields.io/badge/core-v1.1.0-D8FF3A?style=flat-square&labelColor=16130F" alt="harness-core v1.1.0">
+  <img src="https://img.shields.io/badge/a11y-WCAG_2.2_AA-5660F0?style=flat-square&labelColor=16130F" alt="WCAG 2.2 AA">
+  <img src="https://img.shields.io/badge/theme-dark--first-F056A0?style=flat-square&labelColor=16130F" alt="dark-first">
 </p>
 
 An HX-first design harness for AI-assisted product design, packaged as Claude Code plugins. The human directs; agents execute inside evidence loops and hard gates.

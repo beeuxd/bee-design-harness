@@ -1,66 +1,66 @@
 <svg width="1120" height="820" viewBox="0 0 1120 820" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Design Harness map: access and guidance, structured design context, sources of truth, execution layer, content, guardrails">
   <style>
-    text { font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
-    .item { font-size: 17px; letter-spacing: 1.5px; fill: #1f2328; }
-    .chip { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; fill: #111111; }
+    .mono { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+    .item { font-size: 16px; letter-spacing: 1.5px; fill: #16130F; }
+    .chip { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; fill: #16130F; }
   </style>
-  <rect width="1120" height="820" fill="#ffffff"/>
+  <rect width="1120" height="820" fill="#F4F1EC"/>
 
-  <!-- outer: DESIGN HARNESS -->
-  <rect x="20" y="30" width="1080" height="760" rx="16" stroke="#7ed494" stroke-width="2"/>
-  <rect x="48" y="16" width="158" height="28" rx="5" fill="#A5E8B6"/>
-  <text x="127" y="35" text-anchor="middle" class="chip">DESIGN HARNESS</text>
+  <!-- outer: DESIGN HARNESS (pink fill — accent) -->
+  <rect x="20" y="30" width="1080" height="760" rx="16" stroke="#16130F" stroke-opacity="0.4" stroke-width="2"/>
+  <rect x="48" y="16" width="166" height="30" rx="4" fill="#F056A0"/>
+  <text x="131" y="36" text-anchor="middle" class="mono chip" fill="#F4F1EC">DESIGN HARNESS</text>
 
   <!-- ACCESS AND GUIDANCE -->
-  <rect x="60" y="90" width="560" height="540" rx="12" stroke="#9db9ef" stroke-width="2"/>
-  <rect x="85" y="76" width="200" height="28" rx="5" fill="#B9CFF7"/>
-  <text x="185" y="95" text-anchor="middle" class="chip">ACCESS AND GUIDANCE</text>
-  <text x="92" y="152" class="item">DESIGN.MD</text>
-  <text x="92" y="187" class="item">STORYBOOK MCP</text>
-  <text x="92" y="222" class="item">AGENT SKILLS</text>
-  <text x="92" y="257" class="item">REUSABLE LOOPS</text>
+  <rect x="60" y="90" width="560" height="540" rx="12" stroke="#16130F" stroke-opacity="0.3" stroke-width="2"/>
+  <rect x="85" y="76" width="214" height="30" rx="4" fill="#D8FF3A"/>
+  <text x="192" y="96" text-anchor="middle" class="mono chip">ACCESS AND GUIDANCE</text>
+  <text x="92" y="156" class="mono item">DESIGN.MD</text>
+  <text x="92" y="191" class="mono item">STORYBOOK MCP</text>
+  <text x="92" y="226" class="mono item">AGENT SKILLS</text>
+  <text x="92" y="261" class="mono item">REUSABLE LOOPS</text>
 
   <!-- STRUCTURED DESIGN CONTEXT -->
-  <rect x="85" y="292" width="510" height="312" rx="12" stroke="#eda49d" stroke-width="2"/>
-  <rect x="108" y="278" width="248" height="28" rx="5" fill="#F5B5AF"/>
-  <text x="232" y="297" text-anchor="middle" class="chip">STRUCTURED DESIGN CONTEXT</text>
-  <text x="115" y="356" class="item">PURPOSE &amp; USAGE</text>
-  <text x="115" y="391" class="item">CONSTRAINTS</text>
-  <text x="115" y="426" class="item">STATES</text>
-  <text x="115" y="461" class="item">ACCESSIBILITY</text>
-  <text x="115" y="496" class="item">RECIPES</text>
-  <text x="115" y="531" class="item">TEMPLATES</text>
+  <rect x="85" y="292" width="510" height="312" rx="12" stroke="#16130F" stroke-opacity="0.3" stroke-width="2"/>
+  <rect x="108" y="278" width="272" height="30" rx="4" fill="#D8FF3A"/>
+  <text x="244" y="298" text-anchor="middle" class="mono chip">STRUCTURED DESIGN CONTEXT</text>
+  <text x="115" y="358" class="mono item">PURPOSE &amp; USAGE</text>
+  <text x="115" y="393" class="mono item">CONSTRAINTS</text>
+  <text x="115" y="428" class="mono item">STATES</text>
+  <text x="115" y="463" class="mono item">ACCESSIBILITY</text>
+  <text x="115" y="498" class="mono item">RECIPES</text>
+  <text x="115" y="533" class="mono item">TEMPLATES</text>
 
-  <!-- SOURCE OF TRUTH -->
-  <rect x="336" y="330" width="230" height="204" rx="12" stroke="#d69fed" stroke-width="2"/>
-  <rect x="356" y="316" width="160" height="28" rx="5" fill="#E4BAF5"/>
-  <text x="436" y="335" text-anchor="middle" class="chip">SOURCE OF TRUTH</text>
-  <text x="362" y="392" class="item">FIGMA</text>
-  <text x="362" y="427" class="item">TOKENS</text>
-  <text x="362" y="462" class="item">STORYBOOK</text>
-  <text x="362" y="497" class="item">CODEBASE</text>
+  <!-- SOURCE OF TRUTH (periwinkle — primary) -->
+  <rect x="336" y="330" width="230" height="204" rx="12" stroke="#5660F0" stroke-width="2.5"/>
+  <rect x="352" y="316" width="176" height="30" rx="4" fill="#5660F0"/>
+  <text x="440" y="336" text-anchor="middle" class="mono chip" fill="#F4F1EC">SOURCE OF TRUTH</text>
+  <text x="362" y="394" class="mono item">FIGMA</text>
+  <text x="362" y="429" class="mono item">TOKENS</text>
+  <text x="362" y="464" class="mono item">STORYBOOK</text>
+  <text x="362" y="499" class="mono item">CODEBASE</text>
 
   <!-- EXECUTION LAYER -->
-  <rect x="680" y="95" width="380" height="240" rx="12" stroke="#e8c95e" stroke-width="2"/>
-  <rect x="820" y="81" width="164" height="28" rx="5" fill="#F6DE8D"/>
-  <text x="902" y="100" text-anchor="middle" class="chip">EXECUTION LAYER</text>
-  <text x="708" y="157" class="item">CURSOR</text>
-  <text x="708" y="192" class="item">CLAUDE CODE</text>
-  <text x="708" y="227" class="item">CODEX</text>
-  <text x="708" y="262" class="item">REPLIT / FIGMA MAKE</text>
-  <text x="708" y="297" class="item">SANDBOX ENVIRONMENT</text>
+  <rect x="680" y="95" width="380" height="240" rx="12" stroke="#16130F" stroke-opacity="0.3" stroke-width="2"/>
+  <rect x="782" y="81" width="176" height="30" rx="4" fill="#D8FF3A"/>
+  <text x="870" y="101" text-anchor="middle" class="mono chip">EXECUTION LAYER</text>
+  <text x="708" y="161" class="mono item">CURSOR</text>
+  <text x="708" y="196" class="mono item">CLAUDE CODE</text>
+  <text x="708" y="231" class="mono item">CODEX</text>
+  <text x="708" y="266" class="mono item">REPLIT / FIGMA MAKE</text>
+  <text x="708" y="301" class="mono item">SANDBOX ENVIRONMENT</text>
 
   <!-- CONTENT -->
-  <rect x="680" y="372" width="380" height="168" rx="12" stroke="#7fd6ba" stroke-width="2"/>
-  <rect x="860" y="358" width="96" height="28" rx="5" fill="#A5E8D3"/>
-  <text x="908" y="377" text-anchor="middle" class="chip">CONTENT</text>
-  <text x="708" y="428" class="item">CONTENT DESIGN</text>
-  <text x="708" y="463" class="item">CONTENT GUIDELINES</text>
-  <text x="708" y="498" class="item">AI OUTPUT</text>
+  <rect x="680" y="372" width="380" height="168" rx="12" stroke="#16130F" stroke-opacity="0.3" stroke-width="2"/>
+  <rect x="820" y="358" width="100" height="30" rx="4" fill="#D8FF3A"/>
+  <text x="870" y="378" text-anchor="middle" class="mono chip">CONTENT</text>
+  <text x="708" y="432" class="mono item">CONTENT DESIGN</text>
+  <text x="708" y="467" class="mono item">CONTENT GUIDELINES</text>
+  <text x="708" y="502" class="mono item">AI OUTPUT</text>
 
   <!-- GUARDRAILS -->
-  <rect x="60" y="662" width="1000" height="94" rx="12" stroke="#9db9ef" stroke-width="2"/>
-  <rect x="500" y="648" width="120" height="28" rx="5" fill="#B9CFF7"/>
-  <text x="560" y="667" text-anchor="middle" class="chip">GUARDRAILS</text>
-  <text x="560" y="718" text-anchor="middle" class="item">TESTING &#160;|&#160; SECURITY &#160;|&#160; REVIEW &#160;|&#160; BRANCHING &#160;|&#160; CI/CD PIPELINE</text>
+  <rect x="60" y="662" width="1000" height="94" rx="12" stroke="#16130F" stroke-opacity="0.3" stroke-width="2"/>
+  <rect x="496" y="648" width="128" height="30" rx="4" fill="#D8FF3A"/>
+  <text x="560" y="668" text-anchor="middle" class="mono chip">GUARDRAILS</text>
+  <text x="560" y="720" text-anchor="middle" class="mono item"><tspan>TESTING</tspan><tspan fill="#5660F0"> | </tspan><tspan>SECURITY</tspan><tspan fill="#5660F0"> | </tspan><tspan>REVIEW</tspan><tspan fill="#5660F0"> | </tspan><tspan>BRANCHING</tspan><tspan fill="#5660F0"> | </tspan><tspan>CI/CD PIPELINE</tspan></text>
 </svg>

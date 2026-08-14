@@ -1,22 +1,26 @@
 <svg width="1280" height="300" viewBox="0 0 1280 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bee Design Harness — the human directs; agents execute">
   <style>
-    text { font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .display { font-family: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif; }
+    .mono { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
   </style>
-  <rect width="1280" height="300" rx="16" fill="#0d1117"/>
-  <rect x="0.5" y="0.5" width="1279" height="299" rx="15.5" stroke="#21262d"/>
+  <!-- INK -->
+  <rect width="1280" height="300" rx="16" fill="#16130F"/>
 
-  <!-- label chip -->
-  <rect x="547" y="52" width="186" height="30" rx="5" fill="#A5E8B6"/>
-  <text x="640" y="72" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="2" fill="#0d1117">DESIGN HARNESS</text>
+  <!-- acid tag -->
+  <rect x="549" y="46" width="182" height="30" rx="4" fill="#D8FF3A"/>
+  <text x="640" y="66" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="2" fill="#16130F" class="mono">DESIGN HARNESS</text>
 
-  <!-- wordmark -->
-  <text x="640" y="150" text-anchor="middle" font-size="46" font-weight="700" letter-spacing="10" fill="#e6edf3">BEE DESIGN HARNESS</text>
+  <!-- wordmark: PAPER -->
+  <text x="640" y="148" text-anchor="middle" font-size="52" font-weight="800" letter-spacing="-1" fill="#F4F1EC" class="display">Bee Design Harness</text>
+
+  <!-- pink accent bar (fills only) -->
+  <rect x="612" y="166" width="56" height="6" rx="3" fill="#F056A0"/>
 
   <!-- tagline -->
-  <text x="640" y="192" text-anchor="middle" font-size="17" letter-spacing="2" fill="#8b949e">THE HUMAN DIRECTS · AGENTS EXECUTE</text>
+  <text x="640" y="204" text-anchor="middle" font-size="14" letter-spacing="3" fill="#8B867C" class="mono">THE HUMAN DIRECTS · AGENTS EXECUTE</text>
 
-  <!-- traceability chain -->
-  <text x="640" y="248" text-anchor="middle" font-size="16" letter-spacing="1">
-    <tspan fill="#F5B5AF">quote</tspan><tspan fill="#3d444d"> ── </tspan><tspan fill="#F6DE8D">INS</tspan><tspan fill="#3d444d"> ── </tspan><tspan fill="#B9CFF7">PROB</tspan><tspan fill="#3d444d"> ── </tspan><tspan fill="#E4BAF5">FEAT</tspan><tspan fill="#3d444d"> ── </tspan><tspan fill="#A5E8D3">wireframe</tspan><tspan fill="#3d444d"> ── </tspan><tspan fill="#A5E8B6">token</tspan>
+  <!-- traceability chain: periwinkle connectors, paper terms -->
+  <text x="640" y="252" text-anchor="middle" font-size="16" letter-spacing="1" class="mono">
+    <tspan fill="#F4F1EC">quote</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#F4F1EC">INS</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#F4F1EC">PROB</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#F4F1EC">FEAT</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#F4F1EC">wireframe</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#F4F1EC">token</tspan>
   </text>
 </svg>

@@ -1,22 +1,27 @@
 <svg width="1280" height="300" viewBox="0 0 1280 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bee Design Harness — the human directs; agents execute">
   <style>
-    text { font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .display { font-family: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif; }
+    .mono { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
   </style>
-  <rect width="1280" height="300" rx="16" fill="#ffffff"/>
-  <rect x="0.5" y="0.5" width="1279" height="299" rx="15.5" stroke="#d0d7de"/>
+  <!-- PAPER -->
+  <rect width="1280" height="300" rx="16" fill="#F4F1EC"/>
+  <rect x="0.5" y="0.5" width="1279" height="299" rx="15.5" stroke="#16130F" stroke-opacity="0.15"/>
 
-  <!-- label chip -->
-  <rect x="547" y="52" width="186" height="30" rx="5" fill="#A5E8B6"/>
-  <text x="640" y="72" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="2" fill="#111111">DESIGN HARNESS</text>
+  <!-- acid tag -->
+  <rect x="549" y="46" width="182" height="30" rx="4" fill="#D8FF3A"/>
+  <text x="640" y="66" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="2" fill="#16130F" class="mono">DESIGN HARNESS</text>
 
-  <!-- wordmark -->
-  <text x="640" y="150" text-anchor="middle" font-size="46" font-weight="700" letter-spacing="10" fill="#111111">BEE DESIGN HARNESS</text>
+  <!-- wordmark: INK -->
+  <text x="640" y="148" text-anchor="middle" font-size="52" font-weight="800" letter-spacing="-1" fill="#16130F" class="display">Bee Design Harness</text>
+
+  <!-- pink accent bar (fills only) -->
+  <rect x="612" y="166" width="56" height="6" rx="3" fill="#F056A0"/>
 
   <!-- tagline -->
-  <text x="640" y="192" text-anchor="middle" font-size="17" letter-spacing="2" fill="#57606a">THE HUMAN DIRECTS · AGENTS EXECUTE</text>
+  <text x="640" y="204" text-anchor="middle" font-size="14" letter-spacing="3" fill="#8B867C" class="mono">THE HUMAN DIRECTS · AGENTS EXECUTE</text>
 
-  <!-- traceability chain -->
-  <text x="640" y="248" text-anchor="middle" font-size="16" letter-spacing="1">
-    <tspan fill="#c25d54">quote</tspan><tspan fill="#b6bcc4"> ── </tspan><tspan fill="#a8851c">INS</tspan><tspan fill="#b6bcc4"> ── </tspan><tspan fill="#4a6fb5">PROB</tspan><tspan fill="#b6bcc4"> ── </tspan><tspan fill="#9a4fc0">FEAT</tspan><tspan fill="#b6bcc4"> ── </tspan><tspan fill="#1f8a6d">wireframe</tspan><tspan fill="#b6bcc4"> ── </tspan><tspan fill="#2e9e4f">token</tspan>
+  <!-- traceability chain: periwinkle connectors, ink terms -->
+  <text x="640" y="252" text-anchor="middle" font-size="16" letter-spacing="1" class="mono">
+    <tspan fill="#16130F">quote</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#16130F">INS</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#16130F">PROB</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#16130F">FEAT</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#16130F">wireframe</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#16130F">token</tspan>
   </text>
 </svg>
