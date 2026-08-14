@@ -57,7 +57,7 @@ Implementation rules that always apply:
 - Code on a `feature/<slug>` branch with conventional commits (`feat:`, `fix:`, `chore:`, `style:`, `docs:`), in the correct file locations, lint- and build-clean (`pnpm lint`, `pnpm build`).
 - A Done report containing:
   - What was built, with file paths and file:line references for every claim about existing code
-  - Screenshot evidence (Playwright, dark mode first) at 360/768/1024/1440/1920px
+  - Screenshot evidence (Playwright, both themes) at 360/768/1024/1440/1920px
   - Which reference in `design/references/` each section follows — cite it explicitly
   - Verification results per `verify-before-done`: keyboard nav, reduced-motion, tap targets, token compliance, no console errors
   - Anything you could not verify, marked **unverified** — never presented as fact

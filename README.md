@@ -9,7 +9,8 @@
   <img src="https://img.shields.io/badge/agents-7-F056A0?style=flat-square&labelColor=16130F" alt="7 agents">
   <img src="https://img.shields.io/badge/core-v1.1.0-D8FF3A?style=flat-square&labelColor=16130F" alt="harness-core v1.1.0">
   <img src="https://img.shields.io/badge/a11y-WCAG_2.2_AA-5660F0?style=flat-square&labelColor=16130F" alt="WCAG 2.2 AA">
-  <img src="https://img.shields.io/badge/theme-dark--first-F056A0?style=flat-square&labelColor=16130F" alt="dark-first">
+  <img src="https://img.shields.io/badge/mobile--first-360px-F056A0?style=flat-square&labelColor=16130F" alt="mobile-first, 360px up">
+  <img src="https://img.shields.io/badge/themes-light_%2B_dark-D8FF3A?style=flat-square&labelColor=16130F" alt="light and dark themes always ship">
 </p>
 
 An HX-first design harness for AI-assisted product design, packaged as Claude Code plugins. The human directs; agents execute inside evidence loops and hard gates.
@@ -123,7 +124,7 @@ Everything in this repo is one of these six blocks — guidance the agents read,
 
 ## How it works
 
-Read `harness-core/skills/scaffold-project/templates/DESIGN.md` — it's the whole philosophy: director model (steerability, transparency at the right altitude, intervention points), sources of truth with precedence (tokens.json > Figma > Storybook > narrative docs), the loop pipeline, and the hard gates no executor may bypass (token-only styling, hifi-gate's "not 100% right = no push-through", WCAG 2.2 AA, the performance budget, dark-first at 360–1920px).
+Read `harness-core/skills/scaffold-project/templates/DESIGN.md` — it's the whole philosophy: director model (steerability, transparency at the right altitude, intervention points), sources of truth with precedence (tokens.json > Figma > Storybook > narrative docs), the loop pipeline, and the hard gates no executor may bypass (token-only styling, hifi-gate's "not 100% right = no push-through", WCAG 2.2 AA, the performance budget, mobile-first at 360–1920px in both themes).
 
 ## Status
 

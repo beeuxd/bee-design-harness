@@ -104,7 +104,7 @@ grep -rn --include='*.tsx' --include='*.ts' --include='*.css' -E '(bg|text|borde
 2. Apply exactly the approved edits to `design/tokens.json` (and `design/tokens.md` so the human-readable reference stays true — tokens.json wins on conflict). Expect the protected-file confirmation prompt; that is the hook working, not an error.
 3. Regenerate the CSS: `pnpm tokens` (the template's pipeline, `scripts/build-tokens.mjs` → `app/tokens.css`; if this project uses a different generator, the command is in `package.json` `scripts` — do not guess). Never hand-edit `app/tokens.css`. Evidence: `git diff --stat` must show the generated output changed — if it didn't, the build is not wired to the token file; STOP and tell the user.
 4. **Run the `design-system-audit` skill** to find all code affected by the changed values.
-5. Visual verification with Playwright screenshots, dark mode first, at 360 / 768 / 1024 / 1440 / 1920px (Playwright screenshots per viewport; design review per `visual-qa`), on at least one page that consumes each changed token — screenshot evidence, not "it compiles".
+5. Visual verification with Playwright screenshots, in both themes, at 360 / 768 / 1024 / 1440 / 1920px (Playwright screenshots per viewport; design review per `visual-qa`), on at least one page that consumes each changed token — screenshot evidence, not "it compiles".
 6. Commit with a conventional message, e.g. `style: sync tokens with Figma variables (<n> changes)`. Never commit to `main`.
 
 ## Out of scope

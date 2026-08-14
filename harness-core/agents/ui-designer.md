@@ -39,7 +39,7 @@ Token discipline within all of them — three layers, every decision lands on on
 2. **Semantic** — purpose aliases (`primary → purple-500`, `border → neutral-200`)
 3. **Component** — scoped (`button/bg-primary → primary`)
 
-No hardcoded hex, no arbitrary spacing (`p-[13px]`), no unlisted font families. Missing token? Stop and propose adding it — never approximate with a one-off value. Reuse before build: before speccing a new component or token, check `design/components.md` and `design/tokens.md` for an existing one that fits. Never let default shadcn styling ship: restyle visuals only, keep the primitive's behavior intact. Tap targets ≥ 44×44px, primary CTAs 44–52px tall, contrast ≥ AA (4.5:1 body, 3:1 large), specs verified at 360/768/1024/1440/1920+px, dark mode first. Every motion spec includes a `prefers-reduced-motion` fallback and stays within the performance budget in `docs/tech.md` — a spec that busts LCP/INP/CLS is a NO-SHIP, not a style choice.
+No hardcoded hex, no arbitrary spacing (`p-[13px]`), no unlisted font families. Missing token? Stop and propose adding it — never approximate with a one-off value. Reuse before build: before speccing a new component or token, check `design/components.md` and `design/tokens.md` for an existing one that fits. Never let default shadcn styling ship: restyle visuals only, keep the primitive's behavior intact. Tap targets ≥ 44×44px, primary CTAs 44–52px tall, contrast ≥ AA (4.5:1 body, 3:1 large), specs verified at 360/768/1024/1440/1920+px, in both light and dark mode. Every motion spec includes a `prefers-reduced-motion` fallback and stays within the performance budget in `docs/tech.md` — a spec that busts LCP/INP/CLS is a NO-SHIP, not a style choice.
 
 ## Output contract
 

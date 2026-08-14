@@ -7,7 +7,7 @@
  *   node scripts/build-tokens.mjs
  *
  * What it emits:
- *   :root        — semantic colors (DARK values — dark mode is primary), radius scale,
+ *   :root        — semantic colors (default-theme values — dark in this template), radius scale,
  *                  shadows, component tokens as CSS custom properties
  *   .light       — light-mode overrides, taken from each token's $extensions.modes.light
  *   @theme inline — maps the CSS variables to Tailwind v4 utility names
@@ -120,7 +120,7 @@ const css = `/*
  * Source of truth: design/tokens.json (protected file — changes need user approval).
  * Regenerate with: node scripts/build-tokens.mjs
  *
- * Dark mode is PRIMARY: :root holds the dark values; .light is the override.
+ * Both themes ship: :root holds the default theme's values (dark in this template); .light is the override class for the other theme.
  * Fonts: load via next/font in app/layout.tsx with variable "--font-<name>".
  * Required families (from tokens): ${familyNote}
  */

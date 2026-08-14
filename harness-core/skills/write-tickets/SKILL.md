@@ -84,7 +84,7 @@ Template for every ticket:
 ```markdown
 - [ ] Responsive at 360/768/1024/1440/1920px, mobile-first (viewport breakpoints for page layout, @container queries for reusable components, clamp() for fluid type)
 - [ ] WCAG 2.2 AA with full keyboard nav, visible focus, AA contrast; animations gated on prefers-reduced-motion
-- [ ] Dark mode renders correctly as the primary theme (built and verified dark-first)
+- [ ] Both themes render correctly (light and dark built and verified)
 - [ ] Token-only styling from design/tokens.json — no hardcoded hex, no arbitrary px values
 - [ ] Tap targets >= 44x44px; primary CTAs 44-52px tall
 ```

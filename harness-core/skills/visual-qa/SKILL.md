@@ -78,6 +78,7 @@ Quick alternative for a single ad-hoc shot (only works if the theme follows `pre
 
 ```bash
 mkdir -p .qa/visual && npx playwright screenshot --viewport-size="360,780" --color-scheme=dark --full-page --wait-for-timeout=3000 "http://localhost:3000/pricing" .qa/visual/pricing-360.png
+# repeat with --color-scheme=light — both themes always ship and both are reviewed
 ```
 
 ### Validate the capture before reviewing
@@ -130,7 +131,8 @@ Scope note: this skill judges the three review widths. The full 360/768/1024/144
 Always output this structure, in this order:
 
 ### Pass — what looks good
-2–3 bullets with specific observations, each citing a screenshot path (e.g., `.qa/visual/pricing-360.png`) or audit value.
+2–3 bullets with specific observations, each citing a screenshot path (e.g., `.qa/visual/pricing-360.png
+# repeat with --color-scheme=light — both themes always ship and both are reviewed`) or audit value.
 
 ### Issues — what needs fixing
 For each issue:

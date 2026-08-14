@@ -91,7 +91,7 @@ git grep -n "MySymbol"                       # where else is this used? (replace
 
 For rendering/visual problems, "compiles" is not evidence — capture actual page state and include what you observed in the findings block. You need the dev server up (default `http://localhost:3000`); if it isn't, bring it up per the dev-server procedure in `session-start` Step 6 (reuse a server already running on another port; otherwise start one in the background — never run `pnpm dev` in the foreground).
 
-Then take a dark-mode, mobile-first, full-page screenshot:
+Then take a mobile-first, full-page screenshot (default theme; capture both themes if the issue could be theme-specific):
 
 ```bash
 pnpm exec playwright screenshot --viewport-size=360,780 --color-scheme=dark --full-page --wait-for-timeout=3000 "http://localhost:3000/<route>" /tmp/findings-360.png

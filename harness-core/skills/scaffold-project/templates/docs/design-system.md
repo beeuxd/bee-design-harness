@@ -11,7 +11,7 @@
 
 ## Color Strategy
 
-**Dark mode is primary.** Design, build, and test in dark mode first. Light mode is secondary — implement only when explicitly requested. All colors reference semantic tokens from `design/tokens.json`.
+**Both themes, always.** Light and dark both ship; the default theme (which `:root` carries) is **{{THEME}}**, recorded at intake. Design and verify in both. All colors reference semantic tokens from `design/tokens.json`.
 
 ### Usage Rules
 

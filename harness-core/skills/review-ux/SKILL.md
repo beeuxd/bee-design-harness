@@ -19,7 +19,7 @@ Critical review pass. You produce findings, not fixes — do NOT edit any source
 
 ## Step 1 — Gather runtime evidence (do this before judging anything)
 
-Start the dev server and screenshot every screen at all five widths, **dark mode first** (dark is the primary theme).
+Start the dev server and screenshot every screen at all five widths, **both themes — default first** (dark is the primary theme).
 
 ```bash
 mkdir -p /tmp/ux-review

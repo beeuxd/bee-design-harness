@@ -40,7 +40,7 @@ export default defineConfig({
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
     baseURL: 'http://localhost:3000',
-    colorScheme: 'dark', // dark mode is the primary theme — test dark-first
+    colorScheme: 'dark', // the intake default — run the suite in both schemes; both themes always ship
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
   },

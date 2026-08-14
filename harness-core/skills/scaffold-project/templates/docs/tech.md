@@ -19,7 +19,7 @@
 
 - `pnpm storybook` runs the dev instance; the MCP server is exposed at `/mcp` on that server (registered via `@storybook/addon-mcp` in `.storybook/main.ts`) — agents connect there to query components, props, variants, and stories before building anything new.
 - Storybook is a **source of truth** for coded component behavior (precedence in `DESIGN.md`: tokens.json > Figma > Storybook > components.md).
-- Story-per-component is the discipline: every component in `design/components.md` has a story covering its full states matrix, dark-first (`storybook-component` skill owns this).
+- Story-per-component is the discipline: every component in `design/components.md` has a story covering its full states matrix, in both themes (`storybook-component` skill owns this).
 - Previews import `app/globals.css` so tokens are live in stories.
 - If the project declined Storybook, that decision is recorded here: <!-- Storybook: adopted / declined YYYY-MM-DD -->
 

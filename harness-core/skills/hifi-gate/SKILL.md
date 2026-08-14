@@ -36,7 +36,7 @@ Working frame-by-frame from the `wf/*` lo-fi frames (duplicate to `hifi/<screen-
 
 1. Every fill, stroke, text style, spacing value, and radius binds to a **Figma variable** that appears in the mapping table of `design/tokens.md`. Values come from variables — never typed-in raw hex/px that "matches" a token.
 2. Structure is law: the region layout, order, and hierarchy validated by the wireframe matrix must survive styling. Moving/removing a region is a `wireframe-loop` change, not a styling choice.
-3. Dark mode first — design the dark variant as the primary; house rules (44×44px tap targets, focus states, contrast AA) apply inside Figma, not just in code.
+3. Both themes — design light and dark variants (the intake default is reviewed first); house rules (44×44px tap targets, focus states, contrast AA) apply inside Figma, not just in code.
 4. Missing token (the design genuinely needs a value the system lacks) → STOP, propose the token through `/design-tokens-sync`'s add flow, get approval, then bind to it. Never park a raw value "temporarily".
 
 ## Step 3 — Lock 2: the audit pass (the loop core)

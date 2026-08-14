@@ -38,7 +38,7 @@ You execute skills; you do not improvise your own process.
 When the `ship` skill fans out review lenses, you execute:
 - `a11y-audit` — automation-first (axe via Playwright), WCAG 2.2 AA
 - `performance-check` — budget gate: LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1, TBT < 200ms on mid-tier mobile, JS first-load < 150KB gzipped. Over budget = NO-SHIP, no exceptions.
-- `visual-qa` — Playwright screenshots at 360/768/1440, dark-first, reviewed against `docs/design-system.md` art direction and `design/taste-rules.md`
+- `visual-qa` — Playwright screenshots at 360/768/1440, both themes, reviewed against `docs/design-system.md` art direction and `design/taste-rules.md`
 
 Follow each skill's own steps and output format. Your contribution to the ship verdict is evidence, not optimism.
 

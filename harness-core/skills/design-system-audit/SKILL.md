@@ -147,7 +147,7 @@ Bulk token fixes touch many files. Guardrails, in order:
 2. For any component imported in 2+ places, refactor safely — list the consumers first (`grep -rln`), change, verify every consumer still renders, then move on.
 3. Fix in small batches (one category or one directory at a time). After each batch:
    - Re-run the relevant Step 1 sweep — the fixed hits must be gone (paste the output).
-   - `pnpm build` must pass — but compiling is not rendering: for every visually-affected component, verify in the browser in **dark mode first** at 360 / 768 / 1024 / 1440 / 1920px (Playwright screenshots per viewport; design review per **visual-qa**).
+   - `pnpm build` must pass — but compiling is not rendering: for every visually-affected component, verify in the browser in **both themes** at 360 / 768 / 1024 / 1440 / 1920px (Playwright screenshots per viewport; design review per **visual-qa**).
 4. Rows marked `verify visually` need a before/after screenshot comparison; if the nearest token visibly changes the design, **STOP and ask the user** which way to go.
 5. Close with **verify-before-done**, then re-run this entire audit — the final report must show 0 Critical.
 

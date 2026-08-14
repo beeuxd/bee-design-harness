@@ -9,7 +9,7 @@ Run this at the top of ANY session before touching code. Total budget: a few min
 
 ## Step 1 — Read CLAUDE.md
 
-Read `CLAUDE.md` at the repo root. It is the house-rules contract; nothing you do this session may contradict it. Note especially: dark mode is primary, mobile-first at 360px, token-only styling, the "Stop and ask me before" list, and the protected files (`design/tokens.json`, `CLAUDE.md`, `.claude/settings.json` — a PreToolUse hook blocks edits without explicit user approval).
+Read `CLAUDE.md` at the repo root. It is the house-rules contract; nothing you do this session may contradict it. Note especially: mobile-first at 360px, both themes always ship (light and dark), token-only styling, the "Stop and ask me before" list, and the protected files (`design/tokens.json`, `CLAUDE.md`, `.claude/settings.json` — a PreToolUse hook blocks edits without explicit user approval).
 
 ## Step 2 — Classify the entry state
 
@@ -114,13 +114,13 @@ If a tool is missing or unauthenticated, STOP and tell the user exactly what fai
 
 In at most 3 sentences, tell the user: (1) the scope as you understand it, (2) a 3-step plan, (3) the first file you'll touch or doc you still need. Example shape:
 
-> Scope: restyle the pricing cards for mobile, dark-first. Plan: 1) map Figma variables to our tokens for the card, 2) rebuild `components/site/pricing-card.tsx` on the shadcn Card primitive with container queries, 3) verify at 360/768/1024/1440/1920 in dark mode. Starting with `design/tokens.md` — anything I'm missing?
+> Scope: restyle the pricing cards for mobile. Plan: 1) map Figma variables to our tokens for the card, 2) rebuild `components/site/pricing-card.tsx` on the shadcn Card primitive with container queries, 3) verify at 360/768/1024/1440/1920 in both themes. Starting with `design/tokens.md` — anything I'm missing?
 
 Wait for pushback only if you asked a question; otherwise proceed.
 
 ## Hard rules carried into the rest of the session
 
-- Dark mode first; verify every change at 360/768/1024/1440/1920px.
+- Mobile-first; verify every change at 360/768/1024/1440/1920px, in both light and dark mode.
 - WCAG 2.2 AA baseline; interactive elements meet the 44×44px minimum tap target on touch.
 - Token-only styling — a PostToolUse hook flags hardcoded hex and arbitrary px at write time; fix flags immediately, don't suppress.
 - Evidence over claims: "compiles" is not "renders". Screenshot or curl the actual page state, and cite `file:line` when reporting what you changed or found.

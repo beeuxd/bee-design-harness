@@ -20,7 +20,7 @@ Instructions for any coding agent working in this repo (generated from DESIGN.md
 ## Hard rules (no exceptions)
 
 - **Token-only styling.** No hardcoded hex, no arbitrary px. All values from `design/tokens.json`. Never hand-edit `app/tokens.css` (generated — `pnpm tokens`).
-- **Dark mode first**, mobile first: works at 360px before desktop; verify at 360 / 768 / 1024 / 1440 / 1920px.
+- **Mobile-first:** works at 360px before desktop; verify at 360 / 768 / 1024 / 1440 / 1920px — in both light and dark mode (both always ship).
 - **WCAG 2.2 AA**: semantic HTML, keyboard nav, visible focus, contrast AA, tap targets ≥ 44×44px, every animation gated on `prefers-reduced-motion`.
 - **Performance budget**: LCP ≤ 2.5s, INP ≤ 200ms, TBT < 200ms, CLS ≤ 0.1, JS first-load < 150KB gz.
 - **No visual work without art direction** in `docs/design-system.md`.

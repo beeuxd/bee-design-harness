@@ -21,8 +21,9 @@ The harness's skills assume a document set (DESIGN.md, docs/, design/) that plug
    7. **Existing content voice?** Voice/tone/content guidelines? (Yes → `voice-guide` runs in adoption mode against them; no → `voice-guide` interviews before user-facing copy ships.)
    8. **Research material?** Interviews, tickets, surveys to seed `docs/research/raw/`? (Determines whether the loops or direct build is the next step.)
    9. **Which executors besides Claude Code?** Cursor/Codex/Copilot-family (AGENTS.md standard), Replit, Figma Make? (Determines which executor context files `sync-executor-context` maintains.)
+   10. **Default theme?** Light or dark — decides which theme's values `:root` carries in the token pipeline. Both themes ALWAYS ship; this only picks the default the project opens in.
 
-   Record answers 5–9 under a `## Intake` section in `docs/design-system.md` (with the design-system answer as its own `## Design system source` line) so no skill re-asks them.
+   Record answers 5–10 under a `## Intake` section in `docs/design-system.md` (with the design-system answer as its own `## Design system source` line) so no skill re-asks them.
 
 ## Step 1 — Write the tree
 
@@ -45,7 +46,7 @@ scripts/build-tokens.mjs
 
 The CI files only bite once the repo is on GitHub and `app-bootstrap` (role-engineer) has installed the toolchain — say so in the report if either isn't true yet.
 
-Then replace placeholders in every copied `.md`/`.json`: `{{PROJECT_NAME}}`, `{{PROJECT_DESCRIPTION}}`, `{{AESTHETIC}}`, `{{FIGMA_URL}}` with the Step 0 answers (empty answer → leave the placeholder and note it in the report). Record the intake answers per Step 0.3. If intake named Replit or Figma Make as executors, run `sync-executor-context` at the end to generate their context files (AGENTS.md ships from the template either way).
+Then replace placeholders in every copied `.md`/`.json`: `{{PROJECT_NAME}}`, `{{PROJECT_DESCRIPTION}}`, `{{AESTHETIC}}`, `{{FIGMA_URL}}`, `{{THEME}}` with the Step 0 answers (empty answer → leave the placeholder and note it in the report). Record the intake answers per Step 0.3. If intake named Replit or Figma Make as executors, run `sync-executor-context` at the end to generate their context files (AGENTS.md ships from the template either way).
 
 ## Step 2 — Project-level protections
 

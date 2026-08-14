@@ -64,7 +64,7 @@ For specific tasks, Claude Code auto-invokes the matching skill from the library
 |---|---|
 | `ship` | Pre-ship gate: parallel lens reviews → honest SHIP / NO-SHIP verdict |
 | `verify-before-done` | Before the words "done" / "fixed" — evidence required |
-| `visual-qa` | Playwright screenshots at the three review widths (360/768/1440, dark-first) + design review |
+| `visual-qa` | Playwright screenshots at the three review widths (360/768/1440, both themes) + design review |
 | `a11y-audit` | WCAG 2.2 AA, automation-first (axe via Playwright) |
 | `performance-check` | Core Web Vitals budget gate — fail = no ship |
 | `e2e-test` | Playwright suites per feature (5-spec structure) |
@@ -124,7 +124,7 @@ For small tasks, skip agents and just do the work directly. Agents are for deleg
 - **Sizing hits real humans.** Interactive elements meet **44×44px minimum tap target** on touch. Primary CTAs are generous (44–52px tall). Never ship shadcn defaults unchanged — they're app-sized, not site-sized.
 - **No layout shift.** Reserve space for images, fonts, dynamic content. CLS ≤ 0.1.
 - **Performance budget.** LCP ≤ 2.5s, INP ≤ 200ms, TBT < 200ms on mid-tier mobile. JS first-load < 150KB gzipped.
-- **Dark mode is primary.** The default theme is dark. Design, build, and test in dark mode first. Light mode is secondary — implement only when explicitly requested.
+- **Both themes, always.** Light and dark mode both ship on every component — neither is optional. Intake records which one is the default (`:root`); design and verify in both.
 - **No generic AI aesthetic.** No default Inter, no purple gradients, no glassmorphism unless it's in your design system.
 - **Content-first.** If copy is missing, flag it — don't invent marketing claims.
 

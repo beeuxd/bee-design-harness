@@ -30,7 +30,7 @@ For the component just built or restyled:
 
 1. One story file next to Storybook convention for this repo (`<component>.stories.tsx`), typed with CSF3 (`Meta`/`StoryObj`).
 2. **Cover the full states matrix** — the states come from the component's spec (`docs/specs/<feature>.md` or `design/components.md` entry): default, hover/focus/active where interactive, disabled, loading, empty, error, and content-extremes (long text, zero items, overflow). One named story per state. A story file with only `Default` is a stub, not coverage.
-3. Dark mode is the primary theme — stories render dark-first, matching the app.
+3. Stories render in both themes (theme switchable; default first, matching the app's intake setting).
 4. Token-only styling applies inside stories too (the design-system-guard hook scans story files like any other write).
 5. Controls (`argTypes`) for every public prop, so the MCP exposes real prop metadata to agents.
 

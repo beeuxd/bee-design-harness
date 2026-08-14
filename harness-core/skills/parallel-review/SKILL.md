@@ -68,7 +68,7 @@ Write down for the prompt template: the exact URLs in scope, the dev server port
 | Accessibility | `a11y-audit` | WCAG 2.2 AA: keyboard, semantics, contrast, focus, `prefers-reduced-motion` gating |
 | Token compliance | `design-system-audit` | Only token/spec drift: hardcoded hex, arbitrary px, values not in `design/tokens.json`, deviation from Figma-sourced specs |
 | Performance | `performance-check` | Budget only: LCP <= 2.5s, INP <= 200ms, CLS <= 0.1, TBT < 200ms, JS first-load < 150KB gzipped |
-| UX state coverage | `review-ux` | States and responsive only: loading/empty/error/hover/focus/disabled, tap targets >= 44x44px, behavior at 360/768/1024/1440/1920px, dark mode first |
+| UX state coverage | `review-ux` | States and responsive only: loading/empty/error/hover/focus/disabled, tap targets >= 44x44px, behavior at 360/768/1024/1440/1920px, in both themes |
 | Copy | `ux-copy-review` (requires the role-copywriter plugin; if it isn't installed, drop this lens and flag copy review as a human follow-up) | Words only: labels, errors, empty states, CTAs, tone, invented marketing claims |
 
 Rules:
@@ -87,7 +87,7 @@ Follow the {SKILL_NAME} skill step by step.
 Scope: {URLS / FILES / ROUTES}.
 App under review: http://localhost:{PORT} — {the dev server; OR, for the
 performance lens only: the production build, measure against this URL}.
-Theme: dark mode is primary — verify dark-first.
+Theme: both light and dark always ship — verify both, default theme first.
 Viewports (if your lens is visual): 360, 768, 1024, 1440, 1920px, via Playwright.
 Reference truth: design/tokens.json, docs/design-system.md, design/accessibility.md.
 

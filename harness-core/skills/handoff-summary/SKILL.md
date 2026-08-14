@@ -114,7 +114,7 @@ Session N: increment from the previous handoff if the user pasted one at the sta
 - **Specific over general.** "Built the hero section with container-query responsive grid" — not "worked on hero."
 - **Include blockers.** If you were stuck, say on what and why — the next session should not rediscover it.
 - **List every file touched.** Even small edits. Derived from git (step 2), not memory.
-- **Verification state is a fact.** If work is unverified (no dark-mode screenshots, no viewport sweep per `verify-before-done`), say so in "In progress" — "compiles" does not mean "renders".
+- **Verification state is a fact.** If work is unverified (no screenshots in both themes, no viewport sweep per `verify-before-done`), say so in "In progress" — "compiles" does not mean "renders".
 - **No meta-commentary.** No "great session!", no apologies, no process narration. Just the facts.
 - **Under 400 words.** Context, not diary. If it runs long, the doc-sync in step 3 was incomplete — move durable facts into files and shorten the block.
 

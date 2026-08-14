@@ -53,6 +53,7 @@ mkdir -p .claude/evidence
 npx playwright screenshot --color-scheme=dark --viewport-size=360,800  --full-page http://localhost:3000/<route> .claude/evidence/<route>-360.png
 npx playwright screenshot --color-scheme=dark --viewport-size=768,1024 --full-page http://localhost:3000/<route> .claude/evidence/<route>-768.png
 npx playwright screenshot --color-scheme=dark --viewport-size=1440,900 --full-page http://localhost:3000/<route> .claude/evidence/<route>-1440.png
+# Both themes always ship — repeat the sweep with --color-scheme=light (or the project's other theme)
 ```
 
 **Option B — spec file (required when dark mode is class-based, e.g. next-themes puts `.dark` on `<html>`):** create `e2e/verify-screenshots.spec.ts`:

@@ -251,3 +251,22 @@ Suite result 2026-08-14: ALL GREEN (33 checks) including workshop in-sync ×15.
 verification passes run on Sonnet 4.6 for cost while the judgment agents (pm, architect,
 ui-designer, backend-dev, frontend-engineer) inherit the session model (Opus tier). Rationale:
 the gate suite's pass/fail checks are procedural and evidence-based; design judgment is not.
+
+## Addendum (2026-08-14, night II): doctrine correction — mobile-first + both themes
+
+User correction: dark-first was wrongly ranked as harness doctrine. New doctrine, swept
+across ~35 sites (skills, agents, templates, workshop CLAUDE.md/DESIGN.md, README):
+
+- **Mobile-first is the law.** 360px before desktop, universal, unranked below nothing.
+- **Both themes always ship.** Light AND dark on every component — neither is optional.
+  Scaffold intake question 10 (new) records which theme is the DEFAULT (whose values
+  `:root` carries, emitted with the other theme as an override class by build-tokens.mjs);
+  the default is a per-project choice, not doctrine. `{{THEME}}` placeholder added to
+  templates/docs/design-system.md and the scaffold replacement list.
+- Verification language updated everywhere: screenshot sweeps, e2e colorScheme comment,
+  a11y audit (contrast can pass in one theme and fail in the other), storybook stories,
+  ship/parallel-review lenses, ticket checklists, agent evidence requirements.
+- README badges: theme-dark-first replaced by mobile-first-360px + themes-light+dark.
+
+Verified: zero remaining "dark-first / dark mode is primary / dark mode first" doctrine
+refs in live files (grep sweep). Workshop twins re-synced from core.

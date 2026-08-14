@@ -83,7 +83,7 @@ The PostToolUse hook flags hardcoded hex and arbitrary px at write time. If it f
 
 - Compose from `components/ui/` (shadcn) and `components/site/` (custom). Pages assemble components; components own their styles.
 - **Interaction:** open the actual primitive source in `components/ui/` and preserve its hover/focus/keyboard/aria wiring. Restyle with tokens; never re-implement Radix behavior or invent states the primitive doesn't have.
-- **Dark-first:** build and check in dark mode (the default theme). Light mode only if explicitly requested.
+- **Both themes:** build and check light AND dark — both always ship; review the intake default first.
 - **Mobile-first, three layers:** viewport breakpoints (`sm:`/`md:`) for page-level layout only; `@container` queries inside reusable components; `clamp()` for fluid type. If Figma only shows desktop, derive the 360px layout yourself and list it as a judgment call in Step 6.
 - **Tap targets** ≥ 44×44px; primary CTAs 44–52px tall — override shadcn's default heights if smaller.
 - **Images:** `next/image` with an explicit `sizes` prop and reserved dimensions (CLS ≤ 0.1).

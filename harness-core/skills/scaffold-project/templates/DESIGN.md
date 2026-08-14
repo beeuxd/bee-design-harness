@@ -97,6 +97,6 @@ Any link an executor cannot produce evidence for is marked `unvalidated` — vis
 - **Art direction before visuals.** No art direction section in `docs/design-system.md` → visual work stops.
 - **Accessibility.** WCAG 2.2 AA, keyboard nav, visible focus, 44×44px tap targets, `prefers-reduced-motion` respected.
 - **Performance budget.** LCP ≤ 2.5s, INP ≤ 200ms, TBT < 200ms, CLS ≤ 0.1, JS first-load < 150KB gz (details: `docs/tech.md`).
-- **Responsive.** 360 / 768 / 1024 / 1440 / 1920px, dark mode first.
+- **Responsive, mobile-first.** 360 / 768 / 1024 / 1440 / 1920px — works at 360 before desktop exists; verified in both light and dark mode.
 - **Evidence before "done".** Screenshots, build output, test results — claims without artifacts don't count.
 - **Protected files.** `design/tokens.json`, `CLAUDE.md`, `.claude/settings.json` require explicit human confirmation to edit.

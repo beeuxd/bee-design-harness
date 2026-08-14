@@ -22,7 +22,7 @@ Same distillation, Replit-Agent-framed: component library + token rules up front
 
 ## Step 3 — figma-make-guidelines.md (if Figma Make is in use)
 
-A guidelines file the user uploads into Figma Make's Guidelines folder. Design-language content only (Make generates UI, it doesn't run your repo): art-direction summary in concrete terms, token palette by semantic name with values from `design/tokens.md`, type scale, spacing rhythm, dark-first, a11y floor (contrast AA, 44px targets), the banned list from `design/taste-rules.md`. End with: "components must map to the project's design system — flag anything that has no token."
+A guidelines file the user uploads into Figma Make's Guidelines folder. Design-language content only (Make generates UI, it doesn't run your repo): art-direction summary in concrete terms, token palette by semantic name with values from `design/tokens.md`, type scale, spacing rhythm, both themes (default from intake), a11y floor (contrast AA, 44px targets), the banned list from `design/taste-rules.md`. End with: "components must map to the project's design system — flag anything that has no token."
 
 ## Step 4 — Verify + report
 

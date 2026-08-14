@@ -30,7 +30,7 @@ Run the `parallel-review` skill end to end — it owns server startup, agent con
 
 - Lenses, each executing its library skill: `a11y-audit`, `performance-check`, `design-system-audit`, `review-ux`, `visual-qa`. If user-facing copy changed in scope — check `git diff main...HEAD` for string changes in components/pages; if the scope is a page/feature with no branch diff to inspect, ask the user whether copy changed rather than guessing — then: if the role-copywriter plugin is installed, add its `ux-copy-review` lens; otherwise flag copy review as a human follow-up in the report. If the scope contains AI-generated output or AI-driven actions, `review-ux`'s T.R.U.S.T. lens (checklist in `docs/trust-scaffolding.md`) is in play — its Medium+-stakes findings land in the gate table below.
 - Performance lens measures the **production build** (`pnpm start`), never the dev server.
-- Visual lenses verify **dark mode first** at 360 / 768 / 1024 / 1440 / 1920px via Playwright.
+- Visual lenses verify **both themes** (default first) at 360 / 768 / 1024 / 1440 / 1920px via Playwright.
 - Every finding needs file:line or a measured value (e.g. "LCP 3.1s at /pricing, 360px"); findings without evidence are discarded — that is parallel-review's contract, hold it to it.
 - Point agents at `design/tokens.json`, `docs/design-system.md`, `design/accessibility.md` for truth. Never paste font names or hex values into prompts — this is a template repo; values live in those files.
 
