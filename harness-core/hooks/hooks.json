@@ -21,6 +21,17 @@
           }
         ]
       }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Context was just compacted — it had grown past the safe threshold. Per the handoff-summary skill: sync doc-level decisions made this session into docs/ or design/ now, save a handoff block to docs/handoffs/, and suggest the user start a fresh chat rather than continuing long on compacted context.'"
+          }
+        ]
+      }
     ]
   }
 }

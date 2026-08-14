@@ -142,3 +142,105 @@ role-engineer ships deploy/browser/review-loop skills; role-designer ships anima
 - **role-designer's animate/review-animations skills** are referenced by name (a11y-audit, art-direction) per the build spec, but the role-designer pack's `skills/` directory is empty on disk at repair time — the names could not be verified against shipped SKILL.md files. If the pack ships different names, update those two pointers.
 - **role-pm's discovery/spec skill names** are unknown, so kickoff-replacement references say "PM discovery / role-pm's discovery/spec skills" generically rather than naming a skill.
 - **T.R.U.S.T. checklist** (`docs/trust-scaffolding.md`) is referenced by ship and templates/CLAUDE.md and exists in the scaffold templates — verified present, nothing to fix; noted here because it originated in the legacy batch.
+
+## Addendum (2026-08-14): handoff-summary restored
+
+Restored `handoff-summary` from the legacy archive into `harness-core/skills/` and the workshop's
+`.claude/skills/` — CLAUDE.md's "Context & new-chat protocol" section depended on it but no live
+copy existed anywhere. Repairs made during restoration:
+
+- `session-start` (description + Section 6 resume protocol) → inlined the CLAUDE.md new-chat
+  protocol (acknowledge in one line, re-read CLAUDE.md + scope docs, one clarifying question,
+  never echo the handoff back). Re-point at `session-start` if/when it is restored.
+- `checkpoint-recovery` (Section 2, risky working tree) → inlined a checkpoint-commit command.
+- Added Section 1 token-threshold table (200k window; offer handoff at 60–70% used, urgent >80%,
+  never rely on ~95% auto-compact) — new capability, not in the legacy version.
+- Added durable-save requirement: handoff block is also written to `docs/handoffs/HANDOFF-YYYY-MM-DD.md`.
+- `taste-retro` added to the doc-sync table (visual corrections row) — it is live in core.
+
+Still dangling from CLAUDE.md with no live skill (all present in the legacy archive, restorable
+the same way): `session-start`, `escalation-protocol`, `setup-kanban`, `write-tickets`.
+
+Proposed but NOT applied (needs user approval — settings.json is guarded): a SessionStart
+hook with matcher "compact" that injects a reminder to run handoff-summary whenever
+compaction fires. Snippet lives in the workshop conversation of 2026-08-14.
+
+## Addendum (2026-08-14, later same day): session-start + escalation-protocol restored
+
+Restored both from the legacy archive into `harness-core/skills/` and the workshop's
+`.claude/skills/`, closing the two remaining load-bearing CLAUDE.md references
+("Run session-start at the top of every session" / "When stuck, escalation-protocol").
+The earlier inlined repairs in the gate suite (verify-before-done, visual-qa, e2e-test,
+parallel-review) that replaced escalation-protocol pointers with "STOP and report" text
+remain valid — the inlined text matches the restored skill's Step 3 behavior, so no
+re-pointing is required.
+
+Repairs made during restoration:
+
+- session-start description: "is kickoff" → "belongs to the pm agent per CLAUDE.md's
+  feature flow" (`kickoff` remains retired).
+- escalation-protocol Step 4: "the test matrix in `responsive-implementation`" → "run the
+  project's responsive matrix via `e2e-test` or the ship gate" (`responsive-implementation`
+  remains retired).
+- All other cross-references verified live: handoff-summary (restored earlier today),
+  visual-qa (harness-core), and the mutual session-start ↔ escalation-protocol ↔
+  handoff-summary pointers now form a closed triangle with no dangling edges.
+
+Still dangling from CLAUDE.md (legacy archive has both, restore on demand):
+`setup-kanban`, `write-tickets`.
+
+## Addendum (2026-08-14, evening): diagram-audit closeout — user-approved batch
+
+Four decisions approved by the user and executed:
+
+1. **Workshop synced to current template (design-context files only, no git/CI).** Copied into
+   the persona workshop: AGENTS.md, docs/content-guidelines.md, design/recipes.md,
+   design/templates.md, docs/specs/. Inserted the template DESIGN.md's three newer sections
+   (Recipes and templates / Executor context files / Sandbox environment) into the workshop
+   DESIGN.md between "Sources of truth" and "The pipeline". Deliberately NOT synced: git init,
+   .github/workflows/gates.yml, .lighthouserc.json — the workshop is meta, not a product repo.
+2. **SessionStart(compact) hook added** to both the workshop .claude/settings.json and
+   harness-core/hooks/hooks.json: after any compaction, an injected reminder tells the agent to
+   sync doc-level decisions, save a handoff to docs/handoffs/, and suggest a fresh chat.
+3. **setup-kanban + write-tickets restored** from the legacy archive into the workshop and
+   harness-core, unmodified — their only cross-reference (escalation-protocol) is live again,
+   so no repairs were needed. Every CLAUDE.md skill reference now resolves.
+4. **All 7 agents now ship in harness-core/agents/**: pm, architect, backend-dev, ui-designer,
+   frontend-engineer copied from the workshop, joining qa and researcher.
+
+Live counts after this batch: harness-core 27 skills + 7 agents; workshop 15 skills + 7 agents.
+Diagram audit (DESIGN.md harness map, 2026-08-14): every box covered — no known gaps remain.
+
+## Addendum (2026-08-14, night): structural test suite — first run + findings
+
+New: `test-harness.sh` at the repo root — repeatable integrity suite (JSON validity, skill
+frontmatter + name collisions, dangling retired-skill refs, template completeness against the
+DESIGN.md read-order, live guard-hook execution with violation payloads, and optional
+workshop-drift check via `./test-harness.sh <project-path>`). Run it after any skill edit or
+restoration. The RETIRED list inside it must be updated whenever a skill is restored from the
+legacy archive.
+
+Findings from the first run (both fixed):
+1. **Workshop skill drift (real bug, the exact disease the harness exists to prevent):** the
+   persona workshop's 10 original skills were pre-repair legacy copies still referencing
+   retired skills (bootstrap-app, design-references, design-flow, prd-to-ui, new-site-component,
+   add-shadcn-component, responsive-implementation, design-options, motion). Fixed by syncing
+   all 10 from harness-core (the repaired source of truth). Lesson: projects that COPY skills
+   drift; prefer plugin installs, and run the drift check when copies are unavoidable.
+2. **False negative in manual guard testing:** design-system-guard reads the written file from
+   disk (correct PostToolUse behavior) — testing it against a nonexistent path passes silently.
+   The suite now tests with a real file on disk; guard correctly flags hex, arbitrary px, and
+   inline color styles (4/4), and protected-files-guard correctly returns "ask" on tokens.json
+   and stays silent on free files.
+
+Suite result 2026-08-14: ALL GREEN (33 checks) including workshop in-sync ×15.
+
+## Addendum (2026-08-14, late): anti-drift hardening
+
+- scaffold-project Step 2 now carries the **distribution rule**: skills are installed via
+  plugin, never copied into `.claude/skills/`; scaffold checks for copies and flags them.
+- README gained an "Integrity — keep one source of truth" section (install-never-copy,
+  test-harness.sh after every change, version-on-change, restorations logged).
+- harness-core plugin version bumped 1.0.0 → 1.1.0 (5 restored skills, 5 added agents,
+  SessionStart(compact) hook since 1.0.0). README counts corrected: 27 skills / 7 agents / 3 hooks.
+- Suite re-run after all edits: ALL GREEN.
