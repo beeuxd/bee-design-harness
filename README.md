@@ -28,16 +28,70 @@ quote → INS → PROB → FEAT (MoSCoW) → wireframe region → token/Figma va
 
 ## Install
 
+### Before you start
+
+You need two things:
+
+1. **Claude Code** — install it if you haven't: `npm install -g @anthropic-ai/claude-code` (or download the desktop app), then run `claude` once and log in.
+2. **Access to this repo** — it's private for now, so you must be logged into a GitHub account that can see it. Check with `gh auth status`; if that fails, run `gh auth login` first.
+
+### Step 1 — Add the marketplace (once per machine)
+
+This tells Claude Code where the plugins live. You only ever do this once:
+
 ```bash
 claude plugin marketplace add beeuxd/bee-design-harness
-claude plugin install harness-core@bee-design-harness --scope project
-claude plugin install role-designer@bee-design-harness --scope project   # the default role
-# add other roles as needed
 ```
 
-(Or from inside a Claude Code session: `/plugin marketplace add beeuxd/bee-design-harness`, then `/plugin install harness-core@bee-design-harness`. While the repo is private, installs require GitHub auth with repo access.)
+### Step 2 — Install the plugins into your project (once per project)
 
-Then in the project: `/harness-core:scaffold-project` — runs the intake (existing design system / branding / voice / research / executors) and installs DESIGN.md, AGENTS.md, docs/, design/, registry/, and the token pipeline (plugins ship behaviors; the scaffold skill writes the documents).
+`cd` into your project folder (create an empty one if you're starting fresh), then:
+
+```bash
+claude plugin install harness-core@bee-design-harness --scope project
+claude plugin install role-designer@bee-design-harness --scope project
+```
+
+`harness-core` is always required. `role-designer` is the default second install — swap or add roles from the table above based on what the project needs (shipping code? add `role-engineer`; in discovery? add `role-pm`). You can add more roles later at any time.
+
+`--scope project` records the install in the project itself, so anyone else opening this project in Claude Code gets prompted to install the same plugins.
+
+> Prefer working inside a session? The same two steps work as slash commands: `/plugin marketplace add beeuxd/bee-design-harness`, then `/plugin install harness-core@bee-design-harness`.
+
+### Step 3 — Scaffold the project (once per project)
+
+Open Claude Code in the project folder and run:
+
+```
+/harness-core:scaffold-project
+```
+
+It asks one batch of intake questions (project name, aesthetic, existing design system / branding / voice, research material, which other AI tools you use), then writes the whole document tree: `DESIGN.md`, `CLAUDE.md`, `AGENTS.md`, `docs/`, `design/`, `registry/`, the token pipeline, and the CI gate workflow. Plugins ship the *behaviors*; this step writes the *documents* they operate on.
+
+### Step 4 — Verify it worked
+
+- Type `/` in the session — you should see skills like `/harness-core:insight-loop` and `/harness-core:art-direction` in the list.
+- `ls` the project — `DESIGN.md`, `docs/`, and `design/tokens.json` should exist.
+- Try writing a hardcoded hex color into a `.tsx` file — the design-system guard should flag it immediately. That's the hooks working.
+
+### What to run first
+
+| Your situation | First command |
+|---|---|
+| Any visual work planned | `art-direction` — the taste interview; visual builds refuse to start without it |
+| User-facing copy planned | `voice-guide` — same idea, for words |
+| You have research material (interviews, tickets, surveys) | `/harness-core:insight-loop` — starts the evidence pipeline |
+| None of the above yet | Just start working — the skills route themselves |
+
+### Updating later
+
+When the harness improves, pull the update into any project:
+
+```bash
+claude plugin marketplace update bee-design-harness
+```
+
+Never copy skill files into a project's `.claude/skills/` by hand — that's how drift happens (see Integrity below).
 
 ## Integrity — keep one source of truth
 
