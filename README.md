@@ -2,6 +2,14 @@
 
 An HX-first design harness for AI-assisted product design, packaged as Claude Code plugins. The human directs; agents execute inside evidence loops and hard gates.
 
+## Why I made this
+
+I'm a product designer, and I built this because raw AI is not usable for real product work — not for designers, not for PMs, not for founders. Point a model at a one-line prompt and you get generic output: invented requirements, hardcoded values, the same interchangeable aesthetic, claims of "done" with nothing verified. The problem was never the model's capability. It's that nobody hands a new team member zero context and expects craft.
+
+This harness is the context. It gives AI what a good team gives a new hire: written direction (art direction, taste rules, a voice), sources of truth it may not contradict (design tokens, Figma variables, the codebase), a process with evidence at every step (research → insights → problems → features → wireframes → hi-fi → built UI, every link traceable back to a real user quote), and hard gates it cannot talk its way past (token-only styling, WCAG 2.2 AA, performance budgets, "not 100% right = no push-through").
+
+The point is who it's for. Designers direct visual quality without babysitting every prompt — corrections become standing rules that compound. PMs run discovery and validation loops where every feature traces to evidence, not vibes. Founders ship with a full product team's discipline before they can afford the team. You stay the director: the AI executes inside the structure, shows its work, and stops at the decisions that are yours.
+
 ```
 quote → INS → PROB → FEAT (MoSCoW) → wireframe region → token/Figma value
 ```
@@ -21,11 +29,13 @@ quote → INS → PROB → FEAT (MoSCoW) → wireframe region → token/Figma va
 ## Install
 
 ```bash
-claude plugin marketplace add <this-repo-url-or-path>
+claude plugin marketplace add beeuxd/bee-design-harness
 claude plugin install harness-core@bee-design-harness --scope project
 claude plugin install role-designer@bee-design-harness --scope project   # the default role
 # add other roles as needed
 ```
+
+(Or from inside a Claude Code session: `/plugin marketplace add beeuxd/bee-design-harness`, then `/plugin install harness-core@bee-design-harness`. While the repo is private, installs require GitHub auth with repo access.)
 
 Then in the project: `/harness-core:scaffold-project` — runs the intake (existing design system / branding / voice / research / executors) and installs DESIGN.md, AGENTS.md, docs/, design/, registry/, and the token pipeline (plugins ship behaviors; the scaffold skill writes the documents).
 

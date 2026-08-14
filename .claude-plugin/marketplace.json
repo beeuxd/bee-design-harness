@@ -2,19 +2,76 @@
   "name": "bee-design-harness",
   "metadata": {
     "description": "Bee's Design Harness — an HX-first design system for AI-assisted product design. Core pipeline (research→insight→problem→ideation→wireframe→hifi→build) plus role packs.",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "owner": {
     "name": "Bee",
     "email": "bee@frontiertower.io"
   },
   "plugins": [
-    { "name": "harness-core", "source": "./harness-core", "description": "The design harness core: 5 evidence loops, token/Figma gates, guard hooks, project scaffold, qa + researcher agents. Required by all role packs.", "tags": ["design", "harness", "core"] },
-    { "name": "role-designer", "source": "./role-designer", "description": "The Designer role (default agent): design system, accessibility, motion, polish, critique, hand-off.", "tags": ["design", "role"] },
-    { "name": "role-engineer", "source": "./role-engineer", "description": "The Engineer role: implement from Figma, ship polished UI, design systems in code, deploy.", "tags": ["engineering", "role"] },
-    { "name": "role-pm", "source": "./role-pm", "description": "The PM role: discovery, validation, user research, spec & prioritize — feeds the harness loops.", "tags": ["product", "role"] },
-    { "name": "role-copywriter", "source": "./role-copywriter", "description": "The Copywriter role: UX writing, product copy, voice alignment — the harness Content block.", "tags": ["content", "role"] },
-    { "name": "role-marketer", "source": "./role-marketer", "description": "The Marketer role: SEO, CRO, launch, brand presence — post-ship growth.", "tags": ["marketing", "role"] },
-    { "name": "role-founder", "source": "./role-founder", "description": "The Founder role: validate & discover, scope & build, launch & grow.", "tags": ["strategy", "role"] }
+    {
+      "name": "harness-core",
+      "source": "./harness-core",
+      "description": "The design harness core: 5 evidence loops, the 9-skill quality-gate suite, session lifecycle (session-start/handoff/escalation), token/Figma gates, guard hooks, project scaffold, all 7 team agents. Required by all role packs.",
+      "tags": [
+        "design",
+        "harness",
+        "core"
+      ]
+    },
+    {
+      "name": "role-designer",
+      "source": "./role-designer",
+      "description": "The Designer role (default agent): design system, accessibility, motion, polish, critique, hand-off.",
+      "tags": [
+        "design",
+        "role"
+      ]
+    },
+    {
+      "name": "role-engineer",
+      "source": "./role-engineer",
+      "description": "The Engineer role: implement from Figma, ship polished UI, design systems in code, deploy.",
+      "tags": [
+        "engineering",
+        "role"
+      ]
+    },
+    {
+      "name": "role-pm",
+      "source": "./role-pm",
+      "description": "The PM role: discovery, validation, user research, spec & prioritize — feeds the harness loops.",
+      "tags": [
+        "product",
+        "role"
+      ]
+    },
+    {
+      "name": "role-copywriter",
+      "source": "./role-copywriter",
+      "description": "The Copywriter role: UX writing, product copy, voice alignment — the harness Content block.",
+      "tags": [
+        "content",
+        "role"
+      ]
+    },
+    {
+      "name": "role-marketer",
+      "source": "./role-marketer",
+      "description": "The Marketer role: SEO, CRO, launch, brand presence — post-ship growth.",
+      "tags": [
+        "marketing",
+        "role"
+      ]
+    },
+    {
+      "name": "role-founder",
+      "source": "./role-founder",
+      "description": "The Founder role: validate & discover, scope & build, launch & grow.",
+      "tags": [
+        "strategy",
+        "role"
+      ]
+    }
   ]
 }
