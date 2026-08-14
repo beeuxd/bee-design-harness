@@ -32,6 +32,20 @@ Assets ship in pairs (`*-light.svg` on PAPER, `*-dark.svg` on INK) and switch vi
 `<picture><source media="(prefers-color-scheme: dark)">`. Chip fills (ACID, PINK,
 PERIWINKLE) are constant across themes — only INK/PAPER swap roles.
 
+## Reference — bearodil.com (Bee's portfolio)
+
+The living example of the system in use. What to take from it:
+
+- **Both themes**, minimalist, high contrast — confirms the both-themes-always doctrine.
+- **Signature motif:** glitch-doubled text (`LLooaaddiinngg`) — a playful distortion used
+  sparingly as identity, not decoration. Candidate motif for harness visuals if a loading /
+  in-progress state ever needs one.
+- **Labels:** small uppercase tags with years ("WEB · 2024") — exactly the Fragment Mono
+  eyebrow role. No heavy chip styling on the portfolio; chips in this repo stay because the
+  harness map inherits them from Bee's own diagram.
+- **Voice:** confident, not corporate — "turn complex, technical products into interfaces
+  people understand", "design for users, with users", "AI-powered, human-made".
+
 ## Standing rules (learned)
 
 - No invented palettes. If a new color feels needed, the answer is a different weight or
