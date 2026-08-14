@@ -13,14 +13,14 @@
   <!-- wordmark: PAPER -->
   <text x="640" y="148" text-anchor="middle" font-size="52" font-weight="800" letter-spacing="-1" fill="#F4F1EC" class="display">Bee Design Harness</text>
 
-  <!-- pink accent bar (fills only) -->
-  <rect x="612" y="166" width="56" height="6" rx="3" fill="#F056A0"/>
-
   <!-- tagline -->
   <text x="640" y="204" text-anchor="middle" font-size="14" letter-spacing="3" fill="#8B867C" class="mono">THE HUMAN DIRECTS · AGENTS EXECUTE</text>
 
+  <!-- pink accent rule (fills only) — divider, not underline -->
+  <rect x="580" y="222" width="120" height="4" rx="2" fill="#F056A0"/>
+
   <!-- traceability chain: periwinkle connectors, paper terms -->
-  <text x="640" y="252" text-anchor="middle" font-size="16" letter-spacing="1" class="mono">
+  <text x="640" y="258" text-anchor="middle" font-size="16" letter-spacing="1" class="mono">
     <tspan fill="#F4F1EC">quote</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#F4F1EC">INS</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#F4F1EC">PROB</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#F4F1EC">FEAT</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#F4F1EC">wireframe</tspan><tspan fill="#5660F0"> ── </tspan><tspan fill="#F4F1EC">token</tspan>
   </text>
 </svg>

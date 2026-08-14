@@ -52,7 +52,7 @@ Then replace placeholders in every copied `.md`/`.json`: `{{PROJECT_NAME}}`, `{{
 
 The harness's guard hooks ship with this plugin and run automatically. But `design/tokens.json` protection assumes the file exists at the project root path the guard expects — confirm `design/tokens.json` landed there. If the project keeps tokens elsewhere, STOP and ask before adapting.
 
-**Distribution rule — skills are installed, never copied.** Harness skills reach a project ONLY via the plugin install (`claude plugin install harness-core@bee-design-harness`); never copy them into the project's `.claude/skills/`. Copies drift silently the moment the harness improves — this exact failure was caught in the field on 2026-08-14 (see repairs-core.md). During scaffold, check `.claude/skills/` for copies of harness skills: if any exist, flag them, recommend deleting in favor of the plugin, and point at `test-harness.sh <project-path>` (harness repo root) which detects copy drift. Project-local skills that have no harness twin are fine.
+**Distribution rule — skills are installed, never copied.** Harness skills reach a project ONLY via the plugin install (`claude plugin install harness-core@bee-design-harness`); never copy them into the project's `.claude/skills/`. Copies drift silently the moment the harness improves — this exact failure was caught in the field on 2026-08-14 (see logs/repairs-core.md in the harness repo). During scaffold, check `.claude/skills/` for copies of harness skills: if any exist, flag them, recommend deleting in favor of the plugin, and point at `test-harness.sh <project-path>` (harness repo root) which detects copy drift. Project-local skills that have no harness twin are fine.
 
 ## Step 3 — Git
 

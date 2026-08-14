@@ -108,10 +108,10 @@ Never copy skill files into a project's `.claude/skills/` by hand — that's how
 
 ## Integrity — keep one source of truth
 
-- **Install, never copy.** Skills reach projects only via the plugin install above. Copying SKILL.md files into a project's `.claude/skills/` creates silent drift the moment the harness improves (this failure was caught in the field on 2026-08-14 — see `repairs-core.md`).
+- **Install, never copy.** Skills reach projects only via the plugin install above. Copying SKILL.md files into a project's `.claude/skills/` creates silent drift the moment the harness improves (this failure was caught in the field on 2026-08-14 — see `logs/repairs-core.md`).
 - **Test after every change.** `./test-harness.sh` validates manifests, frontmatter, name collisions, dangling retired-skill references, template completeness, and executes the guard hooks against violation payloads. Pass a project path (`./test-harness.sh ~/my-project`) to also detect copy drift. All green or don't ship.
 - **Version on change.** Bump the plugin `version` in `.claude-plugin/plugin.json` when its skills change, so installed projects can see they're behind.
-- **Restorations are logged.** Anything revived from a legacy archive gets its dangling references repaired and an entry in `repairs-*.md` — and the RETIRED list in `test-harness.sh` updated.
+- **Restorations are logged.** Anything revived from a legacy archive gets its dangling references repaired and an entry in `logs/repairs-*.md` — and the RETIRED list in `test-harness.sh` updated.
 
 ## The map
 
