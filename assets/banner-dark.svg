@@ -1,0 +1,22 @@
+<svg width="1280" height="300" viewBox="0 0 1280 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bee Design Harness — the human directs; agents execute">
+  <style>
+    text { font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+  </style>
+  <rect width="1280" height="300" rx="16" fill="#0d1117"/>
+  <rect x="0.5" y="0.5" width="1279" height="299" rx="15.5" stroke="#21262d"/>
+
+  <!-- label chip -->
+  <rect x="547" y="52" width="186" height="30" rx="5" fill="#A5E8B6"/>
+  <text x="640" y="72" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="2" fill="#0d1117">DESIGN HARNESS</text>
+
+  <!-- wordmark -->
+  <text x="640" y="150" text-anchor="middle" font-size="46" font-weight="700" letter-spacing="10" fill="#e6edf3">BEE DESIGN HARNESS</text>
+
+  <!-- tagline -->
+  <text x="640" y="192" text-anchor="middle" font-size="17" letter-spacing="2" fill="#8b949e">THE HUMAN DIRECTS · AGENTS EXECUTE</text>
+
+  <!-- traceability chain -->
+  <text x="640" y="248" text-anchor="middle" font-size="16" letter-spacing="1">
+    <tspan fill="#F5B5AF">quote</tspan><tspan fill="#3d444d"> ── </tspan><tspan fill="#F6DE8D">INS</tspan><tspan fill="#3d444d"> ── </tspan><tspan fill="#B9CFF7">PROB</tspan><tspan fill="#3d444d"> ── </tspan><tspan fill="#E4BAF5">FEAT</tspan><tspan fill="#3d444d"> ── </tspan><tspan fill="#A5E8D3">wireframe</tspan><tspan fill="#3d444d"> ── </tspan><tspan fill="#A5E8B6">token</tspan>
+  </text>
+</svg>

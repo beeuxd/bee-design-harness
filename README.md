@@ -1,4 +1,16 @@
-# Bee Design Harness
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+  <img src="assets/banner-light.svg" alt="Bee Design Harness — the human directs; agents execute" width="100%">
+</picture>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/plugins-7-A5E8B6?style=flat-square&labelColor=1f2328" alt="7 plugins">
+  <img src="https://img.shields.io/badge/skills-118-B9CFF7?style=flat-square&labelColor=1f2328" alt="118 skills">
+  <img src="https://img.shields.io/badge/agents-7-E4BAF5?style=flat-square&labelColor=1f2328" alt="7 agents">
+  <img src="https://img.shields.io/badge/core-v1.1.0-F6DE8D?style=flat-square&labelColor=1f2328" alt="harness-core v1.1.0">
+  <img src="https://img.shields.io/badge/a11y-WCAG_2.2_AA-A5E8D3?style=flat-square&labelColor=1f2328" alt="WCAG 2.2 AA">
+  <img src="https://img.shields.io/badge/theme-dark--first-F5B5AF?style=flat-square&labelColor=1f2328" alt="dark-first">
+</p>
 
 An HX-first design harness for AI-assisted product design, packaged as Claude Code plugins. The human directs; agents execute inside evidence loops and hard gates.
 
@@ -100,6 +112,15 @@ Never copy skill files into a project's `.claude/skills/` by hand — that's how
 - **Version on change.** Bump the plugin `version` in `.claude-plugin/plugin.json` when its skills change, so installed projects can see they're behind.
 - **Restorations are logged.** Anything revived from a legacy archive gets its dangling references repaired and an entry in `repairs-*.md` — and the RETIRED list in `test-harness.sh` updated.
 
+## The map
+
+Everything in this repo is one of these six blocks — guidance the agents read, context they must honor, truth they may not contradict, executors that do the work, the content layer, and the guardrails that catch what slips through:
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/harness-map-dark.svg">
+  <img src="assets/harness-map-light.svg" alt="Design Harness map — access and guidance wraps structured design context and sources of truth; execution layer, content, and guardrails surround them" width="100%">
+</picture>
+
 ## How it works
 
 Read `harness-core/skills/scaffold-project/templates/DESIGN.md` — it's the whole philosophy: director model (steerability, transparency at the right altitude, intervention points), sources of truth with precedence (tokens.json > Figma > Storybook > narrative docs), the loop pipeline, and the hard gates no executor may bypass (token-only styling, hifi-gate's "not 100% right = no push-through", WCAG 2.2 AA, the performance budget, dark-first at 360–1920px).
@@ -109,3 +130,9 @@ Read `harness-core/skills/scaffold-project/templates/DESIGN.md` — it's the who
 - `harness-core` — complete (27 skills: loops + gates + session lifecycle + tickets + scaffold + recipe-harvest + sync-executor-context; 3 hooks incl. post-compaction handoff reminder; all 7 agents)
 - `role-*` — built (agents defined, skill packs installed per role; engineer includes app-bootstrap, the toolchain installer the gates depend on)
 - Guardrails complete: agent-run gate suite + CI twin (`.github/workflows/gates.yml`: e2e/axe/visual-regression, token-guard, security, perf budget) + security lens in /ship
+
+---
+
+<p align="center">
+  <sub>Made by <a href="https://github.com/beeuxd">Bee</a> — a designer teaching AI the difference between generated and designed.</sub>
+</p>
