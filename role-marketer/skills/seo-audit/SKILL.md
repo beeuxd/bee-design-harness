@@ -1,5 +1,7 @@
 ---
 name: seo-audit
+source: https://github.com/coreyhaines31/marketingskills
+license: MIT
 description: Expert SEO audit for crawlability, technical, on-page, and content. Read product-marketing-context if present.
 ---
 

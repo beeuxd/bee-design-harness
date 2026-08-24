@@ -1,5 +1,7 @@
 ---
 name: copywriting
+source: https://github.com/coreyhaines31/marketingskills
+license: MIT
 description: Conversion-focused marketing copy. Read product-marketing-context if present.
 ---
 

@@ -1,5 +1,7 @@
 ---
 name: stripe-best-practices
+source: https://github.com/stripe/ai
+license: MIT
 description: >-
   Guides Stripe integration decisions. API selection (Checkout Sessions vs
   PaymentIntents), Connect platform setup (Accounts v2, controller properties),

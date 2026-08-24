@@ -1,5 +1,6 @@
 ---
 name: vercel-composition-patterns
+source: https://github.com/vercel-labs/agent-skills
 description:
   React composition patterns that scale. Use when refactoring components with
   boolean prop proliferation, building flexible component libraries, or

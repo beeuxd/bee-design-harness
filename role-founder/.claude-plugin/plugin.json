@@ -1,10 +1,19 @@
 {
   "name": "role-founder",
   "displayName": "Role: Founder",
-  "version": "1.0.0",
-  "description": "The Founder role — validate & discover, scope & build, launch & grow, fundraise.",
-  "author": { "name": "Bee", "email": "bee@frontiertower.io" },
+  "version": "1.0.1",
+  "description": "The Founder role \u2014 validate & discover, scope & build, launch & grow, fundraise.",
+  "author": {
+    "name": "Bee",
+    "email": "bee@frontiertower.io"
+  },
   "license": "MIT",
-  "keywords": ["strategy", "role", "founder"],
-  "dependencies": ["harness-core"]
+  "keywords": [
+    "strategy",
+    "role",
+    "founder"
+  ],
+  "dependencies": [
+    "harness-core"
+  ]
 }

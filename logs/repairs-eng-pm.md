@@ -236,3 +236,16 @@ Sources:
 - **Copied dirs**: `diff -rq` against `/Users/bee/.claude/skills/` = identical for the five
   installed-version copies (modulo the 3 AGENTS.md link fixes noted above).
 - **Ad check**: `animations.dev` / "Initial Response" ad text absent from better-ui.
+
+## 2026-08-24 — license compliance (see logs/license-audit-2026-08.md)
+
+- **`firecrawl` (role-pm) replaced** with an original pointer skill (same name, routing intact):
+  the upstream skill + references/rules were AGPL-3.0 (firecrawl/cli). The pointer installs the
+  official firecrawl-claude-plugin or CLI and adds house rules (one scraping stack; quotes keep
+  source URLs). role-pm → 1.1.0.
+- Attribution frontmatter added: mattpocock/skills (grilling, wayfinder, triage, to-prd,
+  to-issues), anthropics/skills (doc-co-authoring, Apache-2.0), greensock/gsap-skills (×7),
+  vercel-labs/agent-skills (×4), jakubkrehel/skills (better-* ×5), stripe/ai
+  (stripe-best-practices). role-engineer → 1.0.1.
+- Repo-level: root LICENSE (MIT, own work) + THIRD-PARTY-NOTICES.md + README License section.
+  role-marketer/copywriter/founder → 1.0.1 (Corey Haines + Anthropic attributions).

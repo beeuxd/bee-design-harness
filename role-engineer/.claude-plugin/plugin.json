@@ -1,10 +1,19 @@
 {
   "name": "role-engineer",
   "displayName": "Role: Engineer",
-  "version": "1.0.0",
-  "description": "The Engineer role — implement from Figma, ship polished UI, build design systems in code, prototype with motion, ship & deploy.",
-  "author": { "name": "Bee", "email": "bee@frontiertower.io" },
+  "version": "1.0.1",
+  "description": "The Engineer role \u2014 implement from Figma, ship polished UI, build design systems in code, prototype with motion, ship & deploy.",
+  "author": {
+    "name": "Bee",
+    "email": "bee@frontiertower.io"
+  },
   "license": "MIT",
-  "keywords": ["engineering", "role", "frontend"],
-  "dependencies": ["harness-core"]
+  "keywords": [
+    "engineering",
+    "role",
+    "frontend"
+  ],
+  "dependencies": [
+    "harness-core"
+  ]
 }

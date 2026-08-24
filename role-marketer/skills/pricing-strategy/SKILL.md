@@ -1,5 +1,7 @@
 ---
 name: pricing-strategy
+source: https://github.com/coreyhaines31/marketingskills
+license: MIT
 description: Help users design and optimize pricing strategies. Use when someone is setting prices for the first time, considering freemium vs paid models, optimizing monetization, dealing with willingness to pay questions, or transitioning between pricing models.
 ---
 

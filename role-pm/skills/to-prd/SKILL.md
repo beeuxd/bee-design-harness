@@ -1,5 +1,7 @@
 ---
 name: to-prd
+source: https://github.com/mattpocock/skills
+license: MIT
 description: Turn the current conversation context into a PRD and write it to docs/prd.md with permanent REQ-IDs. Use when user wants to create a PRD from the current context.
 ---
 

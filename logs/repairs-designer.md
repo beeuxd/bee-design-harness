@@ -78,3 +78,12 @@ Executed the CURATION.md "role-designer (16)" list. Sources: `/Users/bee/Downloa
 - Anchor-level check: all 8 `A11Y-PATTERNS.md#…` fragments resolve to headings in the recovered file.
 - Non-negotiables sweep: no WCAG 2.0/2.1 leftovers; animation suite already reduced-motion-aware; `outline: none` occurrences in wcag-accessibility are the documented anti-pattern example plus the standard `:focus-visible` pattern (keyboard focus stays visible) — not violations; dark-first and 44px patches applied as logged above.
 - No git commands run.
+
+## 2026-08-24 — license compliance (see logs/license-audit-2026-08.md)
+
+- **Removed `pdf` + `docx`** — Anthropic proprietary document skills; LICENSE.txt prohibits
+  redistribution and derivative works. Capability is bundled with Claude products anyway.
+  README skill list updated; role-designer → 1.1.0.
+- Emil Kowalski's six (animate, review-animations, improve-animations,
+  find-animation-opportunities, animation-vocabulary, apple-design) attributed in frontmatter
+  (source: emilkowalski/skills, MIT).

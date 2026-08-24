@@ -1,5 +1,7 @@
 ---
 name: better-ui
+source: https://github.com/jakubkrehel/skills
+license: MIT
 description: Design engineering principles for making interfaces feel polished. Use when building UI components, reviewing frontend code, implementing animations, hover states, shadows, borders, micro-interactions, enter/exit animations, choosing or reviewing icons, or any visual detail work. Triggers on UI polish, design details, "make it feel better", "feels off", stagger animations, border radius, optical alignment, image outlines, box shadows, icons, icon stroke weight, icon states, motion restraint.
 ---
 

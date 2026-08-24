@@ -1,5 +1,7 @@
 ---
 name: internal-comms
+source: https://github.com/anthropics/skills
+license: Apache-2.0
 description: Write internal communications using company formats.
 ---
 

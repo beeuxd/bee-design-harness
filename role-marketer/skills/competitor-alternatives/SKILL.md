@@ -1,5 +1,7 @@
 ---
 name: competitor-alternatives
+source: https://github.com/coreyhaines31/marketingskills
+license: MIT
 description: Build competitor comparison and alternative pages. Read product-marketing-context first.
 ---
 

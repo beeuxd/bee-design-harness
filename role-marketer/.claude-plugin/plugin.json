@@ -1,10 +1,20 @@
 {
   "name": "role-marketer",
   "displayName": "Role: Marketer",
-  "version": "1.0.0",
-  "description": "The Marketer role — post-ship growth: rank & get found (SEO), convert & measure (CRO/analytics), plan content & social, email & outbound, paid/launch/distribute, brand presence.",
-  "author": { "name": "Bee", "email": "bee@frontiertower.io" },
+  "version": "1.0.1",
+  "description": "The Marketer role \u2014 post-ship growth: rank & get found (SEO), convert & measure (CRO/analytics), plan content & social, email & outbound, paid/launch/distribute, brand presence.",
+  "author": {
+    "name": "Bee",
+    "email": "bee@frontiertower.io"
+  },
   "license": "MIT",
-  "keywords": ["marketing", "role", "seo", "cro"],
-  "dependencies": ["harness-core"]
+  "keywords": [
+    "marketing",
+    "role",
+    "seo",
+    "cro"
+  ],
+  "dependencies": [
+    "harness-core"
+  ]
 }

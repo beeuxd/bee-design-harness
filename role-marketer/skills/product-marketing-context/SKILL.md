@@ -1,5 +1,7 @@
 ---
 name: product-marketing-context
+source: https://github.com/coreyhaines31/marketingskills
+license: MIT
 description: Create and maintain product marketing context document. Other marketing skills reference it.
 ---
 

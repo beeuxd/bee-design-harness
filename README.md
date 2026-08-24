@@ -130,7 +130,7 @@ Session lifecycle: `session-start` · `handoff-summary` · `escalation-protocol`
 Foundation: `scaffold-project` · `art-direction` · `taste-retro` · `design-tokens-sync` · `from-figma` · `storybook-component` · `recipe-harvest` · `sync-executor-context` · `setup-kanban` · `write-tickets`
 
 **`role-designer` (17)**
-`animate` · `review-animations` · `improve-animations` · `find-animation-opportunities` · `animation-vocabulary` · `awwwards-animations` · `apple-design` · `design-critique` · `design-handoff` · `design-taste-frontend` · `extract-design-system` · `wcag-accessibility` · `imagegen-frontend-web` · `imagegen-frontend-mobile` · `text-to-lottie` · `docx` · `pdf`
+`animate` · `review-animations` · `improve-animations` · `find-animation-opportunities` · `animation-vocabulary` · `awwwards-animations` · `apple-design` · `design-critique` · `design-handoff` · `design-taste-frontend` · `extract-design-system` · `wcag-accessibility` · `imagegen-frontend-web` · `imagegen-frontend-mobile` · `text-to-lottie`
 
 **`role-engineer` (21)**
 `app-bootstrap` · `tailwind-design-system` · `better-ui` · `better-accessibility` · `better-colors` · `better-layout` · `better-typography` · `gsap-core` · `gsap-react` · `gsap-scrolltrigger` · `gsap-timeline` · `gsap-plugins` · `gsap-performance` · `gsap-utils` · `vercel-react-best-practices` · `vercel-composition-patterns` · `vercel-react-view-transitions` · `web-design-guidelines` · `review-loop` · `agent-browser` · `deploy-to-vercel`
@@ -185,9 +185,13 @@ For anyone changing this repo (mostly future Bee):
 - **Install, never copy.** Skills reach projects only via the plugin install. Copying SKILL.md files into a project's `.claude/skills/` creates silent drift the moment the harness improves — this exact failure was caught in the field on 2026-08-14 (`logs/repairs-core.md`).
 - **Test after every change.** `./test-harness.sh` validates manifests, frontmatter, name collisions, dangling references, template completeness, and executes the guard hooks against violation payloads. Pass a project path (`./test-harness.sh ~/my-project`) to also detect copy drift. All green or don't ship.
 - **Version on change.** Bump the plugin `version` in `.claude-plugin/plugin.json` when its skills change, so installed projects can see they're behind.
-- **Log restorations.** Anything revived from the legacy archive gets its references repaired, an entry in `logs/repairs-*.md`, and the RETIRED list in `test-harness.sh` updated. `logs/CURATION.md` is the provenance record — start there for the license audit before this repo goes public.
+- **Log restorations.** Anything revived from the legacy archive gets its references repaired, an entry in `logs/repairs-*.md`, and the RETIRED list in `test-harness.sh` updated. `logs/CURATION.md` is the provenance record — start there for provenance; the license audit itself is `logs/license-audit-2026-08.md`.
 
 **Status:** harness-core complete (27 skills, 3 hooks, 7 agents) · all six role packs built · guardrails complete (agent-run gate suite + its CI twin in `.github/workflows/gates.yml`).
+
+## License
+
+Original work (harness-core, agents, hooks, templates, docs, and all unattributed skills) is [MIT](LICENSE). Imported skills keep their upstream licenses — each declares `source:` and `license:` in its frontmatter, aggregated in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). Firecrawl's AGPL-3.0 skill and Anthropic's proprietary document skills (`pdf`/`docx`) are deliberately not bundled; the `firecrawl` skill here is an original pointer to the official distribution. Skills without a resolved upstream are dispositioned in `logs/license-audit-2026-08.md` before any public release.
 
 ---
 

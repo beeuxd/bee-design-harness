@@ -1,5 +1,7 @@
 ---
 name: to-issues
+source: https://github.com/mattpocock/skills
+license: MIT
 description: Break a plan, spec, or PRD into independently-grabbable GitHub Issues using tracer-bullet vertical slices, linked to the GitHub Projects board.
 disable-model-invocation: true
 ---
