@@ -1,170 +1,48 @@
 ---
 name: design-critique
-description: Structured framework for design feedback sessions.
+description: Run a structured design critique — of a screen, flow, component, or Figma frame — grounded in the project's written standards rather than personal taste. Use when someone asks to "critique this design", "give feedback on this screen", "review this mockup", or wants a design feedback session structured.
 ---
 
-# Design Critique Framework
+# Design critique
 
-A structured approach to giving and receiving design feedback.
+Critique is comparison against a standard. In this harness the standards are written down, so a
+critique cites them — `docs/design-system.md` (art direction), `design/taste-rules.md`,
+`design/tokens.md`, `docs/ux-principles.md` — instead of arguing taste. Read those first;
+if there's no art direction section, stop and run `art-direction` before critiquing anything.
 
-## Before the Critique
+## Before the critique — three questions
 
-### Presenter Preparation
-1. **State the context**
-   - What problem are you solving?
-   - Who is the target user?
-   - What constraints exist?
+1. **What stage is this?** Concept sketch, wireframe, or hi-fi? Critiquing polish on a wireframe
+   or structure on a near-final screen wastes the round.
+2. **What decision does this feedback serve?** "Choosing between these two" needs comparative
+   critique; "about to build this" needs a blocking-issues pass.
+3. **What's already locked?** Don't relitigate settled decisions — flag disagreement once,
+   point at the record, move on.
 
-2. **Define the scope**
-   - What stage is this work?
-   - What feedback do you need?
-   - What's out of scope?
+## The three passes (in order — don't skip ahead)
 
-3. **Share materials in advance**
-   - Design files or prototypes
-   - User research findings
-   - Business requirements
+1. **Purpose & hierarchy.** What is this screen for, and does the visual weight agree? Squint
+   test: does the most important thing win? Does the primary action read as primary at 360px?
+2. **Flow & state.** Walk it as the user: entry point, happy path, and then every state the
+   mockup forgot — empty, loading, error, long-content, both themes. Per problem/MoSCoW
+   cross-check: any UI serving no traced need, any Must with no home on screen (`wireframe-loop`
+   territory — cite it).
+3. **Craft.** Token compliance (any value not in `design/tokens.json` is a finding, not a
+   preference), spacing rhythm, type scale, contrast ≥ AA, tap targets ≥ 44×44px, alignment,
+   taste-rules violations by name.
 
-### Facilitator Preparation
-- Set time limits
-- Define feedback format
-- Prepare prompts
+## Delivering findings
 
-## Critique Structure
+- Format per finding: **observation → standard it violates → severity → suggestion**.
+  "The CTA is `#7C3AED`, which isn't in the palette (tokens.md) — blocker — use `accent.primary`."
+- Severity: **blocker** (violates a gate or standard) / **should-fix** (hurts the goal) /
+  **consider** (judgment call, stated as one).
+- Questions before verdicts where intent is unclear: "what's the intended reading order here?"
+  beats guessing wrong.
+- Praise what works and *why it works* — a critique that only lists faults teaches nothing.
 
-### 1. Presentation (5-10 min)
-Presenter shares:
-- Problem statement
-- User needs
-- Design solution
-- Specific questions
+## Receiving critique (when the user critiques our output)
 
-### 2. Clarifying Questions (5 min)
-Reviewers ask questions to understand:
-- "What happens when...?"
-- "How did you decide...?"
-- "What alternatives did you consider?"
-
-### 3. Feedback Round (15-20 min)
-Each reviewer shares observations using the format below.
-
-### 4. Discussion (10 min)
-- Explore key themes
-- Identify next steps
-- Prioritize changes
-
-## Feedback Format
-
-### The "I Like, I Wish, What If" Method
-
-**I Like...**
-What's working well
-"I like how the onboarding flow reduces friction."
-
-**I Wish...**
-Opportunities for improvement
-"I wish the error states were more helpful."
-
-**What If...**
-Ideas to explore
-"What if we added a progress indicator?"
-
-### The Observation Method
-
-**Observation → Impact → Suggestion**
-
-"I notice the CTA is below the fold. This might reduce conversions. Consider testing it above the fold."
-
-## Types of Feedback
-
-### Actionable vs. Preferential
-
-**Actionable (Give this)**
-"The contrast ratio on this button is 2.8:1, which fails WCAG AA. Increase the contrast to at least 4.5:1."
-
-**Preferential (Avoid this)**
-"I don't like the blue. Try green instead."
-
-### Specific vs. Vague
-
-**Specific (Give this)**
-"The form has 12 fields. Consider progressive disclosure to reduce cognitive load."
-
-**Vague (Avoid this)**
-"This feels overwhelming."
-
-## Feedback by Design Stage
-
-### Early Exploration
-Focus on:
-- Problem framing
-- Conceptual direction
-- User needs alignment
-
-Avoid:
-- Visual polish details
-- Pixel-level feedback
-- Implementation concerns
-
-### Mid-Fidelity
-Focus on:
-- Information architecture
-- User flows
-- Interaction patterns
-
-Avoid:
-- Final copy critique
-- Color/font perfection
-- Edge cases
-
-### High-Fidelity
-Focus on:
-- Visual consistency
-- Accessibility compliance
-- Content quality
-- Edge cases
-
-## Receiving Feedback
-
-### Do
-- Listen fully before responding
-- Take notes
-- Ask clarifying questions
-- Thank reviewers
-- Follow up on actions
-
-### Don't
-- Defend every decision
-- Explain away feedback
-- Take it personally
-- Ignore patterns in feedback
-
-## Facilitation Tips
-
-### Time Management
-- Set clear time boxes
-- Use a timer
-- Interrupt politely if needed
-
-### Encourage Participation
-- Go around the room
-- Call on quiet people
-- Limit dominant voices
-
-### Stay On Track
-- Redirect tangents
-- Park off-topic items
-- Summarize key points
-
-### Document Outcomes
-- Capture all feedback
-- Note priorities
-- Assign owners to action items
-
-## Remote Critique Best Practices
-
-- Use collaborative tools (Figma, Miro)
-- Enable commenting
-- Mute when not speaking
-- Use video for engagement
-- Record for absent team members
+Every correction is an asset: capture it as a standing rule via `taste-retro` so the same note
+never has to be given twice. Push back only with evidence (a standard, a constraint, data) —
+then the user rules.

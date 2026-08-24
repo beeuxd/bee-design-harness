@@ -256,3 +256,8 @@ Sources:
   (anthropics/knowledge-work-plugins), customer-journey-map + opportunity-solution-tree (phuryn/pm-skills).
   role-engineer → 1.0.2, role-pm → 1.1.1.
 - Flagged for rewrite/cut: review-loop (upstream unlicensed), usability-testing (untraced Lenny-template variant).
+
+## 2026-08-24 (final) — disposition executed
+- Rewritten in-house: review-loop (rubric-first worker/reviewer, 3-round cap → escalation-protocol)
+  → role-engineer 1.1.0; usability-testing (evidence-pipeline-integrated, severity-rated findings,
+  references/ removed) → role-pm 1.2.0.

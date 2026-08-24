@@ -89,3 +89,11 @@ None ended up necessary — every dangling pointer was recovered from an origin 
   ai-product-strategy, measuring-product-market-fit (RefoundAI/lenny-skills, MIT w/ content caveat) → role-founder 1.0.2.
 - Flagged for rewrite/cut: ux-writing (untraced); pitch-deck, scoping-cutting (untraced Lenny variants — rewrite);
   vibe-coding, ai-product (untraced + quality-disputed — recommend cut).
+
+## 2026-08-24 (final) — disposition executed
+- Cut: vibe-coding, ai-product (untraced Lenny-template variants + ⚠ quality-disputed in CURATION).
+  role-founder now 7 skills.
+- Rewritten in-house: pitch-deck (narrative spine, no-invented-metrics rule), scoping-cutting
+  (MoSCoW-tree-based, cut-scope-never-quality) → role-founder 1.1.0; ux-writing (voice-guide as law,
+  pattern library, a11y copy rules) → role-copywriter 1.1.0.
+- README: badges and pack lists now 114 skills (designer 15, founder 7).

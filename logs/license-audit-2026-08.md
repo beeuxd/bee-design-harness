@@ -7,7 +7,7 @@ names/phrases against live upstream repos (verified 2026-08-24).
 
 ## Verdict
 
-**The repo cannot go public as-is.** Two skills carry a proprietary Anthropic license that
+**RESOLVED 2026-08-24 — repo is license-clean for public release** (see disposition section). Original verdict for the record: the repo cannot go public as-is. Two skills carry a proprietary Anthropic license that
 prohibits redistribution outright; one is AGPL-3.0 (copyleft, incompatible with a blanket MIT
 repo); ~25 imported skills have unknown provenance and no license; and none of the ~60 confirmed
 MIT/Apache imports currently carry the upstream copyright notices those licenses require.
@@ -65,7 +65,15 @@ imagegen-frontend-web/mobile + design-taste-frontend (Leonxlnx/taste-skill), tex
 measuring-product-market-fit (RefoundAI/lenny-skills — repo MIT, with upstream's own caveat that
 underlying frameworks/insights credit Lenny's Podcast guests).
 
-## Remaining disposition list (10 skills — rewrite or cut before public)
+## Disposition list — EXECUTED 2026-08-24 (user-approved: rewrite 8, cut 2)
+
+All ten dispositioned the same day. `vibe-coding` and `ai-product` cut (untraced + quality-disputed).
+The other eight rewritten in-house from scratch — original, house-aligned text (motion gates,
+evidence pipeline, voice-guide law, MoSCoW scoping, WCAG 2.2 house baseline); third-party
+companion `references/` dirs removed with them. **Zero unattributed third-party text remains in
+the repo. The repo is license-clean for public release.** Original list follows for the record.
+
+### Original list: Remaining disposition list (10 skills — rewrite or cut before public)
 
 **Upstream found but unlicensed (all-rights-reserved by default — cannot redistribute):**
 

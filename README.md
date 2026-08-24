@@ -5,7 +5,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/plugins-7-D8FF3A?style=flat-square&labelColor=16130F" alt="7 plugins">
-  <img src="https://img.shields.io/badge/skills-118-5660F0?style=flat-square&labelColor=16130F" alt="118 skills">
+  <img src="https://img.shields.io/badge/skills-114-5660F0?style=flat-square&labelColor=16130F" alt="114 skills">
   <img src="https://img.shields.io/badge/agents-7-F056A0?style=flat-square&labelColor=16130F" alt="7 agents">
   <img src="https://img.shields.io/badge/core-v1.1.0-D8FF3A?style=flat-square&labelColor=16130F" alt="harness-core v1.1.0">
   <img src="https://img.shields.io/badge/a11y-WCAG_2.2_AA-5660F0?style=flat-square&labelColor=16130F" alt="WCAG 2.2 AA">
@@ -121,7 +121,7 @@ Seven plugins: one core everything depends on, plus six role packs you add as th
 | `role-founder` | Validate, scope ruthlessly, launch, fundraise | Making bets |
 
 <details>
-<summary><b>Every skill, by pack</b> (118 total)</summary>
+<summary><b>Every skill, by pack</b> (114 total)</summary>
 
 **`harness-core` (27)**
 Evidence loops: `insight-loop` · `problem-loop` · `ideation-loop` · `wireframe-loop` · `hifi-gate`
@@ -129,7 +129,7 @@ Quality gates: `ship` · `verify-before-done` · `visual-qa` · `a11y-audit` · 
 Session lifecycle: `session-start` · `handoff-summary` · `escalation-protocol`
 Foundation: `scaffold-project` · `art-direction` · `taste-retro` · `design-tokens-sync` · `from-figma` · `storybook-component` · `recipe-harvest` · `sync-executor-context` · `setup-kanban` · `write-tickets`
 
-**`role-designer` (17)**
+**`role-designer` (15)**
 `animate` · `review-animations` · `improve-animations` · `find-animation-opportunities` · `animation-vocabulary` · `awwwards-animations` · `apple-design` · `design-critique` · `design-handoff` · `design-taste-frontend` · `extract-design-system` · `wcag-accessibility` · `imagegen-frontend-web` · `imagegen-frontend-mobile` · `text-to-lottie`
 
 **`role-engineer` (21)**
@@ -144,8 +144,8 @@ Foundation: `scaffold-project` · `art-direction` · `taste-retro` · `design-to
 **`role-marketer` (26)**
 `brandkit` · `product-launch` · `product-marketing-context` · `content-strategy` · `seo-audit` · `ai-seo` · `programmatic-seo` · `schema-markup` · `page-cro` · `onboarding-cro` · `ab-testing` · `analytics-tracking` · `marketing-psychology` · `pricing-strategy` · `paid-ads` · `ad-creative` · `email-sequences` · `cold-email` · `lead-magnets` · `referral-program` · `churn-prevention` · `competitor-alternatives` · `directory-submissions` · `social-content` · `marketing-ideas` · `ppt-visual-design`
 
-**`role-founder` (9)**
-`scoping-cutting` · `vibe-coding` · `measuring-product-market-fit` · `founder-sales` · `fundraising` · `pitch-deck` · `stripe-best-practices` · `ai-product` · `ai-product-strategy`
+**`role-founder` (7)**
+`scoping-cutting` · `measuring-product-market-fit` · `founder-sales` · `fundraising` · `pitch-deck` · `stripe-best-practices` · `ai-product-strategy`
 
 </details>
 

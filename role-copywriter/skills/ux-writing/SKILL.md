@@ -1,154 +1,53 @@
 ---
 name: ux-writing
-description: Write effective microcopy for digital interfaces.
+description: Write microcopy for interfaces — buttons, errors, empty states, confirmations, labels, tooltips, loading and success moments. Use when the user needs interface copy written or improved, mentions "microcopy", "button label", "error message", "empty state copy", or when a build has placeholder text that needs real words.
 ---
 
-# UX Writing
+# UX writing
 
-Write clear, helpful copy that guides users through your interface.
+Interface copy is navigation, not decoration: every string either moves the user forward or
+stalls them. The words are part of the design system and follow the same discipline as tokens.
 
-## Core Principles
+## The law
 
-### 1. Clarity Over Cleverness
-- Use simple, familiar words
-- Avoid jargon and technical terms
-- Say what you mean directly
+`docs/content-guidelines.md` (written by `voice-guide`) is the voice standard — tone by moment,
+terminology, mechanics, banned list. **If it doesn't exist, run `voice-guide` before writing
+user-facing copy**; microcopy written without a voice standard is the copy equivalent of
+hardcoded hex. Finished copy gets reviewed by `ux-copy-review` against that same standard.
 
-### 2. Be Concise
-- Cut unnecessary words
-- One idea per sentence
-- Front-load important information
+## Principles
 
-### 3. Be Helpful
-- Tell users what to do, not just what happened
-- Provide next steps
-- Reduce anxiety and uncertainty
+- **Front-load the point.** First two words carry the meaning — users scan, screen-reader users
+  hear them first, and truncation eats the rest.
+- **Verbs over nouns for actions**; the user's words over the org chart's (what the team calls
+  "provisioning" the user calls "setting up").
+- **One idea per string.** If a sentence needs "and", it's usually two UI moments.
+- **Consistency beats variety.** One name per concept everywhere — synonyms in navigation are
+  bugs, not style.
+- **Write for translation and layout**: expect +30–40% length in other locales, no idioms, no
+  words doing double duty. Copy that only fits at 1440px doesn't fit — check it at 360px.
 
-## Button Labels
+## Patterns
 
-### Do
-- Use action verbs: "Save," "Send," "Create"
-- Be specific: "Add to Cart" not "Submit"
-- Match user intent: "Sign up free"
+- **Buttons**: verb + object ("Save changes", not "Submit"/"OK"). The button alone, out of
+  context, should say what happens next. Destructive confirms repeat the object ("Delete
+  3 files"), never "Are you sure?" with Yes/No.
+- **Errors**: what happened → why (if known) → what to do next, in the user's language. Never
+  blame ("invalid input"), never bare codes, never dead ends — every error names an exit. Keep
+  the user's data in the retelling ("couldn't save *pricing-v2*").
+- **Empty states**: never actually empty — say what will live here and give the first action.
+  First-run empties sell the value; cleared-inbox empties can celebrate; error empties explain.
+- **Forms**: labels always visible (placeholders are not labels — they vanish and screen readers
+  lose them), helper text before the mistake, error text at the field and specific.
+- **Loading & progress**: name what's happening ("Importing 240 rows…") when it's slow;
+  say nothing when it's fast. Never lie with fake progress.
+- **Success**: confirm the outcome, not the click ("Invite sent to Ana"), and offer the natural
+  next step.
+- **Tooltips**: last resort — supplementary, never the only place an interaction is explained,
+  and never holding content keyboard users can't reach.
 
-### Don't
-- Generic: "OK," "Submit," "Continue"
-- Vague: "Click here," "Go"
-- Negative framing: "Don't cancel"
+## Accessibility is copy's job too
 
-### Examples
-| Instead of | Use |
-|------------|-----|
-| Submit | Send Message |
-| OK | Got it |
-| Continue | Next: Payment |
-| Cancel | Keep Editing |
-| Yes/No | Delete / Keep |
-
-## Error Messages
-
-### Formula
-What happened + Why + How to fix it
-
-### Examples
-❌ "Error 404"
-✅ "Page not found. Try searching or go back to the homepage."
-
-❌ "Invalid input"
-✅ "Please enter a valid email address (e.g., name@example.com)"
-
-❌ "Something went wrong"
-✅ "We couldn't save your changes. Check your connection and try again."
-
-### Guidelines
-- Be specific about the problem
-- Avoid blame ("You entered...")
-- Suggest a solution
-- Use plain language, not error codes
-
-## Empty States
-
-### What to Include
-1. What this space is for
-2. Why it's empty
-3. How to fill it
-
-### Examples
-
-**No search results**
-"No results for 'xyz'. Try different keywords or check your spelling."
-
-**Empty inbox**
-"No messages yet. When someone contacts you, you'll see it here."
-
-**First-time user**
-"Your projects will appear here. Create your first project to get started."
-
-## Loading & Progress
-
-### Short waits (< 2 seconds)
-Just show a spinner, no text needed
-
-### Medium waits (2-10 seconds)
-"Loading your dashboard..."
-"Saving changes..."
-
-### Long waits (> 10 seconds)
-"Processing your video. This usually takes 1-2 minutes."
-Show progress percentage when possible
-
-## Success Messages
-
-### Be Specific
-❌ "Success!"
-✅ "Your profile has been updated."
-
-### Confirm the Action
-"Message sent to sarah@example.com"
-"Order #12345 confirmed. Shipping in 2-3 days."
-
-### Suggest Next Steps
-"Password changed. You can now sign in with your new password."
-
-## Tooltips & Hints
-
-### When to Use
-- Explain unfamiliar UI elements
-- Provide context for actions
-- Show keyboard shortcuts
-
-### Keep Them Short
-- Under 150 characters
-- One concept per tooltip
-- No critical information (tooltips are hidden by default)
-
-## Onboarding Copy
-
-### Welcome Messages
-- Acknowledge the milestone
-- Set expectations
-- Point to first action
-
-**Example:**
-"Welcome to Acme! Let's set up your workspace in 3 quick steps."
-
-### Progressive Disclosure
-- Don't explain everything at once
-- Introduce features when relevant
-- Use inline hints over tutorials
-
-## Voice & Tone Guidelines
-
-### Voice (Consistent)
-- Friendly but professional
-- Clear and direct
-- Helpful and supportive
-
-### Tone (Varies by Context)
-| Situation | Tone |
-|-----------|------|
-| Success | Celebratory, warm |
-| Error | Calm, helpful |
-| Warning | Serious, clear |
-| Onboarding | Encouraging, patient |
-| Settings | Neutral, informative |
+Icon-only buttons get accessible names; link text works out of context ("View pricing", never
+"click here"); alt text describes purpose, not pixels; announcements for async results go through
+live regions with the same voice rules as visible text.

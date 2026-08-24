@@ -94,3 +94,9 @@ Executed the CURATION.md "role-designer (16)" list. Sources: `/Users/bee/Downloa
   extract-design-system (arvindrk, MIT). role-designer → 1.1.1.
 - Flagged for rewrite/cut: awwwards-animations (upstream unlicensed), design-critique + wcag-accessibility
   (untraced). See logs/license-audit-2026-08.md disposition list.
+
+## 2026-08-24 (final) — disposition executed
+- Rewritten in-house from scratch: awwwards-animations (now a direction layer over the official
+  gsap-* seven + Lenis, motion gates baked in; 15 unlicensed reference files removed),
+  design-critique (standards-grounded, three-pass), wcag-accessibility (WCAG 2.2 AA house
+  baseline; bogus MIT/web-quality-skills attribution dropped). role-designer → 1.2.0 (15 skills).

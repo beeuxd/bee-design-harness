@@ -1,7 +1,7 @@
 {
   "name": "role-pm",
   "displayName": "Role: PM",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "The PM role \u2014 discover & validate (feeds the harness loops), spec & prioritize, partner on design.",
   "author": {
     "name": "Bee",

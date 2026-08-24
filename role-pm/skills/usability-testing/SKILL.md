@@ -1,71 +1,52 @@
 ---
 name: usability-testing
-description: Help users conduct effective usability testing. Use when someone is planning user tests, designing prototype validation, preparing usability studies, or trying to understand why users struggle with their product.
+description: Plan, run, and synthesize usability tests — task-based protocols, screeners, moderation guides, severity-rated findings. Use when someone is planning user tests, validating a prototype or wireframe, preparing a usability study, or asking why users struggle with their product. Session quotes feed the evidence pipeline as raw research.
 ---
 
-# Usability Testing
+# Usability testing
 
-Help the user conduct effective usability testing using frameworks and insights from 11 product leaders.
+Watching five real people fail a task beats fifty opinions. This skill produces the protocol,
+keeps the moderation honest, and turns sessions into evidence the loops can consume.
 
-## How to Help
+## Plan
 
-When the user asks for help with usability testing:
+- **One study, one question.** "Can a first-time visitor complete checkout on mobile?" — not
+  "is the app good?" If there are three questions, that's three (short) studies.
+- **5 participants per user segment per round.** Past five, you're re-watching the same failures;
+  spend the budget on another round after fixes instead.
+- **Recruit by behavior, not demographics.** The screener asks what they *do* ("bought something
+  on a phone this month?"), never whether they'd like the product.
+- **Tasks are scenarios, not instructions.** "You want to send this to a friend — go ahead" beats
+  "click the share button." Each task has a written success criterion before the first session.
+- **Test at the fidelity you have.** Paper/wireframe finds flow problems; hi-fi finds label and
+  affordance problems; production finds performance and trust problems. Don't wait for polish —
+  `wireframe-loop` output is testable.
 
-1. **Clarify the goal** - Determine if they're validating a concept, finding friction points, or optimizing conversion
-2. **Choose the right fidelity** - Help them select between Wizard of Oz tests, fake doors, prototypes, or production testing
-3. **Design the test** - Guide them on recruiting users, creating scenarios, and what to observe
-4. **Plan for iteration** - Discuss how findings will flow back into the product development process
+## Moderate
 
-## Core Principles
+- Think-aloud, and then **shut up**. Silence is the tool: the urge to help is data about the UI.
+- Never lead: "what do you expect that to do?" not "did you see the menu?"
+- When they fail, let it land (that's the finding), then move on — no rescuing mid-task.
+- Record with consent; capture verbatim quotes with timestamps. A paraphrase is not evidence.
 
-### Fake it before you build it
-Itamar Gilad: "Initially you fake it - fake door test, smoke test, Wizard of Oz tests. We showed the tabbed inbox working to people, but it wasn't really Gmail, it was just a facade." Validate core value propositions before writing production code using faked versions where humans perform the automated task behind the scenes.
+## Measure
 
-### Small samples reveal big friction
-Melanie Perkins: "It's amazing how you can find 10 random people on the internet and they can give such astute feedback that's so representative for such a large number of people." Run tests with as few as 10 random people to identify core product issues.
+Per task: completion (unassisted / assisted / failed), time on task, errors and wrong turns,
+and a post-task confidence rating. Post-study: SUS if you need a trackable benchmark score.
+Numbers with n=5 are directional — the *why* in the recordings is the product.
 
-### Watch users, don't just ask them
-Uri Levine: "Simply watch users and see what they're doing. If they're not doing what you expect, then ask them why." Direct observation reveals behaviors and needs that surveys miss. Ask 'why' when users deviate from the expected path.
+## Synthesize
 
-### Test multiple options, not one
-Kristen Berman: "We never do a UX study where we're just showing people one thing. We always present multiple options and relatively look for which one drives the intended behavior." Single-design testing is ineffective for predicting behavior.
+- Findings, not anecdotes: **what happened → how many of n → severity → evidence (quote/clip)**.
+- Severity scale: **blocker** (task failed) / **major** (completed with serious struggle) /
+  **minor** (friction, recovered) / **polish**.
+- Write raw session notes and quotes into `docs/research/` with source attribution — usability
+  quotes are first-class raw research: `insight-loop` traces them into insights, and from there
+  the chain runs quote → INS → PROB → FEAT. A finding that traces to nothing fixes nothing.
+- Blockers and majors become problem candidates for `problem-loop`; polish items go straight to
+  the backlog via `to-issues`.
 
-### Overcome creator bias
-Guillermo Rauch: "You tend to overrate how well your products work. It's very important to give your product to another person and watch them interact with it." Directly observing users helps overcome the tendency to think your product is more intuitive than it is.
+## Anti-patterns to refuse
 
-### Micro-level testing drives millions
-Judd Antin: "We changed seven characters and made Airbnb millions of dollars because we found out the button felt scary." Don't dismiss usability testing as junior work; finding scary or confusing CTAs can massively impact conversion.
-
-### Progress through testing stages
-Itamar Gilad: "Mid-level tests are about building a rough version - early adopter programs, alphas, longitudinal user studies, and fish food (testing on your own team)." Use a progression from fish fooding to dogfooding to alphas to increase confidence iteratively.
-
-### Make testing a team sport
-Noah Weiss: "We had PMs, engineers, designers, and the user researcher all in one Slack thread live, responding and reacting to the usability session." Increase engagement by having cross-functional teams live-react to sessions in shared chat threads.
-
-## Questions to Help Users
-
-- "What specific behavior are you trying to observe or validate?"
-- "Do you need to validate the concept (use fake doors) or optimize the execution (use the real product)?"
-- "How will you recruit users who have 'zero skin in the game' for honest feedback?"
-- "Are you testing one option or multiple options to compare?"
-- "What will you do with the findings - how will they flow back into development?"
-- "Who else on the team should observe these sessions?"
-
-## Common Mistakes to Flag
-
-- **Testing only one design** - Present multiple options to measure relative performance
-- **Building before validating** - Use Wizard of Oz or fake door tests before writing production code
-- **Relying on internal intuition** - Employees are too familiar with the product to spot real user friction
-- **Ignoring micro-level issues** - Small copy changes and button labels can have massive business impact
-- **Testing in isolation** - Bring engineers and designers into sessions to build shared understanding
-
-## Deep Dive
-
-For all 14 insights from 11 guests, see `references/guest-insights.md`
-
-## Related Skills
-
-- Customer Research
-- Writing PRDs
-- Shipping Products
-- Designing Growth Loops
+Testing with teammates, demoing instead of testing, fixing the prototype between participants
+mid-round (finish the round; version the fix), and reporting averages without the failure clips.

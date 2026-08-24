@@ -1,70 +1,53 @@
 ---
 name: scoping-cutting
-description: Help users scope projects and cut features effectively. Use when someone is defining an MVP, dealing with scope creep, trying to ship faster, or needs to make tradeoffs about what to build.
+description: Scope projects and cut features without cutting quality — MVP definition, scope-creep triage, ship-faster tradeoffs. Use when someone is defining an MVP, drowning in scope, deciding what to drop to hit a date, or asking "what's the smallest version of this worth shipping?"
 ---
 
-# Scoping & Cutting
+# Scoping and cutting
 
-Help the user scope projects and cut features effectively using frameworks from 15 product leaders.
+Cutting scope is a design act: the goal is the smallest product that still proves the thesis,
+not the biggest product that fits the deadline.
 
-## How to Help
+## The house frame
 
-When the user asks for help with scoping:
+- **The MoSCoW feature tree is the scoping instrument.** If `docs/ideation/feature-tree.md`
+  exists, scope decisions are edits to it: cutting = moving a node below the Must line, with the
+  evidence trail intact. If it doesn't exist and the project has research, run `ideation-loop`
+  first — scoping without evidence is guessing in a spreadsheet.
+- **Cut scope, never quality.** The gates are not scope: accessibility, both themes, responsive
+  at all five widths, the performance budget, and token-only styling apply to whatever ships,
+  however small. A half-broken feature costs more than the feature it displaced.
+- **Whole slices, not layers.** Ship "one user can complete one job end-to-end", never "the
+  backend for everything." A walking skeleton that does one real thing beats scaffolding for ten.
 
-1. **Understand the hypothesis** - Ask what they're trying to learn or validate
-2. **Identify the appetite** - Determine how much time/resources they're willing to invest
-3. **Find the essential core** - Help them identify what must be present for the first version
-4. **Design for learning** - Ensure the scope enables fast feedback, not just fast shipping
+## Deciding what's a Must
 
-## Core Principles
+A feature is a Must only if the answer to *"does the thesis survive without it at launch?"* is
+no. Everything else is a Should until a user's behavior — not a stakeholder's enthusiasm —
+promotes it. Tie-breakers, in order: evidence weight (how many PROBs trace to it), reversibility
+(cheap-to-add-later loses to hard-to-retrofit), and dependency (what unlocks other Musts).
 
-### Use appetite, not estimates
-Ryan Singer: "We're going to go the other way around and we're going to say, what is the maximum amount of time we're willing to go before we actually finish something?" Set a fixed time budget (appetite) and design a version of the solution that fits within it. Vary scope, not deadlines.
+## Cutting moves (in order of preference)
 
-### MVP is a validation tool
-Eric Ries: "MVP is simply for whatever the hypothesis is that we're trying to test, what is the most efficient way to get the validation we need about whether a hypothesis is true or not?" An MVP is not a low-quality product - it's the most efficient way to test a specific hypothesis.
+1. **Narrow the audience** — same product, one segment. Sharpest cut with the least rework.
+2. **Narrow the job** — support the core path; drop admin, settings, edge flows behind a
+   "contact us" seam.
+3. **Degrade gracefully** — manual-behind-the-scenes where automation was planned (concierge);
+   a default where a preference was planned.
+4. **Defer polish that isn't craft** — animations and delight moments can wait; alignment,
+   contrast, and tap targets cannot (that's quality, see above).
+5. **Cut whole features** — last, and always back into the tree as Won't-this-round, never
+   deleted; the evidence that motivated them doesn't expire.
 
-### Cut the list in half, then half again
-Eric Ries: "Write out the list of features that are necessary in your MVP. Cut it in half and cut it in half again and build that." Founders consistently overestimate what's "minimum." Aggressive cutting is required to reach a true baseline.
+## Scope creep triage
 
-### Fixed time, small teams
-Jason Fried: "Our appetite for any individual feature is no more than six weeks... So we have to figure out the simplest, most effective version of that to get that done within six weeks and get it done by two people." Constraints force creative solutions. Limit team size to maintain focus.
+New ask mid-build → three questions, in writing: which PROB does it trace to? what currently
+scoped Must does it displace? who accepts the delay if nothing is displaced? A request that
+can't answer the first question goes to the backlog via `to-issues`, not into the sprint.
+When the pressure is coming from the founder themselves, run `grilling` on the ask.
 
-### Build the scooter, not the axle
-Eeke de Milliano: "If you're trying to build the minimum viable product for a car, don't build just the wheels and the axle, build the scooter first." An MVP should be a functional, end-to-end version of a smaller value proposition, not an incomplete piece of a larger one.
+## Output
 
-### Use Wizard of Oz testing
-Crystal W: "It's really this Wizard of Oz experience. We don't have to build anything. I coordinated with a bunch of interns and we were able to validate some of the value prop." Validate value propositions manually before investing in engineering. Use humans to simulate automated features.
-
-### Kill projects that don't finish in time
-Jason Fried: "If there's any work that's left over that's still on the left side of the hill, meaning we're still pushing it up, we don't know how we're going to do it and we're at our time limit, it almost certainly dies." Let projects die if they aren't completed within their allotted time to prevent never-ending work.
-
-### Build the option to pivot into the process
-Paige Costello: "We added into our product process a notion that we might pivot or cut from stuff that we put on our roadmap because it felt like once it was on the roadmap, it had to be done." Formalize the ability to cut or pivot from roadmap items to avoid the sunk cost fallacy.
-
-## Questions to Help Users
-
-- "What's the single hypothesis you're trying to validate with this version?"
-- "What's the maximum time you're willing to invest before shipping something?"
-- "What would you cut if you had to ship in half the time?"
-- "Is there a way to test this manually before building automation?"
-- "If this feature doesn't ship in time, will you kill it or extend?"
-- "What's the smallest thing that still delivers complete value?"
-
-## Common Mistakes to Flag
-
-- **Estimating instead of time-boxing** - Asking "how long will this take?" instead of "what can we do in X weeks?"
-- **Building the axle** - Shipping incomplete parts of a larger feature instead of complete smaller features
-- **Never killing projects** - Extending deadlines instead of cutting scope or canceling
-- **Over-engineering the MVP** - Building too much before testing the core hypothesis
-- **Ignoring the Wizard of Oz** - Always defaulting to building when manual validation would be faster
-
-## Deep Dive
-
-For all 19 insights from 15 guests, see `references/guest-insights.md`
-
-## Related Skills
-
-- prioritizing-roadmap
-- planning-under-uncertainty
-- problem-definition
+Update the feature tree (or write a one-page scope memo if no tree exists): what ships, what
+moved, why, and the single metric that decides whether the cut was right. Update `docs/prd.md`
+REQ-IDs so the PRD and the tree never disagree.
