@@ -1,5 +1,7 @@
 ---
 name: design-handoff
+source: https://github.com/anthropics/knowledge-work-plugins
+license: Apache-2.0
 description: Generate developer handoff specs from a design. Use when a design is ready for engineering and needs a spec sheet covering layout, design tokens, component props, interaction states, responsive breakpoints, edge cases, and animation details.
 argument-hint: "<Figma URL or design description>"
 ---

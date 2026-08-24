@@ -4,6 +4,7 @@
 # ═══════════════════════════════════════════════════════════════════════════════
 
 name: ppt-visual-design
+source: https://github.com/claude-office-skills/skills
 description: "Design presentation visuals and slide layouts. Create visual concepts, suggest graphics, and provide design specifications for impactful PowerPoint slides."
 version: "1.0.0"
 author: claude-office-skills

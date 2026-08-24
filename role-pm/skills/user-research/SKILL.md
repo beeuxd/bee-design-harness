@@ -1,5 +1,7 @@
 ---
 name: user-research
+source: https://github.com/anthropics/knowledge-work-plugins
+license: Apache-2.0
 description: Plan, conduct, and synthesize user research. Trigger with "user research plan", "interview guide", "usability test", "survey design", "research questions", or when the user needs help with any aspect of understanding their users through research.
 ---
 

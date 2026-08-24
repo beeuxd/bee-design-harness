@@ -1,5 +1,7 @@
 ---
 name: extract-design-system
+source: https://github.com/arvindrk/extract-design-system
+license: MIT
 description: Extract design primitives from a public website and generate starter token files for your project.
 ---
 

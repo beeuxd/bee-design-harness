@@ -1,5 +1,7 @@
 ---
 name: opportunity-solution-tree
+source: https://github.com/phuryn/pm-skills
+license: MIT
 description: "Build an Opportunity Solution Tree (OST) to structure product discovery, map a desired outcome to opportunities, solutions, and experiments. Based on Teresa Torres' Continuous Discovery Habits. Use when structuring discovery work, mapping opportunities to solutions, or deciding what to build next."
 ---
 

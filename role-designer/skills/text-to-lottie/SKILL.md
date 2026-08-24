@@ -1,5 +1,7 @@
 ---
 name: text-to-lottie
+source: https://github.com/diffusionstudio/lottie
+license: MIT
 description: Author a Lottie (Bodymovin) JSON animation that renders in a local skia player. Use whenever the user asks to create, generate, edit, or fix a Lottie animation, or asks for "an animation" to load.
 ---
 

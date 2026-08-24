@@ -1,5 +1,7 @@
 ---
 name: deploy-to-vercel
+source: https://github.com/vercel-labs/agent-skills
+license: MIT
 description: Deploy applications and websites to Vercel. Use when the user requests deployment actions like "deploy my app", "deploy and give me the link", "push this live", or "create a preview deployment".
 metadata:
   author: vercel

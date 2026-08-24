@@ -1,5 +1,7 @@
 ---
 name: measuring-product-market-fit
+source: https://github.com/refoundai/lenny-skills
+license: MIT
 description: Help users assess and achieve product-market fit. Use when someone is trying to determine if they have PMF, measuring user engagement and retention, running the Sean Ellis survey, or figuring out if they should scale or keep iterating.
 ---
 

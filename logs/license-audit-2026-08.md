@@ -53,25 +53,39 @@ harness-core's 27 skills, the 7 agents, hooks, templates, and DESIGN.md are in-h
 (loops/gates authored here; `session-start`/`handoff-summary`/etc. restored from our own legacy
 archive) — no third-party constraint beyond ideas.
 
-## Unresolved provenance (~25 skills — no license, upstream not identified)
+## Trace pass update (2026-08-24, second session)
 
-- **role-designer:** `extract-design-system`, `design-taste-frontend`, `imagegen-frontend-web`,
-  `imagegen-frontend-mobile`, `design-handoff`, `design-critique`, `text-to-lottie`,
-  `awwwards-animations`, `wcag-accessibility` (declares MIT, author unknown)
-- **role-engineer:** `tailwind-design-system`, `review-loop`, `agent-browser` (likely
-  vercel-labs/agent-browser — verify), `deploy-to-vercel` (likely Vercel — verify)
-- **role-pm:** `customer-journey-map`, `opportunity-solution-tree`, `usability-testing`,
-  `user-research`, `prototype`
-- **role-founder:** `fundraising`, `pitch-deck`, `scoping-cutting`,
-  `measuring-product-market-fit`, `founder-sales`, `vibe-coding`, `ai-product`,
-  `ai-product-strategy` (searched; no upstream match found)
-- **role-copywriter:** `ux-writing`
-- **role-marketer:** `brandkit`, `ppt-visual-design` (declares MIT, author "claude-office-skills"
-  — locate repo to confirm)
+The trace pass resolved 19 more skills (attribution frontmatter added, THIRD-PARTY-NOTICES.md
+updated): agent-browser + deploy-to-vercel (Vercel), tailwind-design-system (wshobson/agents),
+design-handoff + user-research (anthropics/knowledge-work-plugins), customer-journey-map +
+opportunity-solution-tree (phuryn/pm-skills), prototype (mattpocock/skills), brandkit +
+imagegen-frontend-web/mobile + design-taste-frontend (Leonxlnx/taste-skill), text-to-lottie
+(diffusionstudio/lottie), extract-design-system (arvindrk), ppt-visual-design
+(claude-office-skills), fundraising + founder-sales + ai-product-strategy +
+measuring-product-market-fit (RefoundAI/lenny-skills — repo MIT, with upstream's own caveat that
+underlying frameworks/insights credit Lenny's Podcast guests).
 
-**Action (per skill, pick one):** trace upstream via fingerprint search and attribute; rewrite
-in-house (founder pack is short prose — cheapest path); or exclude from the public build and keep
-in a private overlay. Unlicensed third-party text cannot ship publicly by default.
+## Remaining disposition list (10 skills — rewrite or cut before public)
+
+**Upstream found but unlicensed (all-rights-reserved by default — cannot redistribute):**
+
+- `awwwards-animations` (role-designer) ← devmartinese/awwwards-animations-skill, no LICENSE.
+  Recommend: rewrite in-house — the official MIT gsap-* seven cover most of its ground; a slim
+  original Lenis/premium-scroll skill on top is a small write. (Alternative: ask author for a license.)
+- `review-loop` (role-engineer) ← 2dmurali/review-loop-skill, no LICENSE.
+  Recommend: rewrite in-house — it's a one-page worker/reviewer loop pattern, trivial to re-author.
+
+**Untraced (no upstream found; can't ship third-party text unattributed):**
+
+- `usability-testing`, `pitch-deck`, `scoping-cutting`, `vibe-coding`, `ai-product` (role-pm/founder)
+  — Lenny-template variants ("insights from N product leaders") not present in the current
+  lenny-skills repo. Recommend: rewrite usability-testing + pitch-deck + scoping-cutting in-house
+  (worth keeping); cut vibe-coding + ai-product (both already ⚠ quality-disputed in CURATION).
+- `design-critique` (role-designer), `ux-writing` (role-copywriter) — generic names, no header
+  match in any candidate repo. Recommend: rewrite in-house (short, well-understood territory).
+- `wcag-accessibility` (role-designer) — declares MIT but no author/upstream found. Content is
+  largely WCAG-standard material and already house-patched (24px→44px). Recommend: rewrite/normalize
+  in-house and drop the unverifiable license claim.
 
 ## Licensing model recommendation
 

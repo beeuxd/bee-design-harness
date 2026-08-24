@@ -83,3 +83,9 @@ None ended up necessary — every dangling pointer was recovered from an origin 
 - Frontmatter `name:` == directory name for all 40; every file has valid `---` frontmatter with name + description.
 - Names unique across the three packs; zero collisions with harness-core (20 skills) or the role-designer/role-engineer/role-pm lists in CURATION.md.
 - Pointer sweep (markdown links, `<references/...>`, backticked reference paths) across all .md in the three packs: **0 dangling** (one checker false-positive: a skill-root-relative prose path in ad-creative/references/creative-review-page.md whose target exists at `ad-creative/assets/`).
+
+## 2026-08-24 — trace pass results (license audit)
+- Attributed: brandkit + ppt-visual-design → role-marketer 1.0.2; fundraising, founder-sales,
+  ai-product-strategy, measuring-product-market-fit (RefoundAI/lenny-skills, MIT w/ content caveat) → role-founder 1.0.2.
+- Flagged for rewrite/cut: ux-writing (untraced); pitch-deck, scoping-cutting (untraced Lenny variants — rewrite);
+  vibe-coding, ai-product (untraced + quality-disputed — recommend cut).

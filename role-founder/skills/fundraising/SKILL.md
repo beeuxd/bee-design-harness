@@ -1,5 +1,7 @@
 ---
 name: fundraising
+source: https://github.com/refoundai/lenny-skills
+license: MIT
 description: Help founders raise capital and build investor relationships. Use when someone is preparing a pitch deck, deciding whether to raise venture capital, meeting with investors, or asking about fundraising strategy.
 ---
 

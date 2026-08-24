@@ -87,3 +87,10 @@ Executed the CURATION.md "role-designer (16)" list. Sources: `/Users/bee/Downloa
 - Emil Kowalski's six (animate, review-animations, improve-animations,
   find-animation-opportunities, animation-vocabulary, apple-design) attributed in frontmatter
   (source: emilkowalski/skills, MIT).
+
+## 2026-08-24 (later) — trace pass results
+- Attributed: design-handoff (anthropics/knowledge-work-plugins, Apache-2.0), design-taste-frontend +
+  imagegen-frontend-web/mobile (Leonxlnx/taste-skill, MIT), text-to-lottie (diffusionstudio/lottie, MIT),
+  extract-design-system (arvindrk, MIT). role-designer → 1.1.1.
+- Flagged for rewrite/cut: awwwards-animations (upstream unlicensed), design-critique + wcag-accessibility
+  (untraced). See logs/license-audit-2026-08.md disposition list.

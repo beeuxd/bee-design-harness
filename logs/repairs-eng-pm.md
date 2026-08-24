@@ -249,3 +249,10 @@ Sources:
   (stripe-best-practices). role-engineer → 1.0.1.
 - Repo-level: root LICENSE (MIT, own work) + THIRD-PARTY-NOTICES.md + README License section.
   role-marketer/copywriter/founder → 1.0.1 (Corey Haines + Anthropic attributions).
+
+## 2026-08-24 (later) — trace pass results
+- Attributed: agent-browser (vercel-labs/agent-browser, Apache-2.0), deploy-to-vercel (vercel-labs/agent-skills),
+  tailwind-design-system (wshobson/agents), prototype (mattpocock/skills), user-research
+  (anthropics/knowledge-work-plugins), customer-journey-map + opportunity-solution-tree (phuryn/pm-skills).
+  role-engineer → 1.0.2, role-pm → 1.1.1.
+- Flagged for rewrite/cut: review-loop (upstream unlicensed), usability-testing (untraced Lenny-template variant).
