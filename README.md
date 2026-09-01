@@ -5,9 +5,9 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/plugins-7-D8FF3A?style=flat-square&labelColor=16130F" alt="7 plugins">
-  <img src="https://img.shields.io/badge/skills-114-5660F0?style=flat-square&labelColor=16130F" alt="114 skills">
+  <img src="https://img.shields.io/badge/skills-115-5660F0?style=flat-square&labelColor=16130F" alt="115 skills">
   <img src="https://img.shields.io/badge/agents-7-F056A0?style=flat-square&labelColor=16130F" alt="7 agents">
-  <img src="https://img.shields.io/badge/core-v1.1.0-D8FF3A?style=flat-square&labelColor=16130F" alt="harness-core v1.1.0">
+  <img src="https://img.shields.io/badge/core-v1.2.0-D8FF3A?style=flat-square&labelColor=16130F" alt="harness-core v1.2.0">
   <img src="https://img.shields.io/badge/a11y-WCAG_2.2_AA-5660F0?style=flat-square&labelColor=16130F" alt="WCAG 2.2 AA">
   <img src="https://img.shields.io/badge/mobile--first-360px-F056A0?style=flat-square&labelColor=16130F" alt="mobile-first, 360px up">
   <img src="https://img.shields.io/badge/themes-light_%2B_dark-D8FF3A?style=flat-square&labelColor=16130F" alt="light and dark themes always ship">
@@ -121,12 +121,12 @@ Seven plugins: one core everything depends on, plus six role packs you add as th
 | `role-founder` | Validate, scope ruthlessly, launch, fundraise | Making bets |
 
 <details>
-<summary><b>Every skill, by pack</b> (114 total)</summary>
+<summary><b>Every skill, by pack</b> (115 total)</summary>
 
-**`harness-core` (27)**
+**`harness-core` (28)**
 Evidence loops: `insight-loop` · `problem-loop` · `ideation-loop` · `wireframe-loop` · `hifi-gate`
 Quality gates: `ship` · `verify-before-done` · `visual-qa` · `a11y-audit` · `performance-check` · `e2e-test` · `design-system-audit` · `review-ux` · `parallel-review`
-Session lifecycle: `session-start` · `handoff-summary` · `escalation-protocol`
+Session lifecycle: `session-start` · `next-step` · `handoff-summary` · `escalation-protocol`
 Foundation: `scaffold-project` · `art-direction` · `taste-retro` · `design-tokens-sync` · `from-figma` · `storybook-component` · `recipe-harvest` · `sync-executor-context` · `setup-kanban` · `write-tickets`
 
 **`role-designer` (15)**
@@ -187,7 +187,7 @@ For anyone changing this repo (mostly future Bee):
 - **Version on change.** Bump the plugin `version` in `.claude-plugin/plugin.json` when its skills change, so installed projects can see they're behind.
 - **Log restorations.** Anything revived from the legacy archive gets its references repaired, an entry in `logs/repairs-*.md`, and the RETIRED list in `test-harness.sh` updated. `logs/CURATION.md` is the provenance record — start there for provenance; the license audit itself is `logs/license-audit-2026-08.md`.
 
-**Status:** harness-core complete (27 skills, 3 hooks, 7 agents) · all six role packs built · guardrails complete (agent-run gate suite + its CI twin in `.github/workflows/gates.yml`).
+**Status:** harness-core complete (28 skills, 4 hooks, 7 agents) · all six role packs built · guardrails complete (agent-run gate suite + its CI twin in `.github/workflows/gates.yml`).
 
 ## License
 

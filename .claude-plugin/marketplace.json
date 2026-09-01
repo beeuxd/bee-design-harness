@@ -1,7 +1,7 @@
 {
   "name": "bee-design-harness",
   "metadata": {
-    "description": "Bee's Design Harness — an HX-first design system for AI-assisted product design. Core pipeline (research→insight→problem→ideation→wireframe→hifi→build) plus role packs.",
+    "description": "Bee's Design Harness \u2014 an HX-first design system for AI-assisted product design. Core pipeline (research\u2192insight\u2192problem\u2192ideation\u2192wireframe\u2192hifi\u2192build) plus role packs.",
     "version": "1.1.0"
   },
   "owner": {
@@ -17,7 +17,8 @@
         "design",
         "harness",
         "core"
-      ]
+      ],
+      "version": "1.2.0"
     },
     {
       "name": "role-designer",
@@ -40,7 +41,7 @@
     {
       "name": "role-pm",
       "source": "./role-pm",
-      "description": "The PM role: discovery, validation, user research, spec & prioritize — feeds the harness loops.",
+      "description": "The PM role: discovery, validation, user research, spec & prioritize \u2014 feeds the harness loops.",
       "tags": [
         "product",
         "role"
@@ -49,7 +50,7 @@
     {
       "name": "role-copywriter",
       "source": "./role-copywriter",
-      "description": "The Copywriter role: UX writing, product copy, voice alignment — the harness Content block.",
+      "description": "The Copywriter role: UX writing, product copy, voice alignment \u2014 the harness Content block.",
       "tags": [
         "content",
         "role"
@@ -58,7 +59,7 @@
     {
       "name": "role-marketer",
       "source": "./role-marketer",
-      "description": "The Marketer role: SEO, CRO, launch, brand presence — post-ship growth.",
+      "description": "The Marketer role: SEO, CRO, launch, brand presence \u2014 post-ship growth.",
       "tags": [
         "marketing",
         "role"

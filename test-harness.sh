@@ -67,6 +67,22 @@ OUT="$(echo '{"tool_name":"Edit","tool_input":{"file_path":"/some/project/app/pa
 [ -z "$OUT" ] && pass "protected-files-guard passes free files" || fail "protected-files-guard blocked a free file"
 rm -rf "$TMP"
 
+# pipeline-status: template stubs must read as an un-started pipeline; a filled
+# insights row must advance the suggestion; a non-harness dir must stay silent.
+TPL="$ROOT/harness-core/skills/scaffold-project/templates"
+OUT="$(cd "$TPL" && node "$ROOT/harness-core/scripts/pipeline-status.js" 2>/dev/null)"
+echo "$OUT" | grep -q "gather raw research" && pass "pipeline-status: stubs read as phase 0" || fail "pipeline-status misread template stubs: $OUT"
+TMP="$(mktemp -d)"; mkdir -p "$TMP/docs/research/raw"; cp -r "$TPL/docs/." "$TMP/docs/"; touch "$TMP/DESIGN.md"
+echo quotes > "$TMP/docs/research/raw/q.md"
+echo '| INS-001 | pattern | "q" — raw/q.md | x | High | Active |' >> "$TMP/docs/research/insights.md"
+OUT="$(cd "$TMP" && node "$ROOT/harness-core/scripts/pipeline-status.js" 2>/dev/null)"
+echo "$OUT" | grep -q "problem-loop" && pass "pipeline-status: advances on filled artifacts" || fail "pipeline-status did not advance: $OUT"
+rm -rf "$TMP"
+TMP="$(mktemp -d)"
+OUT="$(cd "$TMP" && node "$ROOT/harness-core/scripts/pipeline-status.js" 2>/dev/null)"
+[ -z "$OUT" ] && pass "pipeline-status: silent outside harness projects" || fail "pipeline-status noisy in non-harness dir"
+rm -rf "$TMP"
+
 # ── 7. Workshop/project drift (optional arg): skill copies match core ────
 if [ -n "$WORKSHOP" ] && [ -d "$WORKSHOP/.claude/skills" ]; then
   for d in "$WORKSHOP"/.claude/skills/*/; do

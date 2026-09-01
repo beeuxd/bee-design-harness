@@ -270,3 +270,18 @@ across ~35 sites (skills, agents, templates, workshop CLAUDE.md/DESIGN.md, READM
 
 Verified: zero remaining "dark-first / dark mode is primary / dark mode first" doctrine
 refs in live files (grep sweep). Workshop twins re-synced from core.
+
+## 2026-09-01 — pipeline auto-pilot (harness-core → 1.2.0)
+
+The harness now prompts the next step from artifact state instead of relying on memory:
+- **`scripts/pipeline-status.js`** — read-only state machine over the sources of truth
+  (raw/ files, INS/PROB/FEAT/REQ ID counts on non-placeholder lines, figma links in the
+  wireframe matrix, `## Art direction` presence, dated Gate Ledger rows). Prints the chain,
+  the suggested next step, and staleness flags (upstream mtime newer than derived downstream).
+- **SessionStart hook** (`startup|resume|clear` matcher) runs it automatically — every session
+  opens knowing where the pipeline stands. Silent outside harness projects.
+- **`next-step` skill** — on-demand deeper version: verifies artifact meaning (dead insights,
+  pending director verdicts) before routing; documents the brownfield/redesign entry rule
+  (existing product's tickets/analytics ARE raw research; art-direction never skipped).
+- 3 new integrity tests (stubs read as phase 0, advances on filled artifacts, silent in
+  non-harness dirs). README counts → 115 skills / core 28 / 4 hooks.
