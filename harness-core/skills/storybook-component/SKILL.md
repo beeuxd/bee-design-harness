@@ -51,3 +51,10 @@ For the component just built or restyled:
 - Story reveals a visual defect → fix the component (route back to whichever build path produced it), not the story.
 - States matrix doesn't exist for this component → the feature's design spec owns states (wireframe-loop/hifi-gate output); get the matrix before faking one.
 - Many components missing stories → propose a sweep, one component at a time, oldest first.
+
+## Parallel component batches
+
+Building 3+ independent components with stories? Use the `build-fleet` workflow
+(`.claude/workflows/build-fleet.js`) — worktree-isolated builder per component, verifier per
+build, merge decisions back in the main session. Same independence test as from-figma: shared
+new files or in-run dependencies mean sequential, not fleet.

@@ -139,6 +139,16 @@ Small verifiable steps: one component/section at a time; show the file before mo
   ```
 - [ ] Conventional commit on the feature branch; do not push or open a PR unless asked.
 
+## Parallel builds (3+ independent components)
+
+One component at a time is the default (small, verifiable steps). But when 3+ *independent*
+components are specced and gate-passed, don't queue them — run the `build-fleet` workflow
+(`.claude/workflows/build-fleet.js`, scaffolded by harness ≥1.5.0): one frontend-engineer agent
+per component, each in an isolated git worktree (no file conflicts), each code-verified before
+reporting. Independence test: no shared new files, and none consumes another built in the same
+run — fail it and you build sequentially. Merging stays here in the main session, one reviewed
+branch at a time, and the Step 6 screenshot evidence happens after merge as usual.
+
 ## Guardrails (summary)
 
 - Two-source rule always: Figma variables for visuals, primitive source for behavior. A screenshot is never a spec.

@@ -314,3 +314,20 @@ shipped via scaffold into project `.claude/workflows/`:
   in-script.
 - Both end at a human verdict; both flagged token-heavy in whenToUse. Runtime-wrap syntax
   tests added (top-level return is legal in the Workflow runtime, not bare ESM).
+
+## 2026-09-03 (evening) — parallel builds (harness-core → 1.5.0)
+
+ADE step 3, the last of the three:
+- `build-fleet.js` workflow — 2+ independent gate-passed components in parallel: one
+  frontend-engineer agent per component in an isolated git worktree (no conflicts), a strict
+  fresh verifier reads each diff (token-only, five widths, a11y, both themes), returns
+  ready/needsWork/blocked buckets with branch + worktree paths. NOTHING auto-merges — the
+  director reviews and merges one branch at a time from the main session; pixel evidence stays
+  post-merge per verify-before-done. Independence test documented (no shared new files, no
+  in-run dependencies).
+- from-figma + storybook-component route 3+ independent components to the fleet; single
+  components stay sequential by design.
+- e2e-test Step 4: suites run as background tasks — work continues while Playwright grinds;
+  never report before reading finished output.
+ADE track complete: dashboard (1.3.0) + workflows (1.4.0) + parallel builds (1.5.0), all
+file-derived, all ending at human verdicts.

@@ -148,6 +148,11 @@ test('tap targets meet 44px minimum', async ({ page }) => {
 
 ## Step 4 — Run
 
+**Run suites as a background task** (Bash `run_in_background: true`, no `&`) so the session
+keeps working — queue the next build or review while Playwright grinds, then collect results
+when the task completes. Never report pass/fail before reading the finished output; a started
+suite is not evidence. Foreground only when the user is waiting on this single answer.
+
 ```bash
 npx playwright test e2e/[feature-name]/            # all three projects
 npx playwright test e2e/[feature-name]/ --project=mobile

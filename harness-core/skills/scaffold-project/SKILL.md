@@ -41,7 +41,7 @@ design/          (tokens.json, tokens.md, components.md, patterns.md, recipes.md
 registry/        (empty — recipe-harvest writes shadcn registry items here)
 scripts/build-tokens.mjs
 scripts/pipeline-status.js   (project-local statusline copy — byte-identical to the plugin's, verified by test-harness.sh)
-.claude/workflows/       (ship-review.js, variant-tournament.js — deterministic multi-agent routines, run via the Workflow tool)
+.claude/workflows/       (ship-review.js, variant-tournament.js, build-fleet.js — deterministic multi-agent routines, run via the Workflow tool)
 .github/workflows/gates.yml   (CI gate suite: e2e + axe + visual baselines, token-guard, security, perf budget)
 .lighthouserc.json            (Lighthouse budget assertions — LCP/TBT/CLS from docs/tech.md)
 ```
@@ -77,7 +77,11 @@ Two deterministic orchestration scripts land in `.claude/workflows/`:
   (type/color/layout/motion/density-led), three judges score against the art direction and
   taste rules, the director rules on the bracket. Requires `## Art direction` to exist.
 
-Both are token-heavy (8–20 agents per run) and both end at a human verdict. Mention them in the
+- **`build-fleet`** — 3+ independent, gate-passed components built in parallel, one
+  frontend-engineer agent per component in an isolated git worktree, each code-verified before
+  reporting; merging stays with the director, one reviewed branch at a time.
+
+All are token-heavy (8–20 agents per run) and all end at a human verdict. Mention them in the
 scaffold report so the user knows they exist.
 
 ## Step 2 — Project-level protections

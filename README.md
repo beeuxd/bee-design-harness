@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/plugins-7-D8FF3A?style=flat-square&labelColor=16130F" alt="7 plugins">
   <img src="https://img.shields.io/badge/skills-115-5660F0?style=flat-square&labelColor=16130F" alt="115 skills">
   <img src="https://img.shields.io/badge/agents-7-F056A0?style=flat-square&labelColor=16130F" alt="7 agents">
-  <img src="https://img.shields.io/badge/core-v1.4.0-D8FF3A?style=flat-square&labelColor=16130F" alt="harness-core v1.4.0">
+  <img src="https://img.shields.io/badge/core-v1.5.0-D8FF3A?style=flat-square&labelColor=16130F" alt="harness-core v1.5.0">
   <img src="https://img.shields.io/badge/a11y-WCAG_2.2_AA-5660F0?style=flat-square&labelColor=16130F" alt="WCAG 2.2 AA">
   <img src="https://img.shields.io/badge/mobile--first-360px-F056A0?style=flat-square&labelColor=16130F" alt="mobile-first, 360px up">
   <img src="https://img.shields.io/badge/themes-light_%2B_dark-D8FF3A?style=flat-square&labelColor=16130F" alt="light and dark themes always ship">
