@@ -41,6 +41,7 @@ design/          (tokens.json, tokens.md, components.md, patterns.md, recipes.md
 registry/        (empty — recipe-harvest writes shadcn registry items here)
 scripts/build-tokens.mjs
 scripts/pipeline-status.js   (project-local statusline copy — byte-identical to the plugin's, verified by test-harness.sh)
+.claude/workflows/       (ship-review.js, variant-tournament.js — deterministic multi-agent routines, run via the Workflow tool)
 .github/workflows/gates.yml   (CI gate suite: e2e + axe + visual baselines, token-guard, security, perf budget)
 .lighthouserc.json            (Lighthouse budget assertions — LCP/TBT/CLS from docs/tech.md)
 ```
@@ -64,6 +65,20 @@ If `.claude/settings.json` already exists with a `statusLine`, ask before replac
 same detector runs automatically on session start via the plugin's hook — the statusline is
 the always-on version. It renders like: `⬡ wireframes · next: /hifi-gate` or
 `⬡ insights · ⚠ verdict: insight-loop` when a loop awaits the director's ruling.
+
+## Step 1.6 — Workflows (push-button multi-agent routines)
+
+Two deterministic orchestration scripts land in `.claude/workflows/`:
+
+- **`ship-review`** — the ship gate's review engine as a pipeline: parallel lens agents, every
+  finding adversarially verified before it reaches the director. The `ship` skill prefers it
+  when present.
+- **`variant-tournament`** — five agents design the same screen from different angles
+  (type/color/layout/motion/density-led), three judges score against the art direction and
+  taste rules, the director rules on the bracket. Requires `## Art direction` to exist.
+
+Both are token-heavy (8–20 agents per run) and both end at a human verdict. Mention them in the
+scaffold report so the user knows they exist.
 
 ## Step 2 — Project-level protections
 

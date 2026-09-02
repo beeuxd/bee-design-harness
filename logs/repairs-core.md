@@ -298,3 +298,19 @@ ADE visibility layer, file-derived like everything else:
   byte-identical `scripts/pipeline-status.js` copy, identity-verified by the test suite.
 - 4 new integrity tests. Deliberately NOT automated: verdicts and gates stay human-owned —
   the dashboard surfaces decisions, never takes them.
+
+## 2026-09-03 (later) — push-button workflows (harness-core → 1.4.0)
+
+ADE step 2 — the two heaviest multi-agent routines become deterministic Workflow scripts,
+shipped via scaffold into project `.claude/workflows/`:
+- `ship-review.js` — 5 lens agents in a pipeline; every finding gets an adversarial verifier
+  (default stance: refute; "violates a written standard" required). Only confirmed findings
+  return, severity-ordered. ship SKILL.md now prefers it when present; manual parallel-review
+  fan-out stays as fallback.
+- `variant-tournament.js` — 5 designers (type/color/layout/motion/density-led angles, each an
+  emphasis WITHIN the art direction), specs written to docs/specs/variants/, then a 3-judge
+  barrier panel (art-direction fidelity, taste+craft citing rules by name, problem-fit at
+  360px). Returns ranked bracket + steal-list; director rules; art-direction hard gate enforced
+  in-script.
+- Both end at a human verdict; both flagged token-heavy in whenToUse. Runtime-wrap syntax
+  tests added (top-level return is legal in the Workflow runtime, not bare ESM).

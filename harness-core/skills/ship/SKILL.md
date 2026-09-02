@@ -26,6 +26,12 @@ One verdict: SHIP or NO-SHIP. Never anything in between. This skill aggregates e
 
 ## Step 1 — Fan out the lens reviews (via `parallel-review`)
 
+**Workflow route (preferred when available):** if `.claude/workflows/ship-review.js` exists in
+the project (scaffolded by harness ≥1.4.0), run it via the Workflow tool — `Workflow({name:
+"ship-review", args: "<target scope + app URL>"})` — instead of the manual fan-out below. It
+holds the same contract (lens agents, evidence-or-discarded, adversarial verification) with
+deterministic orchestration; take its `confirmed` findings into Step 2. Otherwise:
+
 Run the `parallel-review` skill end to end — it owns server startup, agent contracts, evidence discarding, dedup, and adversarial spot-checks. Non-negotiables for this invocation:
 
 - Lenses, each executing its library skill: `a11y-audit`, `performance-check`, `design-system-audit`, `review-ux`, `visual-qa`. If user-facing copy changed in scope — check `git diff main...HEAD` for string changes in components/pages; if the scope is a page/feature with no branch diff to inspect, ask the user whether copy changed rather than guessing — then: if the role-copywriter plugin is installed, add its `ux-copy-review` lens; otherwise flag copy review as a human follow-up in the report. If the scope contains AI-generated output or AI-driven actions, `review-ux`'s T.R.U.S.T. lens (checklist in `docs/trust-scaffolding.md`) is in play — its Medium+-stakes findings land in the gate table below.

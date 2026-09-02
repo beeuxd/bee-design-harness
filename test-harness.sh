@@ -98,6 +98,12 @@ OUT="$(cd "$TMP" && node "$ROOT/harness-core/scripts/pipeline-status.js" 2>/dev/
 echo "$OUT" | grep -q "VERDICT NEEDED" && pass "pipeline-status: session output surfaces pending verdict" || fail "session output missed PENDING"
 rm -rf "$TMP"
 
+# workflow templates: must parse under the Workflow runtime's async-body wrapping
+for wf in "$TPL/.claude/workflows/"*.js; do
+  { echo "(async ()=>{"; sed 's/^export const meta/const meta/' "$wf"; echo "})"; } | node --check - 2>/dev/null \
+    && pass "workflow parses: $(basename "$wf")" || fail "workflow syntax error: $(basename "$wf")"
+done
+
 # ── 7. Workshop/project drift (optional arg): skill copies match core ────
 if [ -n "$WORKSHOP" ] && [ -d "$WORKSHOP/.claude/skills" ]; then
   for d in "$WORKSHOP"/.claude/skills/*/; do
