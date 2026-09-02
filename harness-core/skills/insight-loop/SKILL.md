@@ -51,7 +51,7 @@ All of the following, verified on the final pass:
 - Every contradiction found anywhere in the process appears in the Contradictory Evidence table
 - Confidence levels match the rubric arithmetic — no gut-feel "High"
 
-Then write the final `docs/research/insights.md`, present the ledger + inventory summary (counts by confidence, contradictions logged), and ask for the user's verdict.
+Then write the final `docs/research/insights.md`, add `Verdict: PENDING — <date>, iteration N` beneath its Director's Ledger, present the ledger + inventory summary (counts by confidence, contradictions logged), and ask for the user's verdict. Once the director rules, replace PENDING with the ruling and date — the pipeline statusline surfaces PENDING as the top item until then.
 
 ## Forbidden moves
 

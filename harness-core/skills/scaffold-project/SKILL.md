@@ -10,7 +10,7 @@ The harness's skills assume a document set (DESIGN.md, docs/, design/) that plug
 ## Step 0 — Preconditions
 
 1. Identify the project root (the user's cwd unless they say otherwise).
-2. **Never overwrite silently.** Check each target before writing: `DESIGN.md`, `CLAUDE.md`, `docs/`, `design/`, `scripts/build-tokens.mjs`. Any that already exist → list them and STOP: "These exist — overwrite, skip, or merge per file?" A project that already has a `CLAUDE.md` almost certainly wants a merge (append the harness sections), not a replacement.
+2. **Never overwrite silently.** Check each target before writing: `DESIGN.md`, `CLAUDE.md`, `docs/`, `design/`, `scripts/build-tokens.mjs`, `scripts/pipeline-status.js`. Any that already exist → list them and STOP: "These exist — overwrite, skip, or merge per file?" A project that already has a `CLAUDE.md` almost certainly wants a merge (append the harness sections), not a replacement.
 3. **The intake — ask in ONE batch, then WAIT.** These answers shape everything downstream; unanswered items are recorded as `OPEN`, never guessed:
    1. Project name?
    2. One-line project description?
@@ -40,6 +40,7 @@ docs/specs/      (empty — design specs land here)
 design/          (tokens.json, tokens.md, components.md, patterns.md, recipes.md, templates.md, accessibility.md, taste-rules.md, references/README.md)
 registry/        (empty — recipe-harvest writes shadcn registry items here)
 scripts/build-tokens.mjs
+scripts/pipeline-status.js   (project-local statusline copy — byte-identical to the plugin's, verified by test-harness.sh)
 .github/workflows/gates.yml   (CI gate suite: e2e + axe + visual baselines, token-guard, security, perf budget)
 .lighthouserc.json            (Lighthouse budget assertions — LCP/TBT/CLS from docs/tech.md)
 ```
@@ -47,6 +48,22 @@ scripts/build-tokens.mjs
 The CI files only bite once the repo is on GitHub and `app-bootstrap` (role-engineer) has installed the toolchain — say so in the report if either isn't true yet.
 
 Then replace placeholders in every copied `.md`/`.json`: `{{PROJECT_NAME}}`, `{{PROJECT_DESCRIPTION}}`, `{{AESTHETIC}}`, `{{FIGMA_URL}}`, `{{THEME}}` with the Step 0 answers (empty answer → leave the placeholder and note it in the report). Record the intake answers per Step 0.3. If intake named Replit or Figma Make as executors, run `sync-executor-context` at the end to generate their context files (AGENTS.md ships from the template either way).
+
+## Step 1.5 — Pipeline statusline (the dashboard)
+
+Wire the pipeline dashboard into the project's statusline so every session shows position,
+next step, and pending director verdicts at a glance. Create or merge `.claude/settings.json`:
+
+```json
+{
+  "statusLine": { "type": "command", "command": "node scripts/pipeline-status.js --statusline" }
+}
+```
+
+If `.claude/settings.json` already exists with a `statusLine`, ask before replacing it. The
+same detector runs automatically on session start via the plugin's hook — the statusline is
+the always-on version. It renders like: `⬡ wireframes · next: /hifi-gate` or
+`⬡ insights · ⚠ verdict: insight-loop` when a loop awaits the director's ruling.
 
 ## Step 2 — Project-level protections
 

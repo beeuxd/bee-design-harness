@@ -83,6 +83,21 @@ OUT="$(cd "$TMP" && node "$ROOT/harness-core/scripts/pipeline-status.js" 2>/dev/
 [ -z "$OUT" ] && pass "pipeline-status: silent outside harness projects" || fail "pipeline-status noisy in non-harness dir"
 rm -rf "$TMP"
 
+# pipeline-status statusline + verdict inbox + template-copy identity
+diff -q "$ROOT/harness-core/scripts/pipeline-status.js" "$TPL/scripts/pipeline-status.js" >/dev/null 2>&1 \
+  && pass "pipeline-status: template copy identical to plugin script" || fail "pipeline-status template copy drifted from plugin script"
+TMP="$(mktemp -d)"; mkdir -p "$TMP/docs/research/raw"; cp -r "$TPL/docs/." "$TMP/docs/"; touch "$TMP/DESIGN.md"
+echo quotes > "$TMP/docs/research/raw/q.md"
+echo '| INS-001 | pattern | "q" — raw/q.md | x | High | Active |' >> "$TMP/docs/research/insights.md"
+OUT="$(cd "$TMP" && echo '{}' | node "$ROOT/harness-core/scripts/pipeline-status.js" --statusline 2>/dev/null)"
+echo "$OUT" | grep -q "next: /problem-loop" && pass "pipeline-status: statusline renders next step" || fail "statusline wrong: $OUT"
+echo 'Verdict: PENDING — test' >> "$TMP/docs/research/insights.md"
+OUT="$(cd "$TMP" && echo '{}' | node "$ROOT/harness-core/scripts/pipeline-status.js" --statusline 2>/dev/null)"
+echo "$OUT" | grep -q "verdict: insight-loop" && pass "pipeline-status: statusline surfaces pending verdict" || fail "verdict inbox missed PENDING: $OUT"
+OUT="$(cd "$TMP" && node "$ROOT/harness-core/scripts/pipeline-status.js" 2>/dev/null)"
+echo "$OUT" | grep -q "VERDICT NEEDED" && pass "pipeline-status: session output surfaces pending verdict" || fail "session output missed PENDING"
+rm -rf "$TMP"
+
 # ── 7. Workshop/project drift (optional arg): skill copies match core ────
 if [ -n "$WORKSHOP" ] && [ -d "$WORKSHOP/.claude/skills" ]; then
   for d in "$WORKSHOP"/.claude/skills/*/; do

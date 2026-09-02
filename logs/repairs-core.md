@@ -285,3 +285,16 @@ The harness now prompts the next step from artifact state instead of relying on 
   (existing product's tickets/analytics ARE raw research; art-direction never skipped).
 - 3 new integrity tests (stubs read as phase 0, advances on filled artifacts, silent in
   non-harness dirs). README counts → 115 skills / core 28 / 4 hooks.
+
+## 2026-09-03 — dashboard: statusline + verdict inbox (harness-core → 1.3.0)
+
+ADE visibility layer, file-derived like everything else:
+- `pipeline-status.js --statusline` — compact always-on line (`⬡ <phase> · next: <step>`,
+  `⚠ verdict: <loop>` when a ruling is pending, `↻ stale ×N`). Reads session JSON on stdin.
+- **Verdict inbox convention**: all five loops now write `Verdict: PENDING — <date>, iteration N`
+  beneath their ledger at exit and replace it with the director's ruling. Detector surfaces
+  PENDING above any next step (session output + statusline).
+- Scaffold Step 1.5 wires the statusline into project `.claude/settings.json`; template ships a
+  byte-identical `scripts/pipeline-status.js` copy, identity-verified by the test suite.
+- 4 new integrity tests. Deliberately NOT automated: verdicts and gates stay human-owned —
+  the dashboard surfaces decisions, never takes them.

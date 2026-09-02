@@ -50,7 +50,7 @@ Fix in Figma, update the matrix and ledger, repeat until a full pass finds nothi
 - Hierarchy matches MoSCoW priority; flow/error branches land somewhere
 - Matrix links and frame names match the actual Figma file
 
-Present the matrix summary + frame links + ledger; ask for the verdict.
+Add `Verdict: PENDING — <date>, iteration N` beneath the Iteration Ledger (above the Gate Ledger section), present the matrix summary + frame links + ledger; ask for the verdict. Once the director rules, replace PENDING with the ruling and date.
 
 ## Forbidden moves
 

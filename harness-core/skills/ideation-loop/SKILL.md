@@ -62,7 +62,7 @@ Fix, update ledger, repeat until a full pass produces zero changes and both Cove
 - Every problem addressed or explicitly deferred
 - Unvalidated bets labeled, MoSCoW rationales written, both coverage tables empty
 
-Present the tree summary (counts per MoSCoW tier, bets flagged), the ledger, and ask for the verdict.
+Add `Verdict: PENDING — <date>, iteration N` beneath the Director's Ledger, present the tree summary (counts per MoSCoW tier, bets flagged), the ledger, and ask for the verdict. Once the director rules, replace PENDING with the ruling and date.
 
 ## Forbidden moves
 

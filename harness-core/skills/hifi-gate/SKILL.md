@@ -55,7 +55,7 @@ Audit every `hifi/*` frame:
 - `/design-tokens-sync` re-run confirms zero HIGH/MEDIUM drift (the hi-fi work itself introduced none)
 - Wireframe validation matrix still holds against the hi-fi frames
 
-Present the gate evidence — drift result, unbound-value count (0), matrix confirmation, frame links — and ask for the verdict.
+Add `Verdict: PENDING — <date>, iteration N` beneath the Gate Ledger, present the gate evidence — drift result, unbound-value count (0), matrix confirmation, frame links — and ask for the verdict. Once the director rules, replace PENDING with the ruling and date.
 
 ## Forbidden moves
 

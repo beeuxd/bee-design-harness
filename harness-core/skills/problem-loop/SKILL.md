@@ -49,7 +49,7 @@ Revise after each round, update the ledger, repeat until a full pass over all fi
 - The Unexplained Insights table is empty, or every row in it has a disposition the user agreed to ("out of scope because…", "needs more research")
 - Status column set: Validated / Open / Unvalidated per the rubric
 
-Then: write `docs/research/problems.md`, update the **Problem Statement** section of `docs/prd.md` (append/replace that section only — never touch REQ tables from this skill), present the ledger, ask for the verdict.
+Then: write `docs/research/problems.md`, update the **Problem Statement** section of `docs/prd.md` (append/replace that section only — never touch REQ tables from this skill), add `Verdict: PENDING — <date>, iteration N` beneath the Validation Ledger, present the ledger, ask for the verdict. Once the director rules, replace PENDING with the ruling and date.
 
 ## Forbidden moves
 
