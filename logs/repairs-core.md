@@ -331,3 +331,23 @@ ADE step 3, the last of the three:
   never report before reading finished output.
 ADE track complete: dashboard (1.3.0) + workflows (1.4.0) + parallel builds (1.5.0), all
 file-derived, all ending at human verdicts.
+
+## 2026-09-09 — research-driven adoptions (harness-core → 1.6.0)
+
+Five patterns from logs/ade-research-2026-09.md applied, each mapped to its verified source:
+1. **Approval persistence** (OpenDev anti-fatigue): docs/decisions.md standing-rulings log; all
+   5 loops consult decisions.md + taste-rules before asking, cite rule IDs, record "always/never
+   again" rulings (visual → taste-retro, process → decisions.md). Exit verdicts never auto-resolve.
+2. **Review queue artifact** (Copilot draft-PR pattern): docs/review-queue.md — one entry per
+   pending verdict (draft location, reasoning, evidence, Status: OPEN→RESOLVED); loops write it
+   alongside Verdict: PENDING; statusline shows ⚑ queue ×N; session output points at it.
+3. **Needs-attention notification** (Warp fleet UI): verdict-notify.js PostToolUse hook — macOS
+   notification when a write ADDS a Verdict: PENDING marker (content-based, never re-fires).
+4. **Schema-level gate** (OpenDev defense-in-depth): build-gate-guard.js PreToolUse hook — UI
+   source writes (app|src|components|pages/*.tsx…) before Gate Ledger evidence exists → ask
+   dialog. The "no build before hifi-gate" rule is now tool-enforced, not prose.
+5. **Session-link trust artifacts** (Warp Oz): Gate Ledger rows + ship verdicts record the
+   session/workflow-run/branch that produced their evidence.
+Also: build-fleet's justification corrected per the refuted worktree-dominance claim — parallelism
+is justified by the review-bottleneck evidence (parallelize cheap-to-review work only).
+5 new tests; suite green. README: 6 hooks.

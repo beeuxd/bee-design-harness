@@ -62,7 +62,7 @@ Fix, update ledger, repeat until a full pass produces zero changes and both Cove
 - Every problem addressed or explicitly deferred
 - Unvalidated bets labeled, MoSCoW rationales written, both coverage tables empty
 
-Add `Verdict: PENDING — <date>, iteration N` beneath the Director's Ledger, present the tree summary (counts per MoSCoW tier, bets flagged), the ledger, and ask for the verdict. Once the director rules, replace PENDING with the ruling and date.
+Add `Verdict: PENDING — <date>, iteration N` beneath the Director's Ledger, present the tree summary (counts per MoSCoW tier, bets flagged), the ledger, and ask for the verdict. Once the director rules, replace PENDING with the ruling and date. Alongside the marker, append an entry to `docs/review-queue.md` — what needs ruling, where the draft lives, 2–3 lines of reasoning, evidence links, `Status: OPEN` — and flip it to RESOLVED with the ruling recorded. Before presenting, scan `docs/decisions.md` and `design/taste-rules.md` for standing rulings that already answer part of what you'd ask — apply them and cite the rule ID in the ledger instead of re-asking (the exit verdict itself is never auto-resolved). A ruling phrased as standing ("always…", "never ask again…") gets recorded: visual → `taste-retro`, process/scope → `docs/decisions.md`.
 
 ## Forbidden moves
 

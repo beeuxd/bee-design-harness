@@ -51,7 +51,7 @@ All of the following, verified on the final pass:
 - Every contradiction found anywhere in the process appears in the Contradictory Evidence table
 - Confidence levels match the rubric arithmetic — no gut-feel "High"
 
-Then write the final `docs/research/insights.md`, add `Verdict: PENDING — <date>, iteration N` beneath its Director's Ledger, present the ledger + inventory summary (counts by confidence, contradictions logged), and ask for the user's verdict. Once the director rules, replace PENDING with the ruling and date — the pipeline statusline surfaces PENDING as the top item until then.
+Then write the final `docs/research/insights.md`, add `Verdict: PENDING — <date>, iteration N` beneath its Director's Ledger, present the ledger + inventory summary (counts by confidence, contradictions logged), and ask for the user's verdict. Once the director rules, replace PENDING with the ruling and date — the pipeline statusline surfaces PENDING as the top item until then. Alongside the marker, append an entry to `docs/review-queue.md` — what needs ruling, where the draft lives, 2–3 lines of reasoning, evidence links, `Status: OPEN` — and flip it to RESOLVED with the ruling recorded. Before presenting, scan `docs/decisions.md` and `design/taste-rules.md` for standing rulings that already answer part of what you'd ask — apply them and cite the rule ID in the ledger instead of re-asking (the exit verdict itself is never auto-resolved). A ruling phrased as standing ("always…", "never ask again…") gets recorded: visual → `taste-retro`, process/scope → `docs/decisions.md`.
 
 ## Forbidden moves
 

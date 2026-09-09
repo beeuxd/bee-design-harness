@@ -30,7 +30,8 @@ One verdict: SHIP or NO-SHIP. Never anything in between. This skill aggregates e
 the project (scaffolded by harness ≥1.4.0), run it via the Workflow tool — `Workflow({name:
 "ship-review", args: "<target scope + app URL>"})` — instead of the manual fan-out below. It
 holds the same contract (lens agents, evidence-or-discarded, adversarial verification) with
-deterministic orchestration; take its `confirmed` findings into Step 2. Otherwise:
+deterministic orchestration; take its `confirmed` findings into Step 2, and record the workflow
+run ID in the verdict evidence — every SHIP/NO-SHIP call stays traceable to the run that earned it. Otherwise:
 
 Run the `parallel-review` skill end to end — it owns server startup, agent contracts, evidence discarding, dedup, and adversarial spot-checks. Non-negotiables for this invocation:
 

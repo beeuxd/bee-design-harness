@@ -49,7 +49,7 @@ Revise after each round, update the ledger, repeat until a full pass over all fi
 - The Unexplained Insights table is empty, or every row in it has a disposition the user agreed to ("out of scope because…", "needs more research")
 - Status column set: Validated / Open / Unvalidated per the rubric
 
-Then: write `docs/research/problems.md`, update the **Problem Statement** section of `docs/prd.md` (append/replace that section only — never touch REQ tables from this skill), add `Verdict: PENDING — <date>, iteration N` beneath the Validation Ledger, present the ledger, ask for the verdict. Once the director rules, replace PENDING with the ruling and date.
+Then: write `docs/research/problems.md`, update the **Problem Statement** section of `docs/prd.md` (append/replace that section only — never touch REQ tables from this skill), add `Verdict: PENDING — <date>, iteration N` beneath the Validation Ledger, present the ledger, ask for the verdict. Once the director rules, replace PENDING with the ruling and date. Alongside the marker, append an entry to `docs/review-queue.md` — what needs ruling, where the draft lives, 2–3 lines of reasoning, evidence links, `Status: OPEN` — and flip it to RESOLVED with the ruling recorded. Before presenting, scan `docs/decisions.md` and `design/taste-rules.md` for standing rulings that already answer part of what you'd ask — apply them and cite the rule ID in the ledger instead of re-asking (the exit verdict itself is never auto-resolved). A ruling phrased as standing ("always…", "never ask again…") gets recorded: visual → `taste-retro`, process/scope → `docs/decisions.md`.
 
 ## Forbidden moves
 

@@ -35,7 +35,9 @@ AGENTS.md        (cross-tool executor context — Cursor/Codex/Copilot/Gemini re
 CLAUDE.md
 docs/            (project, prd, user-flows, ux-principles, design-system, tech, trust-scaffolding, content-guidelines)
 docs/research/   (insights.md, problems.md, raw/README.md, personas/README.md)
-docs/ideation/   (feature-tree.md, wireframes.md)
+docs/ideation/  (feature-tree.md, wireframes.md)
+docs/decisions.md   (standing director rulings — approval persistence)
+docs/review-queue.md (the director's verdict inbox — draft + reasoning + evidence per entry)
 docs/specs/      (empty — design specs land here)
 design/          (tokens.json, tokens.md, components.md, patterns.md, recipes.md, templates.md, accessibility.md, taste-rules.md, references/README.md)
 registry/        (empty — recipe-harvest writes shadcn registry items here)

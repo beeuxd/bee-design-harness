@@ -114,3 +114,7 @@ Any skill doing visual build or review work — `from-figma`, `hifi-gate`, `wire
 - You cannot make the rule checkable without guessing what they meant.
 - Scope (universal vs this-project) is genuinely ambiguous.
 - The correction implies changing `design/tokens.json` or `docs/design-system.md` — logging the rule is fine; changing tokens or the art direction needs explicit approval (tokens.json is a protected file).
+
+## Non-visual standing rulings
+
+A correction about *process or scope* ("never ask me about X again", "always default to Y") is not a taste rule — record it as a DEC row in `docs/decisions.md` instead, same discipline (dated, scoped, citable). Loops consult both files before asking anything twice.

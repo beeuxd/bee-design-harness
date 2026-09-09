@@ -124,10 +124,15 @@ if (ins > 0 && rawNewest > mtime('docs/research/insights.md')) stale.push('raw r
 if (prob > 0 && mtime('docs/research/insights.md') > mtime('docs/research/problems.md')) stale.push('insights.md changed after problems.md — consider re-running /problem-loop');
 if (feat > 0 && mtime('docs/research/problems.md') > mtime('docs/ideation/feature-tree.md')) stale.push('problems.md changed after feature-tree.md — consider re-running /ideation-loop');
 
+// Review queue: OPEN entries are the verdict inbox's body (docs/review-queue.md).
+const rq = read('docs/review-queue.md');
+const queueOpen = rq ? (rq.match(/Status:\s*OPEN/gi) || []).length : 0;
+
 if (STATUSLINE) {
   const bits = [`⬡ ${phase}`];
   if (verdicts.length) bits.push(`⚠ verdict: ${verdicts.join(', ')}`);
   else bits.push(`next: ${nextShort}`);
+  if (queueOpen) bits.push(`⚑ queue ×${queueOpen}`);
   if (stale.length) bits.push(`↻ stale ×${stale.length}`);
   console.log(bits.join(' · '));
   process.exit(0);
@@ -135,5 +140,6 @@ if (STATUSLINE) {
 
 console.log(`[harness] Pipeline: ${chain}`);
 if (verdicts.length) console.log(`[harness] VERDICT NEEDED: ${verdicts.join(', ')} — a loop is waiting on the director's ruling (see its ledger). This outranks the next step below.`);
+if (queueOpen) console.log(`[harness] Review queue: ${queueOpen} OPEN ${queueOpen === 1 ? 'entry' : 'entries'} in docs/review-queue.md — draft + reasoning + evidence per entry.`);
 console.log(`[harness] Next: ${next}`);
 if (stale.length) console.log(`[harness] Stale: ${stale.join('; ')}`);

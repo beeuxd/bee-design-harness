@@ -55,7 +55,7 @@ Audit every `hifi/*` frame:
 - `/design-tokens-sync` re-run confirms zero HIGH/MEDIUM drift (the hi-fi work itself introduced none)
 - Wireframe validation matrix still holds against the hi-fi frames
 
-Add `Verdict: PENDING — <date>, iteration N` beneath the Gate Ledger, present the gate evidence — drift result, unbound-value count (0), matrix confirmation, frame links — and ask for the verdict. Once the director rules, replace PENDING with the ruling and date.
+Every Gate Ledger row also records its session link — the session ID, workflow run ID, or worktree branch that produced the evidence — so any verdict can be traced to the work behind it. Add `Verdict: PENDING — <date>, iteration N` beneath the Gate Ledger, present the gate evidence — drift result, unbound-value count (0), matrix confirmation, frame links — and ask for the verdict. Once the director rules, replace PENDING with the ruling and date. Alongside the marker, append an entry to `docs/review-queue.md` — what needs ruling, where the draft lives, 2–3 lines of reasoning, evidence links, `Status: OPEN` — and flip it to RESOLVED with the ruling recorded. Before presenting, scan `docs/decisions.md` and `design/taste-rules.md` for standing rulings that already answer part of what you'd ask — apply them and cite the rule ID in the ledger instead of re-asking (the exit verdict itself is never auto-resolved). A ruling phrased as standing ("always…", "never ask again…") gets recorded: visual → `taste-retro`, process/scope → `docs/decisions.md`.
 
 ## Forbidden moves
 

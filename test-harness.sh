@@ -98,6 +98,23 @@ OUT="$(cd "$TMP" && node "$ROOT/harness-core/scripts/pipeline-status.js" 2>/dev/
 echo "$OUT" | grep -q "VERDICT NEEDED" && pass "pipeline-status: session output surfaces pending verdict" || fail "session output missed PENDING"
 rm -rf "$TMP"
 
+# build-gate-guard: asks on pre-gate UI writes, silent post-gate and outside harness projects
+TMP="$(mktemp -d)"; touch "$TMP/DESIGN.md"; mkdir -p "$TMP/docs/ideation"
+OUT="$(cd "$TMP" && echo '{"tool_name":"Write","tool_input":{"file_path":"app/hero.tsx"}}' | node "$ROOT/harness-core/scripts/build-gate-guard.js" 2>/dev/null)"
+echo "$OUT" | grep -q '"ask"' && pass "build-gate-guard asks on pre-gate UI write" || fail "build-gate-guard silent pre-gate"
+printf '## Gate Ledger\n| 2026-09-09 | 1 | 0 | clean | yes |\n' > "$TMP/docs/ideation/wireframes.md"
+OUT="$(cd "$TMP" && echo '{"tool_name":"Write","tool_input":{"file_path":"app/hero.tsx"}}' | node "$ROOT/harness-core/scripts/build-gate-guard.js" 2>/dev/null)"
+[ -z "$OUT" ] && pass "build-gate-guard passes post-gate" || fail "build-gate-guard blocked post-gate"
+OUT="$(cd "$TMP" && echo '{"tool_name":"Write","tool_input":{"file_path":"docs/prd.md"}}' | node "$ROOT/harness-core/scripts/build-gate-guard.js" 2>/dev/null)"
+[ -z "$OUT" ] && pass "build-gate-guard ignores non-UI files" || fail "build-gate-guard flagged a doc"
+rm -rf "$TMP"
+
+# verdict-notify: fires only on writes that add the PENDING marker (dry-run mode)
+OUT="$(echo '{"tool_name":"Edit","tool_input":{"file_path":"docs/research/insights.md","new_string":"Verdict: PENDING — test"}}' | HARNESS_NOTIFY_DRYRUN=1 node "$ROOT/harness-core/scripts/verdict-notify.js" 2>/dev/null)"
+echo "$OUT" | grep -q "insight-loop is waiting" && pass "verdict-notify fires on PENDING write" || fail "verdict-notify missed PENDING: $OUT"
+OUT="$(echo '{"tool_name":"Edit","tool_input":{"file_path":"docs/research/insights.md","new_string":"regular edit"}}' | HARNESS_NOTIFY_DRYRUN=1 node "$ROOT/harness-core/scripts/verdict-notify.js" 2>/dev/null)"
+[ -z "$OUT" ] && pass "verdict-notify silent on ordinary edits" || fail "verdict-notify over-fires"
+
 # workflow templates: must parse under the Workflow runtime's async-body wrapping
 for wf in "$TPL/.claude/workflows/"*.js; do
   { echo "(async ()=>{"; sed 's/^export const meta/const meta/' "$wf"; echo "})"; } | node --check - 2>/dev/null \

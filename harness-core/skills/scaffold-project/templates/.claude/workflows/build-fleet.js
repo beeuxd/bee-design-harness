@@ -1,7 +1,7 @@
 export const meta = {
   name: 'build-fleet',
   description: 'Build several independent components/sections in parallel, each in its own git worktree, each verified before it reports back — no file conflicts, no waiting in line',
-  whenToUse: 'When 3+ independent components/sections are specced and ready to build (gate evidence exists). NOT for interdependent work (shared new files, one component consuming another being built in the same run). Token- and disk-heavy: 2 agents + 1 worktree per component.',
+  whenToUse: 'When 3+ independent components/sections are specced and ready to build (gate evidence exists). NOT for interdependent work (shared new files, one component consuming another in the same run). Grounding: human review capacity is the verified bottleneck on parallel agents (see harness logs/ade-research-2026-09.md) — fleet only work whose review is cheap (isolated diffs, glanceable), and merge serially. Token- and disk-heavy: 2 agents + 1 worktree per component.',
   phases: [
     { title: 'Build', detail: 'one builder per component, worktree-isolated' },
     { title: 'Verify', detail: 'fresh verifier reads each worktree diff against the standards' },

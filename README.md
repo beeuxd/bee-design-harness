@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/plugins-7-D8FF3A?style=flat-square&labelColor=16130F" alt="7 plugins">
   <img src="https://img.shields.io/badge/skills-115-5660F0?style=flat-square&labelColor=16130F" alt="115 skills">
   <img src="https://img.shields.io/badge/agents-7-F056A0?style=flat-square&labelColor=16130F" alt="7 agents">
-  <img src="https://img.shields.io/badge/core-v1.5.0-D8FF3A?style=flat-square&labelColor=16130F" alt="harness-core v1.5.0">
+  <img src="https://img.shields.io/badge/core-v1.6.0-D8FF3A?style=flat-square&labelColor=16130F" alt="harness-core v1.6.0">
   <img src="https://img.shields.io/badge/a11y-WCAG_2.2_AA-5660F0?style=flat-square&labelColor=16130F" alt="WCAG 2.2 AA">
   <img src="https://img.shields.io/badge/mobile--first-360px-F056A0?style=flat-square&labelColor=16130F" alt="mobile-first, 360px up">
   <img src="https://img.shields.io/badge/themes-light_%2B_dark-D8FF3A?style=flat-square&labelColor=16130F" alt="light and dark themes always ship">
@@ -187,7 +187,7 @@ For anyone changing this repo (mostly future Bee):
 - **Version on change.** Bump the plugin `version` in `.claude-plugin/plugin.json` when its skills change, so installed projects can see they're behind.
 - **Log restorations.** Anything revived from the legacy archive gets its references repaired, an entry in `logs/repairs-*.md`, and the RETIRED list in `test-harness.sh` updated. `logs/CURATION.md` is the provenance record — start there for provenance; the license audit itself is `logs/license-audit-2026-08.md`.
 
-**Status:** harness-core complete (28 skills, 4 hooks, 7 agents) · all six role packs built · guardrails complete (agent-run gate suite + its CI twin in `.github/workflows/gates.yml`).
+**Status:** harness-core complete (28 skills, 6 hooks, 7 agents) · all six role packs built · guardrails complete (agent-run gate suite + its CI twin in `.github/workflows/gates.yml`).
 
 ## License
 
